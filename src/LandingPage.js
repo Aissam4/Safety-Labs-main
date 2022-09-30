@@ -65,15 +65,12 @@ export default function LandingPage() {
           />
           <div className="content-center">
             <Row className="row-grid justify-content-between align-items-center text-left">
-              <Col lg="6" md="6">
+              <Col lg="6.5" md="6">
                 <h1 className="text-white">
-                  We keep your coin <br />
-                  <span className="text-white">secured</span>
+				Safe servers and facilitate community managment  <br />
                 </h1>
                 <p className="text-white mb-3">
-                  A wonderful serenity has taken possession of my entire soul,
-                  like these sweet mornings of spring which I enjoy with my
-                  whole heart. I am alone, and feel...
+				Safety Labs provides a set of bots that help keep you server safe and CM easy!...
                 </p>
                 <div className="btn-wrapper">
                   <div className="button-container">
