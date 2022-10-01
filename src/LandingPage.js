@@ -1,6 +1,5 @@
 import React from "react";
 import './style.css'
-import { Line } from "react-chartjs-2";
 import {
 	CardTitle,
 	ListGroupItem,
@@ -21,7 +20,6 @@ import 'aos/dist/aos.css';
 import Navbar from "Navbar.js";
 import Footer from "Footer.js";
 
-import bigChartData from "charts.js";
 
 export default function LandingPage() {
   React.useEffect(() => {
@@ -99,7 +97,7 @@ export default function LandingPage() {
               </Col >
               <Col className="mb-5" lg="40" md="6">
                 <img
-                  alt="this image by fulvector on Freepik"
+                  alt="by fulvector on Freepik"
                   className="mb-5 pb-5 w-100 h-100 img-fluid"
                   src={require("./assets/images/Blockchian.png")}
                 />
@@ -129,7 +127,7 @@ export default function LandingPage() {
 				  data-aos="fade-down"
 				  data-aos-delay="9"
     			  data-aos-duration="800"
-                  alt="this image by fulvector on Freepik"
+                  alt="by fulvector on Freepik"
                   className="mb-5 pb-5 w-100 h-100 img-fuild"
                   src={require("./assets/images/finger-print.png")}
                 />
@@ -157,7 +155,7 @@ export default function LandingPage() {
 				  data-aos="fade-up-left"
 				  data-aos-delay="9"
     			  data-aos-duration="800"
-                  alt="this image by fulvector on Freepik"
+                  alt="by fulvector on Freepik"
                   className="mb-5 pb-5 w-100 h-100 img-fuild"
                   src={require("./assets/images/robot.png")}
                 />
