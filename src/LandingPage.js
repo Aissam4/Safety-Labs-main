@@ -101,7 +101,7 @@ export default function LandingPage() {
                 <img
                   alt="this image by fulvector on Freepik"
                   className="mb-5 pb-5 w-100 h-100 img-fluid"
-                  src={require("Blockchian.png")}
+                  src={require("./assets/images/Blockchian.png")}
                 />
               </Col>
             </Row>
@@ -131,7 +131,7 @@ export default function LandingPage() {
     			  data-aos-duration="800"
                   alt="this image by fulvector on Freepik"
                   className="mb-5 pb-5 w-100 h-100 img-fuild"
-                  src={require("finger-print.png")}
+                  src={require("./assets/images/finger-print.png")}
                 />
               </Col>
                 <Col md="6">
@@ -159,7 +159,7 @@ export default function LandingPage() {
     			  data-aos-duration="800"
                   alt="this image by fulvector on Freepik"
                   className="mb-5 pb-5 w-100 h-100 img-fuild"
-                  src={require("robot.png")}
+                  src={require("./assets/images/robot.png")}
                 />
               </Col>
                 <Col md="6">
