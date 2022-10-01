@@ -45,6 +45,10 @@ export default function ExamplesNavbar() {
   const onCollapseExited = () => {
     setCollapseOut("");
   };
+  let scroll = () =>
+  {
+	window.location.href = "#empty";
+  }
   return (
     <Navbar className={"fixed-top " + color} color-on-scroll="100" expand="lg">
       <Container>
@@ -104,7 +108,7 @@ export default function ExamplesNavbar() {
             <NavItem className="p-0">
               <NavLink
                 data-placement="bottom"
-                href="https://www.instagram.com/CreativeTimOfficial"
+                href="#"
                 rel="noopener noreferrer"
                 target="_blank"
                 title="Follow us on Instagram"
@@ -114,12 +118,17 @@ export default function ExamplesNavbar() {
               </NavLink>
             </NavItem>
             <NavItem>
+              <NavLink tag={Link} to="" onClick={scroll}>
+                Features
+              </NavLink>
+            </NavItem>
+            <NavItem>
               <NavLink tag={Link} to="/">
                 Roadmap
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/creativetimofficial/blk-design-system-react/issues">
+              <NavLink href="#">
                 Pricing
               </NavLink>
             </NavItem>

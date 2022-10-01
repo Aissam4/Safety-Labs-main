@@ -8233,8 +8233,9 @@ button.bg-darker:focus {
 
 .mb-5,
 .my-5 {
-  margin-bottom: 3rem !important;
+  margin-bottom: 5rem !important;
 }
+
 
 .ml-5,
 .mx-5 {
@@ -19799,12 +19800,12 @@ hr.line-deafult {
 }
 
 .page-header {
-  min-height: 100vh;
+  /* min-height: 10vh; */
   max-height: 999px;
   padding: 0;
   color: #ffffff;
-  position: relative;
-  overflow: hidden;
+  /* position: relative; */
+  /* overflow: hidden; */
 }
 .page-header .page-header-image {
   position: absolute;

@@ -1,7 +1,6 @@
 import React from "react";
-
+import './style.css'
 import { Line } from "react-chartjs-2";
-
 import {
 	CardTitle,
 	ListGroupItem,
@@ -16,6 +15,9 @@ import {
 	Col
 } from "reactstrap";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 import Navbar from "Navbar.js";
 import Footer from "Footer.js";
 
@@ -28,6 +30,8 @@ export default function LandingPage() {
       document.body.classList.toggle("landing-page");
     };
   }, []);
+  AOS.init();
+
   return (
     <>
       <Navbar />
@@ -63,9 +67,9 @@ export default function LandingPage() {
             className="shapes circle"
             src={require("assets/img/cercuri.png")}
           />
-          <div className="content-center">
-            <Row className="row-grid justify-content-between align-items-center text-left">
-              <Col lg="6.5" md="6">
+          <div className="Landing-page w-100 ">
+            <Row className="row-grid text-left mb-5">
+              <Col className="Safe-text" lg="6.5" md="6">
                 <h1 className="text-white">
 				Safe servers and facilitate community managment  <br />
                 </h1>
@@ -92,128 +96,81 @@ export default function LandingPage() {
                     </Button>
                   </div>
                 </div>
-              </Col>
-              <Col lg="40" md="6" >
+              </Col >
+              <Col className="mb-5" lg="40" md="6">
                 <img
-                  alt="..."
-                  className="img-fluid"
+                  alt="this image by fulvector on Freepik"
+                  className="mb-5 pb-5 w-100 h-100 img-fluid"
                   src={require("Blockchian.png")}
                 />
               </Col>
             </Row>
           </div>
         </div>
-        <section className="section section-lg">
-          <section className="section">
+		<div id="empty"></div>
+        <section id="features">
+          <section>
+			  <h1  data-aos="fade-down"
+				data-aos-offset="200"
+				data-aos-delay="9"
+				data-aos-duration="400"
+				data-aos-easing="ease-in-out"
+				data-aos-once="false" className="features text-center">FEATURES</h1>
+			  <br/><br/><br/>
             <img
               alt="..."
               className="path"
               src={require("assets/img/path4.png")}
             />
             <Container>
-              <Row className="row-grid justify-content-between">
-                <Col className="mt-lg-5" md="5">
-                  <Row>
-                    <Col className="px-2 py-2" lg="6" sm="12">
-                      <Card className="card-stats">
-                        <CardBody>
-                          <Row>
-                            <Col md="4" xs="5">
-                              <div className="icon-big text-center icon-warning">
-                                <i className="tim-icons icon-trophy text-warning" />
-                              </div>
-                            </Col>
-                            <Col md="8" xs="7">
-                              <div className="numbers">
-                                <CardTitle tag="p">3,237</CardTitle>
-                                <p />
-                                <p className="card-category">Awards</p>
-                              </div>
-                            </Col>
-                          </Row>
-                        </CardBody>
-                      </Card>
-                    </Col>
-                    <Col className="px-2 py-2" lg="6" sm="12">
-                      <Card className="card-stats upper bg-default">
-                        <CardBody>
-                          <Row>
-                            <Col md="4" xs="5">
-                              <div className="icon-big text-center icon-warning">
-                                <i className="tim-icons icon-coins text-white" />
-                              </div>
-                            </Col>
-                            <Col md="8" xs="7">
-                              <div className="numbers">
-                                <CardTitle tag="p">3,653</CardTitle>
-                                <p />
-                                <p className="card-category">Commits</p>
-                              </div>
-                            </Col>
-                          </Row>
-                        </CardBody>
-                      </Card>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col className="px-2 py-2" lg="6" sm="12">
-                      <Card className="card-stats">
-                        <CardBody>
-                          <Row>
-                            <Col md="4" xs="5">
-                              <div className="icon-big text-center icon-warning">
-                                <i className="tim-icons icon-gift-2 text-info" />
-                              </div>
-                            </Col>
-                            <Col md="8" xs="7">
-                              <div className="numbers">
-                                <CardTitle tag="p">593</CardTitle>
-                                <p />
-                                <p className="card-category">Presents</p>
-                              </div>
-                            </Col>
-                          </Row>
-                        </CardBody>
-                      </Card>
-                    </Col>
-                    <Col className="px-2 py-2" lg="6" sm="12">
-                      <Card className="card-stats">
-                        <CardBody>
-                          <Row>
-                            <Col md="4" xs="5">
-                              <div className="icon-big text-center icon-warning">
-                                <i className="tim-icons icon-credit-card text-success" />
-                              </div>
-                            </Col>
-                            <Col md="8" xs="7">
-                              <div className="numbers">
-                                <CardTitle tag="p">10,783</CardTitle>
-                                <p />
-                                <p className="card-category">Forks</p>
-                              </div>
-                            </Col>
-                          </Row>
-                        </CardBody>
-                      </Card>
-                    </Col>
-                  </Row>
-                </Col>
+				<Row className="row-grid justify-content-between">
+				<Col className="mb-5 text-center" lg="40" md="6">
+                <img
+				  data-aos="fade-down"
+				  data-aos-delay="9"
+    			  data-aos-duration="800"
+                  alt="this image by fulvector on Freepik"
+                  className="mb-5 pb-5 w-100 h-100 img-fuild"
+                  src={require("finger-print.png")}
+                />
+              </Col>
                 <Col md="6">
-                  <div className="pl-md-5">
-                    <h1>
-					Features
-                    </h1>
-                    <p>
-                      I should be capable of drawing a single stroke at the
-                      present moment; and yet I feel that I never was a greater
-                      artist than now.
-                    </p>
+                  <div data-aos="fade-left" data-aos-delay="" data-aos-duration="900" className="pl-md-5">
+                    <h1 className="bots" >PRE MINT BOTS</h1>
+                    <p>Safety Labs provides a set of bots that help keep you server safe and CM easy! </p>
+					<h5><strong>Safety collobs&nbsp;:&nbsp;&nbsp;</strong>is a bot that make assigning roles easy and fast, the bot can do bulk assign of a specific role to a single or multiple members</h5>
+					<h5><strong>Purge inactive whitelist members&nbsp;:&nbsp;&nbsp;</strong>this bot can send message to your members and warn them about being active to keep a specified role also also the bot allows you to keep track of your active members on a dashboard</h5>
                     <br />
-                    <p>
-                      When, while the lovely valley teems with vapour around me,
-                      and the meridian sun strikes the upper surface of the
-                      impenetrable foliage of my trees, and but a few stray.
-                    </p>
+					<h5><strong>Wallets collector&nbsp;:&nbsp;&nbsp;</strong>you can collect wallet of your whitelisted members easy and quick and accurate inside your server!</h5>
+                    <br />
+					<h5><strong>Discord Lock&nbsp;:&nbsp;&nbsp;</strong>you can set a password and only members with password can get access to your server!</h5>
+		
+                    <br />
+                  </div>
+                </Col>
+              </Row>
+			  <br/>
+			  <br/>
+			  <Row className="flex-row-reverse">
+				<Col className="mb-5 text-center" lg="40" md="6">
+                <img
+				  data-aos="fade-up-left"
+				  data-aos-delay="9"
+    			  data-aos-duration="800"
+                  alt="this image by fulvector on Freepik"
+                  className="mb-5 pb-5 w-100 h-100 img-fuild"
+                  src={require("robot.png")}
+                />
+              </Col>
+                <Col md="6">
+                  <div data-aos="fade-right" data-aos-delay="11" data-aos-duration="1000" className="pl-md-5">
+                    <h1 className="bots" >POST MINT BOTS</h1>
+					<h5><strong>daily mint &nbsp;:&nbsp;&nbsp;</strong>the bot can track all daily mints and display it to members, this way u can never miss a mint </h5>
+					<h5><strong>check floor price&nbsp;:&nbsp;&nbsp;</strong>u can track down any collection FP from server with  a quick command</h5>
+                    <br />
+					<h5><strong>token prices&nbsp;:&nbsp;&nbsp;</strong>the bot  tracks the prices of any token, and can display on your server.</h5>
+                    <br />
+					<h5><strong>raid-to-earn&nbsp;:&nbsp;&nbsp;</strong>u can create a raid contest for members and reward them</h5>
                     <br />
                   </div>
                 </Col>
@@ -349,39 +306,6 @@ export default function LandingPage() {
               </Col>
             </Row>
           </Container>
-        </section>
-        <section className="section section-lg">
-          <img
-            alt="..."
-            className="path"
-            src={require("assets/img/path4.png")}
-          />
-          <img
-            alt="..."
-            className="path2"
-            src={require("assets/img/path2.png")}
-          />
-          <Col md="12">
-            <Card className="card-chart card-plain">
-              <CardHeader>
-                <Row>
-                  <Col className="text-left" sm="6">
-                    <hr className="line-info" />
-                    <h5 className="card-category">Total Investments</h5>
-                    <CardTitle tag="h2">Performance</CardTitle>
-                  </Col>
-                </Row>
-              </CardHeader>
-              <CardBody>
-                <div className="chart-area">
-                  <Line
-                    data={bigChartData.data}
-                    options={bigChartData.options}
-                  />
-                </div>
-              </CardBody>
-            </Card>
-          </Col>
         </section>
         <section className="section section-lg section-coins">
           <img
