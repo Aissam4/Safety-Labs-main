@@ -1,7 +1,6 @@
 import React from "react";
 import './style.css'
 import {
-	CardTitle,
 	ListGroupItem,
 	ListGroup,
 	Container,
@@ -22,7 +21,6 @@ import 'aos/dist/aos.css';
 
 import Navbar from "Navbar.js";
 import Footer from "Footer.js";
-
 
 export default function LandingPage() {
   React.useEffect(() => {
@@ -195,9 +193,6 @@ export default function LandingPage() {
             src={require("assets/img/path2.png")}
           />
           <Container>
-
-
-			  {/* Roadmap */}
 			<VerticalTimeline>
 			<VerticalTimelineElement
 				className="vertical-timeline-element--work"
@@ -207,80 +202,56 @@ export default function LandingPage() {
 				<h4 className="vertical-timeline-element-title">- Launch our website, discord and twitter</h4>
 				<h4 className="vertical-timeline-element-title">- Launch Safety Collabs BOT</h4>
 				<h4 className="vertical-timeline-element-title">- Launch Purge inactive whitelist members BOT</h4>
-				{/* <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-				<p>
-					Creative Direction, User Experience, Visual Design, Project Management, Team Leading
-				</p> */}
 			</VerticalTimelineElement>
 			<VerticalTimelineElement
 				className="vertical-timeline-element--work"
 				contentStyle={{ background: 'rgba(33, 150, 243, 0)', color: '#fff', boxShadow: "none", border: "2px solid rgba(243, 83, 253, 0.5)"}}
 				contentArrowStyle={{ borderRight: '7px solid  rgba(243, 83, 253, 0.5)' }}
 				date="STEP 02">
-				{/* <h3 className="vertical-timeline-element-title">Art Director</h3> */}
 				<h4 className="vertical-timeline-element-subtitle">- Launch Discord Lock BOT</h4>
 				<h4 className="vertical-timeline-element-subtitle">- Launch Daily Mint BOT</h4>
 				<h4 className="vertical-timeline-element-subtitle">- Launch Check Floor Price BOT</h4>
-				{/* <p>
-					Creative Direction, User Experience, Visual Design, SEO, Online Marketing
-				</p> */}
 			</VerticalTimelineElement>
 			<VerticalTimelineElement
 				className="vertical-timeline-element--work"
 				contentStyle={{ background: 'rgba(33, 150, 243, 0)', color: '#fff', boxShadow: "none", border: "2px solid rgba(243, 83, 253, 0.5)"}}
 				contentArrowStyle={{ borderRight: '7px solid  rgba(243, 83, 253, 0.5)' }}
 				date="STEP 03">
-				{/* <h3 className="vertical-timeline-element-title">Web Designer</h3> */}
 				<h4 className="vertical-timeline-element-subtitle">- Launch Raid-To-Earn BOT</h4>
 				<h4 className="vertical-timeline-element-subtitle">- Invite huge communities to use our BOTs</h4>
 				<h4 className="vertical-timeline-element-subtitle">- Launch our $STL Token</h4>
 				<h4 className="vertical-timeline-element-subtitle">- Launch our raffle website</h4>
-				{/* <p>
-					User Experience, Visual Design
-				</p> */}
 			</VerticalTimelineElement>
 			<VerticalTimelineElement
 				className="vertical-timeline-element--work"
 				contentStyle={{ background: 'rgba(33, 150, 243, 0)', color: '#fff', boxShadow: "none", border: "2px solid rgba(243, 83, 253, 0.5)"}}
 				contentArrowStyle={{ borderRight: '7px solid  rgba(243, 83, 253, 0.5)' }}
 				date="STEP 04">
-				{/* <h3 className="vertical-timeline-element-title">Web Designer</h3> */}
 				<h4 className="vertical-timeline-element-subtitle">- Mint our Safety Labs Collection</h4>
 				<h4 className="vertical-timeline-element-subtitle">- Launch staking to earn $SLT Token</h4>
 				<h4 className="vertical-timeline-element-subtitle">- Offer To our holders Pre-sale of Huge/hyped Project</h4>
 				<h4 className="vertical-timeline-element-subtitle">- Snipping Tool</h4>
-				{/* <p>
-					User Experience, Visual Design
-				</p> */}
 			</VerticalTimelineElement>
 			<VerticalTimelineElement
 				className="vertical-timeline-element--education"
 				contentStyle={{ background: 'rgba(33, 150, 243, 0)', color: '#fff', boxShadow: "none", border: "2px solid rgba(243, 83, 253, 0.5)"}}
 				contentArrowStyle={{ borderRight: '7px solid  rgba(243, 83, 253, 0.5)' }}
 				date="STEP 05">
-				{/* <h3 className="vertical-timeline-element-title">Content Marketing for Web, Mobile and Social Media</h3> */}
 				<h4 className="vertical-timeline-element-subtitle">- Invite Ambassador to our Project</h4>
 				<h4 className="vertical-timeline-element-subtitle">- Launch our Merch</h4>
 				<h4 className="vertical-timeline-element-subtitle">- Brand Collaborations</h4>
-				{/* <p>
-					Strategy, Social Media
-				</p> */}
 			</VerticalTimelineElement>
 			<VerticalTimelineElement
 				className="vertical-timeline-element--education"
 				contentStyle={{ background: 'rgba(33, 150, 243, 0)', color: '#fff', boxShadow: "none", border: "2px solid rgba(243, 83, 253, 0.5)"}}
 				contentArrowStyle={{ borderRight: '7px solid  rgba(243, 83, 253, 0.5)' }}
 				date="STEP 06">
-				{/* <h3 className="vertical-timeline-element-title">Agile Development Scrum Master</h3> */}
 				<h1 className="vertical-timeline-element-subtitle">Roadmap v2 Soon...</h1>
-				{/* <p>
-					Creative Direction, User Experience, Visual Design
-				</p> */}
 			</VerticalTimelineElement>
 			</VerticalTimeline>
       </Container>
         </section>
-        <section className="section section-lg section-safe">
+        {/* <section className="section section-lg section-safe">
           <img
             alt="..."
             className="path"
@@ -340,7 +311,7 @@ export default function LandingPage() {
               </Col>
             </Row>
           </Container>
-        </section>
+        </section> */}
         <section className="section section-lg section-coins">
           <img
             alt="..."
@@ -352,7 +323,7 @@ export default function LandingPage() {
               <Col md="4">
                 <hr className="line-info" />
                 <h1>
-                  Choose the coin{" "}
+                  Choose the Bot{" "}
                   <span className="text-info">that fits your needs</span>
                 </h1>
               </Col>
