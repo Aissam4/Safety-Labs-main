@@ -142,7 +142,6 @@ export default function LandingPage() {
 					<h5><strong>Wallets collector&nbsp;:&nbsp;&nbsp;</strong>you can collect wallet of your whitelisted members easy and quick and accurate inside your server!</h5>
                     <br />
 					<h5><strong>Discord Lock&nbsp;:&nbsp;&nbsp;</strong>you can set a password and only members with password can get access to your server!</h5>
-		
                     <br />
                   </div>
                 </Col>
@@ -193,6 +192,13 @@ export default function LandingPage() {
             src={require("assets/img/path2.png")}
           />
           <Container>
+		  <h1  data-aos="fade-down"
+				data-aos-offset="200"
+				data-aos-delay="9"
+				data-aos-duration="400"
+				data-aos-easing="ease-in-out"
+				data-aos-once="false" className="features text-center">ROADMAP</h1>
+			  <br/><br/><br/>
 			<VerticalTimeline>
 			<VerticalTimelineElement
 				className="vertical-timeline-element--work"
