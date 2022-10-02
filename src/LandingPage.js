@@ -251,67 +251,6 @@ export default function LandingPage() {
 			</VerticalTimeline>
       </Container>
         </section>
-        {/* <section className="section section-lg section-safe">
-          <img
-            alt="..."
-            className="path"
-            src={require("assets/img/path5.png")}
-          />
-          <Container>
-            <Row className="row-grid justify-content-between">
-              <Col md="5">
-                <img
-                  alt="..."
-                  className="img-fluid floating"
-                  src={require("assets/img/chester-wade.jpg")}
-                />
-                <Card className="card-stats bg-danger">
-                  <CardBody>
-                    <div className="justify-content-center">
-                      <div className="numbers">
-                        <CardTitle tag="p">100%</CardTitle>
-                        <p className="card-category text-white">Safe</p>
-                      </div>
-                    </div>
-                  </CardBody>
-                </Card>
-                <Card className="card-stats bg-info">
-                  <CardBody>
-                    <div className="justify-content-center">
-                      <div className="numbers">
-                        <CardTitle tag="p">573 K</CardTitle>
-                        <p className="card-category text-white">
-                          Satisfied customers
-                        </p>
-                      </div>
-                    </div>
-                  </CardBody>
-                </Card>
-                <Card className="card-stats bg-default">
-                  <CardBody>
-                    <div className="justify-content-center">
-                      <div className="numbers">
-                        <CardTitle tag="p">10 425</CardTitle>
-                        <p className="card-category text-white">Business</p>
-                      </div>
-                    </div>
-                  </CardBody>
-                </Card>
-              </Col>
-              <Col md="6">
-                <div className="px-md-5">
-                  <hr className="line-success" />
-                  <h3>Getting Started</h3>
-                  <p>
-                    The design system comes with three pre-built pages to help
-                    you get started faster. You can change the text and images
-                    and you're good to go.
-                  </p>
-                </div>
-              </Col>
-            </Row>
-          </Container>
-        </section> */}
         <section className="section section-lg section-coins">
           <img
             alt="..."
