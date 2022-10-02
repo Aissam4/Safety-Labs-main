@@ -21,3 +21,14 @@
 	width: 100%;
 	height: 10vh;
 }
+.vertical-timeline-element-icon{
+	background: url('./cyborg.png');
+	background-size: cover;
+}
+.blockchain{
+	/* height: 110%; */
+	height: 35vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

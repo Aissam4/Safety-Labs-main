@@ -14,6 +14,9 @@ import {
 	Col
 } from "reactstrap";
 
+import { VerticalTimeline, VerticalTimelineElement, SchoolIcon }  from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -29,7 +32,6 @@ export default function LandingPage() {
     };
   }, []);
   AOS.init();
-
   return (
     <>
       <Navbar />
@@ -95,10 +97,10 @@ export default function LandingPage() {
                   </div>
                 </div>
               </Col >
-              <Col className="mb-5" lg="40" md="6">
+              <Col className="block mb-5" lg="40" md="6">
                 <img
                   alt="by fulvector on Freepik"
-                  className="mb-5 pb-5 w-100 h-100 img-fluid"
+                  className="blockchain mb-5 pb-5 w-100 img-fluid"
                   src={require("./assets/images/Blockchian.png")}
                 />
               </Col>
@@ -193,56 +195,90 @@ export default function LandingPage() {
             src={require("assets/img/path2.png")}
           />
           <Container>
-            <Row className="justify-content-center">
-              <Col lg="12">
-                <h1 className="text-center">Our Roadmap</h1>
-                <Row className="row-grid justify-content-center">
-                  <Col lg="3">
-                    <div className="info">
-                      <div className="icon icon-primary">
-                        <i className="tim-icons icon-money-coins" />
-                      </div>
-                      <h4 className="info-title">Low Commission</h4>
-                      <hr className="line-primary" />
-                      <p>
-                        Divide details about your work into parts. Write a few
-                        lines about each one. A paragraph describing a feature
-                        will.
-                      </p>
-                    </div>
-                  </Col>
-                  <Col lg="3">
-                    <div className="info">
-                      <div className="icon icon-warning">
-                        <i className="tim-icons icon-chart-pie-36" />
-                      </div>
-                      <h4 className="info-title">High Incomes</h4>
-                      <hr className="line-warning" />
-                      <p>
-                        Divide details about your product or agency work into
-                        parts. Write a few lines about each one. A paragraph
-                        describing feature will be a feature.
-                      </p>
-                    </div>
-                  </Col>
-                  <Col lg="3">
-                    <div className="info">
-                      <div className="icon icon-success">
-                        <i className="tim-icons icon-single-02" />
-                      </div>
-                      <h4 className="info-title">Verified People</h4>
-                      <hr className="line-success" />
-                      <p>
-                        Divide details about your product or agency work into
-                        parts. Write a few lines about each one. A paragraph
-                        describing be enough.
-                      </p>
-                    </div>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Container>
+
+
+			  {/* Roadmap */}
+			<VerticalTimeline>
+			<VerticalTimelineElement
+				className="vertical-timeline-element--work"
+				contentStyle={{ background: 'rgba(33, 150, 243, 0)', color: '#fff', boxShadow: "none", border: "2px solid rgba(243, 83, 253, 0.5)"}}
+				contentArrowStyle={{ borderRight: '7px solid  rgba(243, 83, 253, 0.5)' }}
+				date="STEP 01">
+				<h4 className="vertical-timeline-element-title">- Launch our website, discord and twitter</h4>
+				<h4 className="vertical-timeline-element-title">- Launch Safety Collabs BOT</h4>
+				<h4 className="vertical-timeline-element-title">- Launch Purge inactive whitelist members BOT</h4>
+				{/* <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
+				<p>
+					Creative Direction, User Experience, Visual Design, Project Management, Team Leading
+				</p> */}
+			</VerticalTimelineElement>
+			<VerticalTimelineElement
+				className="vertical-timeline-element--work"
+				contentStyle={{ background: 'rgba(33, 150, 243, 0)', color: '#fff', boxShadow: "none", border: "2px solid rgba(243, 83, 253, 0.5)"}}
+				contentArrowStyle={{ borderRight: '7px solid  rgba(243, 83, 253, 0.5)' }}
+				date="STEP 02">
+				{/* <h3 className="vertical-timeline-element-title">Art Director</h3> */}
+				<h4 className="vertical-timeline-element-subtitle">- Launch Discord Lock BOT</h4>
+				<h4 className="vertical-timeline-element-subtitle">- Launch Daily Mint BOT</h4>
+				<h4 className="vertical-timeline-element-subtitle">- Launch Check Floor Price BOT</h4>
+				{/* <p>
+					Creative Direction, User Experience, Visual Design, SEO, Online Marketing
+				</p> */}
+			</VerticalTimelineElement>
+			<VerticalTimelineElement
+				className="vertical-timeline-element--work"
+				contentStyle={{ background: 'rgba(33, 150, 243, 0)', color: '#fff', boxShadow: "none", border: "2px solid rgba(243, 83, 253, 0.5)"}}
+				contentArrowStyle={{ borderRight: '7px solid  rgba(243, 83, 253, 0.5)' }}
+				date="STEP 03">
+				{/* <h3 className="vertical-timeline-element-title">Web Designer</h3> */}
+				<h4 className="vertical-timeline-element-subtitle">- Launch Raid-To-Earn BOT</h4>
+				<h4 className="vertical-timeline-element-subtitle">- Invite huge communities to use our BOTs</h4>
+				<h4 className="vertical-timeline-element-subtitle">- Launch our $STL Token</h4>
+				<h4 className="vertical-timeline-element-subtitle">- Launch our raffle website</h4>
+				{/* <p>
+					User Experience, Visual Design
+				</p> */}
+			</VerticalTimelineElement>
+			<VerticalTimelineElement
+				className="vertical-timeline-element--work"
+				contentStyle={{ background: 'rgba(33, 150, 243, 0)', color: '#fff', boxShadow: "none", border: "2px solid rgba(243, 83, 253, 0.5)"}}
+				contentArrowStyle={{ borderRight: '7px solid  rgba(243, 83, 253, 0.5)' }}
+				date="STEP 04">
+				{/* <h3 className="vertical-timeline-element-title">Web Designer</h3> */}
+				<h4 className="vertical-timeline-element-subtitle">- Mint our Safety Labs Collection</h4>
+				<h4 className="vertical-timeline-element-subtitle">- Launch staking to earn $SLT Token</h4>
+				<h4 className="vertical-timeline-element-subtitle">- Offer To our holders Pre-sale of Huge/hyped Project</h4>
+				<h4 className="vertical-timeline-element-subtitle">- Snipping Tool</h4>
+				{/* <p>
+					User Experience, Visual Design
+				</p> */}
+			</VerticalTimelineElement>
+			<VerticalTimelineElement
+				className="vertical-timeline-element--education"
+				contentStyle={{ background: 'rgba(33, 150, 243, 0)', color: '#fff', boxShadow: "none", border: "2px solid rgba(243, 83, 253, 0.5)"}}
+				contentArrowStyle={{ borderRight: '7px solid  rgba(243, 83, 253, 0.5)' }}
+				date="STEP 05">
+				{/* <h3 className="vertical-timeline-element-title">Content Marketing for Web, Mobile and Social Media</h3> */}
+				<h4 className="vertical-timeline-element-subtitle">- Invite Ambassador to our Project</h4>
+				<h4 className="vertical-timeline-element-subtitle">- Launch our Merch</h4>
+				<h4 className="vertical-timeline-element-subtitle">- Brand Collaborations</h4>
+				{/* <p>
+					Strategy, Social Media
+				</p> */}
+			</VerticalTimelineElement>
+			<VerticalTimelineElement
+				className="vertical-timeline-element--education"
+				contentStyle={{ background: 'rgba(33, 150, 243, 0)', color: '#fff', boxShadow: "none", border: "2px solid rgba(243, 83, 253, 0.5)"}}
+				contentArrowStyle={{ borderRight: '7px solid  rgba(243, 83, 253, 0.5)' }}
+				date="STEP 06">
+				{/* <h3 className="vertical-timeline-element-title">Agile Development Scrum Master</h3> */}
+				<h1 className="vertical-timeline-element-subtitle">Roadmap v2 Soon...</h1>
+				{/* <p>
+					Creative Direction, User Experience, Visual Design
+				</p> */}
+			</VerticalTimelineElement>
+			</VerticalTimeline>
+      </Container>
         </section>
         <section className="section section-lg section-safe">
           <img
