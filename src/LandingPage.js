@@ -162,12 +162,12 @@ export default function LandingPage() {
                 <Col md="6">
                   <div data-aos="fade-right" data-aos-delay="11" data-aos-duration="1000" className="pl-md-5">
                     <h1 className="bots" >POST MINT BOTS</h1>
-					<h5><strong>daily mint &nbsp;:&nbsp;&nbsp;</strong>the bot can track all daily mints and display it to members, this way u can never miss a mint </h5>
-					<h5><strong>check floor price&nbsp;:&nbsp;&nbsp;</strong>u can track down any collection FP from server with  a quick command</h5>
+					<h5><strong>daily mint &nbsp;:&nbsp;&nbsp;</strong>the bot can track all daily mints and display it to members, this way you can never miss a mint </h5>
+					<h5><strong>check floor price&nbsp;:&nbsp;&nbsp;</strong>you can track down any collection FP from server with  a quick command</h5>
                     <br />
 					<h5><strong>token prices&nbsp;:&nbsp;&nbsp;</strong>the bot  tracks the prices of any token, and can display on your server.</h5>
                     <br />
-					<h5><strong>raid-to-earn&nbsp;:&nbsp;&nbsp;</strong>u can create a raid contest for members and reward them</h5>
+					<h5><strong>raid-to-earn&nbsp;:&nbsp;&nbsp;</strong>you can create a raid contest for members and reward them</h5>
                     <br />
                   </div>
                 </Col>
@@ -267,8 +267,8 @@ export default function LandingPage() {
           <Container>
 		  <h1 data-aos="fade-down"
 				data-aos-offset="200"
-				data-aos-delay="15"
-				data-aos-duration="550"
+				data-aos-delay="16"
+				data-aos-duration="650"
 				data-aos-easing="ease-in-out"
 				data-aos-once="false" className="features text-center">PRICING</h1>
             <Row>
@@ -293,28 +293,27 @@ export default function LandingPage() {
                     <img
                       alt="..."
                       className="img-center img-fluid"
-                      src={require("assets/img/bitcoin.png")}
+                      src={require("assets/robots/robot-search.png")}
                     />
                   </CardHeader>
                   <CardBody>
                     <Row>
                       <Col className="text-center" md="12">
-                        <h4 className="text-uppercase">Light Coin</h4>
-                        <span>Plan</span>
+                        <h4 className="text-uppercase">Wallets collector</h4>
                         <hr className="line-primary" />
                       </Col>
                     </Row>
                     <Row>
                       <ListGroup>
-                        <ListGroupItem>50 messages</ListGroupItem>
-                        <ListGroupItem>100 emails</ListGroupItem>
-                        <ListGroupItem>24/7 Support</ListGroupItem>
+                        <ListGroupItem>Collect whitelisted members wallet</ListGroupItem>
+                        <ListGroupItem>Accurate inside your server</ListGroupItem>
+                        <ListGroupItem>Easy and quick</ListGroupItem>
                       </ListGroup>
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
                     <Button className="btn-simple" color="primary">
-                      Get plan
+                      Buy
                     </Button>
                   </CardFooter>
                 </Card>
@@ -330,28 +329,27 @@ export default function LandingPage() {
                     <img
                       alt="..."
                       className="img-center img-fluid"
-                      src={require("assets/img/etherum.png")}
+                      src={require("assets/robots/robot-money.png")}
                     />
                   </CardHeader>
                   <CardBody>
                     <Row>
                       <Col className="text-center" md="12">
-                        <h4 className="text-uppercase">Dark Coin</h4>
-                        <span>Plan</span>
+                        <h4 className="text-uppercase">Floor price checker</h4>
                         <hr className="line-success" />
                       </Col>
                     </Row>
                     <Row>
                       <ListGroup>
-                        <ListGroupItem>150 messages</ListGroupItem>
-                        <ListGroupItem>1000 emails</ListGroupItem>
-                        <ListGroupItem>24/7 Support</ListGroupItem>
+                        <ListGroupItem>Track down any collection Floor price</ListGroupItem>
+                        <ListGroupItem>Quick command</ListGroupItem>
+                        <ListGroupItem>Easy to use</ListGroupItem>
                       </ListGroup>
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
                     <Button className="btn-simple" color="success">
-                      Get plan
+                      Buy
                     </Button>
                   </CardFooter>
                 </Card>
@@ -362,28 +360,27 @@ export default function LandingPage() {
                     <img
                       alt="..."
                       className="img-center img-fluid"
-                      src={require("assets/img/ripp.png")}
+                      src={require("assets/robots/robot-message.png")}
                     />
                   </CardHeader>
                   <CardBody>
                     <Row>
                       <Col className="text-center" md="12">
-                        <h4 className="text-uppercase">Bright Coin</h4>
-                        <span>Plan</span>
+                        <h4 className="text-uppercase">Purge inactive whitelist members</h4>
                         <hr className="line-info" />
                       </Col>
                     </Row>
                     <Row>
                       <ListGroup>
-                        <ListGroupItem>350 messages</ListGroupItem>
-                        <ListGroupItem>10K emails</ListGroupItem>
-                        <ListGroupItem>24/7 Support</ListGroupItem>
+                        <ListGroupItem>Tracking your active members</ListGroupItem>
+                        <ListGroupItem>Warn your members about being active</ListGroupItem>
+                        <ListGroupItem>send message to your members</ListGroupItem>
                       </ListGroup>
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
                     <Button className="btn-simple" color="info">
-                      Get plan
+                      Buy
                     </Button>
                   </CardFooter>
                 </Card>
