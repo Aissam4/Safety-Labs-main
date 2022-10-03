@@ -45,9 +45,13 @@ export default function ExamplesNavbar() {
   const onCollapseExited = () => {
     setCollapseOut("");
   };
-  let scroll = () =>
+  let scrollToFeatures = () =>
   {
 	window.location.href = "#empty";
+  }
+  let scrollToRoadmap = () =>
+  {
+	window.location.href = "#empty-roadmap";
   }
   return (
     <Navbar className={"fixed-top " + color} color-on-scroll="100" expand="lg">
@@ -118,12 +122,12 @@ export default function ExamplesNavbar() {
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={Link} to="" onClick={scroll}>
+              <NavLink tag={Link} onClick={scrollToFeatures}>
                 Features
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={Link} to="/">
+              <NavLink tag={Link} onClick={scrollToRoadmap}>
                 Roadmap
               </NavLink>
             </NavItem>

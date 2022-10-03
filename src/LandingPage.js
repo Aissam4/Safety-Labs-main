@@ -192,6 +192,7 @@ export default function LandingPage() {
             src={require("assets/img/path2.png")}
           />
           <Container>
+			  <div id="empty-roadmap"></div>
 		  <h1  data-aos="fade-down"
 				data-aos-offset="200"
 				data-aos-delay="9"
@@ -264,10 +265,16 @@ export default function LandingPage() {
             src={require("assets/img/path3.png")}
           />
           <Container>
+		  <h1 data-aos="fade-down"
+				data-aos-offset="200"
+				data-aos-delay="15"
+				data-aos-duration="550"
+				data-aos-easing="ease-in-out"
+				data-aos-once="false" className="features text-center">PRICING</h1>
             <Row>
-              <Col md="4">
+              <Col data-aos="fade-right" md="4" >
                 <hr className="line-info" />
-                <h1>
+                <h1 >
                   Choose the Bot{" "}
                   <span className="text-info">that fits your needs</span>
                 </h1>
@@ -275,7 +282,13 @@ export default function LandingPage() {
             </Row>
             <Row>
               <Col md="4">
-                <Card className="card-coin card-plain">
+                <Card
+					data-aos="flip-left"
+					data-aos-offset="200"
+					data-aos-delay="14"
+					data-aos-duration="580"
+					data-aos-easing="ease-in-out"
+					className="card-coin card-plain">
                   <CardHeader>
                     <img
                       alt="..."
@@ -307,7 +320,12 @@ export default function LandingPage() {
                 </Card>
               </Col>
               <Col md="4">
-                <Card className="card-coin card-plain">
+                <Card data-aos="flip-left"
+					data-aos-offset="200"
+					data-aos-delay="14"
+					data-aos-duration="580"
+					data-aos-easing="ease-in-out"
+					className="card-coin card-plain">
                   <CardHeader>
                     <img
                       alt="..."
@@ -339,7 +357,7 @@ export default function LandingPage() {
                 </Card>
               </Col>
               <Col md="4">
-                <Card className="card-coin card-plain">
+                <Card data-aos="flip-right" className="card-coin card-plain">
                   <CardHeader>
                     <img
                       alt="..."
