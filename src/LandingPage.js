@@ -272,13 +272,6 @@ export default function LandingPage() {
 				data-aos-easing="ease-in-out"
 				data-aos-once="false" className="features text-center">PRICING</h1>
             <Row>
-              <Col data-aos="fade-right" md="4" >
-                <hr className="line-info" />
-                <h1 >
-                  Choose the Bot{" "}
-                  <span className="text-info">that fits your needs</span>
-                </h1>
-              </Col>
             </Row>
             <Row>
               <Col md="4">
@@ -355,7 +348,7 @@ export default function LandingPage() {
                 </Card>
               </Col>
               <Col md="4">
-                <Card data-aos="flip-right" className="card-coin card-plain">
+                <Card data-aos="flip-left" className="card-coin card-plain">
                   <CardHeader>
                     <img
                       alt="..."
