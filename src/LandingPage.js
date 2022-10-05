@@ -267,8 +267,8 @@ export default function LandingPage() {
           <Container>
 		  <h1 data-aos="fade-down"
 				data-aos-offset="200"
-				data-aos-delay="16"
-				data-aos-duration="650"
+				data-aos-delay="18"
+				data-aos-duration="780"
 				data-aos-easing="ease-in-out"
 				data-aos-once="false" className="features text-center">PRICING</h1>
             <Row>
@@ -278,8 +278,8 @@ export default function LandingPage() {
                 <Card
 					data-aos="flip-left"
 					data-aos-offset="200"
-					data-aos-delay="14"
-					data-aos-duration="580"
+					data-aos-delay="18"
+					data-aos-duration="780"
 					data-aos-easing="ease-in-out"
 					className="card-coin card-plain">
                   <CardHeader>
@@ -314,8 +314,8 @@ export default function LandingPage() {
               <Col md="4">
                 <Card data-aos="flip-left"
 					data-aos-offset="200"
-					data-aos-delay="14"
-					data-aos-duration="580"
+					data-aos-delay="18"
+					data-aos-duration="780"
 					data-aos-easing="ease-in-out"
 					className="card-coin card-plain">
                   <CardHeader>
