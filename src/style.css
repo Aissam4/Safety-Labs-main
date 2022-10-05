@@ -30,9 +30,12 @@
 	background-size: cover;
 }
 .blockchain{
-	/* height: 110%; */
 	height: 35vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
+/* .space-betweeen-rows{
+	height: 10vh;
+	width: 100%;
+} */
