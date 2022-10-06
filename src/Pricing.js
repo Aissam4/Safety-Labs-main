@@ -148,14 +148,14 @@ export default function Pricing(){
                   <CardBody>
                     <Row>
                       <Col className="text-center" md="12">
-                        <h4 className="text-uppercase">Wallets collector</h4>
+                        <h4 className="text-uppercase">Safety collobs</h4>
                         <hr className="line-primary" />
                       </Col>
                     </Row>
                     <Row>
                       <ListGroup>
-                        <ListGroupItem>Collect whitelisted members wallet</ListGroupItem>
-                        <ListGroupItem>Accurate inside your server</ListGroupItem>
+                        <ListGroupItem>assigning roles easy and fast</ListGroupItem>
+                        <ListGroupItem>Bulk assign of a specific role</ListGroupItem>
                         <ListGroupItem>Easy and quick</ListGroupItem>
                       </ListGroup>
                     </Row>
@@ -185,14 +185,14 @@ export default function Pricing(){
                   <CardBody>
                     <Row>
                       <Col className="text-center" md="12">
-                        <h4 className="text-uppercase">Floor price checker</h4>
+                        <h4 className="text-uppercase">Discord Lock</h4>
                         <hr className="line-success" />
                       </Col>
                     </Row>
                     <Row>
                       <ListGroup>
-                        <ListGroupItem>Track down any collection Floor price</ListGroupItem>
-                        <ListGroupItem>Quick command</ListGroupItem>
+                        <ListGroupItem>Set a password of your discord bot</ListGroupItem>
+                        <ListGroupItem>Secure your discord server</ListGroupItem>
                         <ListGroupItem>Easy to use</ListGroupItem>
                       </ListGroup>
                     </Row>
@@ -217,15 +217,15 @@ export default function Pricing(){
                   <CardBody>
                     <Row>
                       <Col className="text-center" md="12">
-                        <h4 className="text-uppercase">Purge inactive whitelist members</h4>
+                        <h4 className="text-uppercase">Token prices checker</h4>
                         <hr className="line-info" />
                       </Col>
                     </Row>
                     <Row>
                       <ListGroup>
-                        <ListGroupItem>Tracking your active members</ListGroupItem>
-                        <ListGroupItem>Warn your members about being active</ListGroupItem>
-                        <ListGroupItem>send message to your members</ListGroupItem>
+                        <ListGroupItem>Tracks the prices of any token</ListGroupItem>
+                        <ListGroupItem>display the prices on your server</ListGroupItem>
+                        <ListGroupItem>Easy to use</ListGroupItem>
                       </ListGroup>
                     </Row>
                   </CardBody>
