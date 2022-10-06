@@ -59,8 +59,7 @@ export default function ExamplesNavbar() {
       <Container>
         <div className="navbar-translate">
           <NavbarBrand to="#" id="navbar-brand" tag={Link}>
-            <span>SAFETY </span>
-            LABS
+			<img className="Safety-logo" alt="Safety-Labs-Logo" src={require("./Safety-Labs-logo.png")}/>
           </NavbarBrand>
           <button
             aria-expanded={collapseOpen}
