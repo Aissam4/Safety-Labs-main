@@ -6294,13 +6294,13 @@ button.bg-success:focus {
   background-color: #00bf9a !important;
 }
 .bg-info {
-  background-color: #1d8cf8 !important;
+  /* background-color: #E7F81D !important; */
 }
 a.bg-info:hover,
 a.bg-info:focus,
 button.bg-info:hover,
 button.bg-info:focus {
-  background-color: #0772db !important;
+  /* background-color: #E7F81D !important; */
 }
 .bg-warning {
   background-color: #ff8d72 !important;
@@ -14688,7 +14688,7 @@ img {
   background-color: #ff8d72 !important;
 }
 .navbar.bg-info {
-  background-color: #1d8cf8 !important;
+  background-color: #E7F81D!important;
 }
 .navbar.bg-success {
   background-color: #00bf9a !important;

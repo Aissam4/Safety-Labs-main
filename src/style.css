@@ -39,3 +39,10 @@
 .space-between{
 	height: 5vh;
 }
+.bg-info{
+	/* background-color: green !important;
+	*/
+	background-color: #00DBDE !important;
+	background-image: linear-gradient(45deg, #00DBDE 0%, #FC00FF 100%) !important;
+	
+}
