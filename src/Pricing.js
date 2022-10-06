@@ -57,6 +57,7 @@ export default function Pricing(){
                     </Button>
                   </CardFooter>
                 </Card>
+				<div className="space-between"></div>
               </Col>
               <Col md="4">
                 <Card data-aos="flip-left"
@@ -93,6 +94,7 @@ export default function Pricing(){
                     </Button>
                   </CardFooter>
                 </Card>
+				<div className="space-between"></div>
               </Col>
               <Col md="4">
                 <Card data-aos="flip-left" className="card-coin card-plain">
@@ -124,6 +126,7 @@ export default function Pricing(){
                     </Button>
                   </CardFooter>
                 </Card>
+				<div className="space-between"></div>
               </Col>
             </Row>
             <Row className='mt-5'>
@@ -163,6 +166,7 @@ export default function Pricing(){
                     </Button>
                   </CardFooter>
                 </Card>
+				<div className="space-between"></div>
               </Col>
               <Col md="4">
                 <Card data-aos="flip-left"
@@ -199,6 +203,7 @@ export default function Pricing(){
                     </Button>
                   </CardFooter>
                 </Card>
+				<div className="space-between"></div>
               </Col>
               <Col md="4">
                 <Card data-aos="flip-left" className="card-coin card-plain">
@@ -230,6 +235,7 @@ export default function Pricing(){
                     </Button>
                   </CardFooter>
                 </Card>
+				
               </Col>
             </Row>
 		</div>
