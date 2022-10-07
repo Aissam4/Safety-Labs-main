@@ -13,7 +13,7 @@ import {
 } from "reactstrap";
 export default function Pricing(){
 	return (
-		<div>
+		<div >
 			 <h1 data-aos="fade-down"
 				data-aos-offset="200"
 				data-aos-delay="18"
@@ -39,7 +39,7 @@ export default function Pricing(){
                   <CardBody>
                     <Row>
                       <Col className="text-center" md="12">
-                        <h4 className="text-uppercase">Wallets collector</h4>
+                        <h4 className="text-uppercase">Wallet collector</h4>
                         <hr className="line-primary" />
                       </Col>
                     </Row>
@@ -76,15 +76,15 @@ export default function Pricing(){
                   <CardBody>
                     <Row>
                       <Col className="text-center" md="12">
-                        <h4 className="text-uppercase">Floor price checker</h4>
+                        <h4 className="text-uppercase">FP/Token checker</h4>
                         <hr className="line-success" />
                       </Col>
                     </Row>
                     <Row>
                       <ListGroup>
                         <ListGroupItem>Track down any collection Floor price</ListGroupItem>
-                        <ListGroupItem>Quick command</ListGroupItem>
-                        <ListGroupItem>Easy to use</ListGroupItem>
+                        <ListGroupItem>Tracks the prices of any token</ListGroupItem>
+                        <ListGroupItem>Display the prices on your server</ListGroupItem>	
                       </ListGroup>
                     </Row>
                   </CardBody>
@@ -108,7 +108,7 @@ export default function Pricing(){
                   <CardBody>
                     <Row>
                       <Col className="text-center" md="12">
-                        <h4 className="text-uppercase">Purge inactive whitelist members</h4>
+                        <h4 className="text-uppercase">Purge inactive members</h4>
                         <hr className="line-info" />
                       </Col>
                     </Row>
@@ -217,15 +217,15 @@ export default function Pricing(){
                   <CardBody>
                     <Row>
                       <Col className="text-center" md="12">
-                        <h4 className="text-uppercase">Token prices checker</h4>
+                        <h4 className="text-uppercase">Daily mint</h4>
                         <hr className="line-info" />
                       </Col>
                     </Row>
                     <Row>
                       <ListGroup>
-                        <ListGroupItem>Tracks the prices of any token</ListGroupItem>
-                        <ListGroupItem>display the prices on your server</ListGroupItem>
-                        <ListGroupItem>Easy to use</ListGroupItem>
+                        <ListGroupItem>Track all daily mints</ListGroupItem>
+                        <ListGroupItem>Display daily mints to your members</ListGroupItem>
+                        <ListGroupItem>You can never miss a mint</ListGroupItem>
                       </ListGroup>
                     </Row>
                   </CardBody>
@@ -235,9 +235,40 @@ export default function Pricing(){
                     </Button>
                   </CardFooter>
                 </Card>
-				
               </Col>
             </Row>
+			<div className="space-between"></div>
+			<Row className='last-card-container'>
+			  <Col md="4">
+                <Card data-aos="flip-left" className="card-coin card-plain">
+					<CardHeader>
+					<img
+					alt="..."
+					className="img-center img-fluid"
+					src={require("assets/robots/robot-message.png")}
+					/>
+					</CardHeader>
+					<CardBody>
+						<Row>
+							<Col className="text-center" md="12">
+								<h4 className="text-uppercase">Raid to earn</h4>
+								<hr className="line-info" />
+							</Col>
+							<ListGroup>
+								<ListGroupItem>Create a raid contest for members</ListGroupItem>
+								<ListGroupItem>Reward your members for them raid</ListGroupItem>
+								<ListGroupItem>raid and earn prizes </ListGroupItem>
+							</ListGroup>
+						</Row>
+					</CardBody>
+					<CardFooter className="text-center">
+					<Button className="btn-simple" color="info">
+						Buy
+					</Button>
+					</CardFooter>
+				</Card>
+			</Col>
+			</Row>
 		</div>
 	);
 }
