@@ -36,7 +36,7 @@ export default function features()
                   <div data-aos="fade-left" data-aos-delay="" data-aos-duration="900" className="pl-md-5">
                     <h1 className="bots" >PRE MINT BOTS</h1>
                     <p>Safety Labs provides a set of bots that help keep you server safe and CM easy! </p>
-					<h5><strong>Safety collobs&nbsp;:&nbsp;&nbsp;</strong>is a bot that make assigning roles easy and fast, the bot can do bulk assign of a specific role to a single or multiple members</h5>
+					<h5><strong>Safety collabs&nbsp;:&nbsp;&nbsp;</strong>is a bot that make assigning roles easy and fast, the bot can do bulk assign of a specific role to a single or multiple members</h5>
 					<h5><strong>Purge inactive whitelist members&nbsp;:&nbsp;&nbsp;</strong>this bot can send message to your members and warn them about being active to keep a specified role also also the bot allows you to keep track of your active members on a dashboard</h5>
                     <br />
 					<h5><strong>Wallets collector&nbsp;:&nbsp;&nbsp;</strong>you can collect wallet of your whitelisted members easy and quick and accurate inside your server!</h5>

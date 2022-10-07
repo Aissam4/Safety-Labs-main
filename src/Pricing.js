@@ -142,13 +142,13 @@ export default function Pricing(){
                     <img
                       alt="..."
                       className="img-center img-fluid"
-                      src={require("assets/robots/robot-search.png")}
+                      src={require("assets/robots/robot-send.png")}
                     />
                   </CardHeader>
                   <CardBody>
                     <Row>
                       <Col className="text-center" md="12">
-                        <h4 className="text-uppercase">Safety collobs</h4>
+                        <h4 className="text-uppercase">Safety collabs</h4>
                         <hr className="line-primary" />
                       </Col>
                     </Row>
@@ -179,7 +179,7 @@ export default function Pricing(){
                     <img
                       alt="..."
                       className="img-center img-fluid"
-                      src={require("assets/robots/robot-money.png")}
+                      src={require("assets/robots/lock-robot.png")}
                     />
                   </CardHeader>
                   <CardBody>
@@ -211,7 +211,7 @@ export default function Pricing(){
                     <img
                       alt="..."
                       className="img-center img-fluid"
-                      src={require("assets/robots/robot-message.png")}
+                      src={require("assets/robots/robot-hi.png")}
                     />
                   </CardHeader>
                   <CardBody>
@@ -245,7 +245,7 @@ export default function Pricing(){
 					<img
 					alt="..."
 					className="img-center img-fluid"
-					src={require("assets/robots/robot-message.png")}
+					src={require("assets/robots/robot-earn.png")}
 					/>
 					</CardHeader>
 					<CardBody>
