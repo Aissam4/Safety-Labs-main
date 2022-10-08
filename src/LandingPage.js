@@ -64,10 +64,10 @@ export default function LandingPage() {
             <Row className="row-grid text-left mb-5">
               <Col className="Safe-text" lg="6.5" md="6">
                 <h1 className="text-white">
-				Safe servers and facilitate community managment  <br />
+					Safe servers and facilitate community managment
                 </h1>
                 <p className="text-white mb-3">
-				Safety Labs provides a set of bots that help keep you server safe and CM easy!...
+					Safety Labs provides a set of bots that help keep your server safe and CM easy!...
                 </p>
                 <div className="btn-wrapper">
                   <div className="button-container">
