@@ -2,13 +2,8 @@ import React from "react";
 
 import "assets/css/nucleo-icons.css";
 import "assets/scss/blk-design-system-react.scss";
-
-import {
-	Container,
-	Button,
-	Row,
-	Col
-} from "reactstrap";
+import Navbar from './Navbar';
+import { Container } from "reactstrap";
 export default function Pricing_page(){
 	React.useEffect(() => {
 		document.body.classList.toggle("landing-page");
@@ -18,6 +13,7 @@ export default function Pricing_page(){
 	  }, []);
 return (
 	<>
+	<Navbar />
       <div className="wrapper">
         <div className="page-header">
           <img
