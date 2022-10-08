@@ -18,13 +18,13 @@ export default function Footer() {
       <Container>
         <Row>
           <Col md="4">
-		  <img className="Safety-logo-footer" alt="Safety-Labs-Logo" src={require("./Safety-Labs-logo.png")}/>
+		  <a href="/"><img className="Safety-logo-footer" alt="Safety-Labs-Logo" src={require("./Safety-Labs-logo.png")}/></a>
           </Col>
           <Col md="2">
             <Nav>
               <NavItem>
-                <NavLink to="/" tag={Link}>
-                  Home
+                <NavLink to="/pricing" tag={Link}>
+                  Pricing
                 </NavLink>
               </NavItem>
               <NavItem>
