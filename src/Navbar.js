@@ -132,7 +132,7 @@ export default function ExamplesNavbar() {
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#">
+              <NavLink tag={Link} to={"/pricing"}>
                 Pricing
               </NavLink>
             </NavItem>
