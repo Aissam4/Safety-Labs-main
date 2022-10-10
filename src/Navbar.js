@@ -12,7 +12,6 @@ import {
 	Row,
 	Col,
 } from "reactstrap";
-import LandingPage from "LandingPage";
 
 export default function ExamplesNavbar({index}){
   const [collapseOpen, setCollapseOpen] = React.useState(false);
@@ -56,10 +55,10 @@ export default function ExamplesNavbar({index}){
 		window.location.href = "/#empty";
 }
 useEffect(() => {
-	if (window.location.hash == "#empty-roadmap") {
+	if (window.location.hash === "#empty-roadmap") {
 		window.location.href = "#empty-roadmap";
 	}
-	else if (window.location.hash == "#empty")
+	else if (window.location.hash === "#empty")
 	window.location.href = "#empty";
   }, [])
 

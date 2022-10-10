@@ -15,8 +15,8 @@ root.render(
   <BrowserRouter>
 		<Switch>
 			<Route exact path='/' component={LandingPage}></Route>
-			<Route exact path='/pricing' component={Pricing_page}></Route>
-			<Route exact path="*" component={NoPage}></Route>
+			<Route path='/pricing' component={Pricing_page}></Route>
+			{/* <Route exact path="*" component={NoPage}></Route> */}
     	</Switch>
   </BrowserRouter>
 );
