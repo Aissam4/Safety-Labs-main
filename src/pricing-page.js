@@ -4,6 +4,7 @@ import "assets/scss/blk-design-system-react.scss";
 import Navbar from './Navbar';
 import './style.css'
 import { Container } from "reactstrap";
+import axios from "axios";
 import { useState } from "react";
 import { Stepper, Button, Group, TextInput,  Code , Card, Text, Badge} from '@mantine/core';
 import { useForm } from '@mantine/form';
@@ -129,20 +130,22 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
 							<Text weight={500}>{`Discord Bot : ${BotName} Bot`}</Text>
 
 						</Group>
-						{/* <Text size="sm" color="dimmed">
-							With Fjord Tours you can explore more of the magical fjord landscapes with tours and
-							activities on and around the fjords of Norway
-						</Text> */}
 						<Button variant="light" color="blue" fullWidth mt="md" radius="md" onClick={nextStep}>
 							Buy
 						</Button>
 					</Card>
 				</Stepper.Step>
 				<Stepper.Completed>
-					Completed! Form values:
-					<Code block mt="xl">
+					Completed successfully
+					{axios.post("http://localhost:1337/api/safety-labs-data", {data: JSON.stringify(form.values, null, 2)}).then(res => {
+						console.log(res)
+					}).catch(err => {
+						console.log(err)
+					})}
+					{/* <Code block mt="xl">
 						{JSON.stringify(form.values, null, 2)}
-					</Code>
+					</Code> */}
+
 				</Stepper.Completed>
 		</Stepper>
 
@@ -152,7 +155,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
 				Back
 			</Button>
 			)}
-			{active < 2 && <Button color="grape.9" onClick={nextStep}>Next step</Button>}
+			{active < 2 && <Button className="next-step-container" onClick={nextStep}>Next step</Button>}
 		</Group>
 
         	</div>
@@ -188,3 +191,13 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
       </div></>
 );
 }
+
+
+
+
+// {
+// 	"Twitterusername": "@safety_labs",
+// 	"DiscordUsername": "sadfsadfs#1234",
+// 	"DiscordInvite": "https://discord.gg/disygjdgfjdgshjfgs",
+// 	"DiscordBot": "Wallet collector"
+//   }
