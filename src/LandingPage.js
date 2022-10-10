@@ -126,12 +126,13 @@ export default function LandingPage() {
 			  <Roadmap />
       </Container>
         </section>
-         <section className="d-flex align-items-center flex-column pricing-redirection section section-lg section-coins">
+         <section className="d-flex align-items-center flex-column pricing-redirection section section-lg section-coins pt-0">
           <img
             alt="..."
             className="path"
             src={require("assets/img/path3.png")}
           />
+		  <div id="empty-pricing"></div>
 			<Pricing />
         </section>
         <Footer />

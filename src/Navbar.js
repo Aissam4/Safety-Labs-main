@@ -69,6 +69,13 @@ useEffect(() => {
 	else if (index === 2)
 		window.location.href='/#empty-roadmap'
   }
+  let scrollToPricing = () =>
+  {
+	if (index === 1)
+		window.location.href = "#empty-pricing";
+	else if (index === 2)
+		window.location.href='/#empty-pricing'
+  }
   return (
     <Navbar className={"fixed-top " + color} color-on-scroll="100" expand="lg">
       <Container>
@@ -146,7 +153,7 @@ useEffect(() => {
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={Link} to={"/pricing"}>
+              <NavLink tag={Link} onClick={scrollToPricing}>
                 Pricing
               </NavLink>
             </NavItem>

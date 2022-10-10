@@ -13,7 +13,6 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 export default function Pricing(){
-	// console.log(window.location.hash)
 	return (
 		<div >
 			 <h1 data-aos="fade-down"
