@@ -2,11 +2,11 @@ import React from "react";
 import "assets/css/nucleo-icons.css";
 import "assets/scss/blk-design-system-react.scss";
 import Navbar from './Navbar';
+import './style.css'
 import { Container } from "reactstrap";
 import { useState } from "react";
-import { Stepper, Button, Group, TextInput,  Code , Card, Text, Badge, Checkbox} from '@mantine/core';
+import { Stepper, Button, Group, TextInput,  Code , Card, Text, Badge} from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { event } from "jquery";
 import Footer from "Footer";
 export default function Pricing_page(){
 	React.useEffect(() => {
@@ -100,15 +100,15 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
             src={require("assets/img/cercuri.png")}
 			/>
           <div className="Landing-page w-100 ">
-			<Stepper active={active} breakpoint="sm">
-				<Stepper.Step label="First step" description="Personal information">
+			<Stepper color="cyan.3" active={active} breakpoint="sm">
+				<Stepper.Step className="step-container" label="First step" description="Personal information">
 					<TextInput label="Twitter Username"  placeholder="Twitter Username" {...form.getInputProps('username')} />
 					<TextInput label="Discord Username" placeholder="Discord Username" {...form.getInputProps('DiscordUsername')} />
 				</Stepper.Step>
-				<Stepper.Step label="Second step" description="Discord server">
+				<Stepper.Step className="step-container" label="Second step" description="Discord server">
 					<TextInput label="Discord invite" placeholder="Discord invite" {...form.getInputProps('DiscordInvite')} />
 				</Stepper.Step>
-				<Stepper.Step label="Final step" description="Payment">
+				<Stepper.Step className="step-container" label="Final step" description="Payment">
 					 <Card shadow="sm" p="lg" radius="md" withBorder>
 						<Card.Section>
 						</Card.Section>
@@ -151,7 +151,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
 				Back
 			</Button>
 			)}
-			{active < 2 && <Button onClick={nextStep}>Next step</Button>}
+			{active < 2 && <Button color="grape.9" onClick={nextStep}>Next step</Button>}
 		</Group>
 
         	</div>
