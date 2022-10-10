@@ -9,9 +9,11 @@ import {
 	CardBody,
 	CardFooter,
 	Row,
-	Col
+	Col,
 } from "reactstrap";
+import { Link } from "react-router-dom";
 export default function Pricing(){
+	// console.log(window.location.hash)
 	return (
 		<div >
 			 <h1 data-aos="fade-down"
@@ -52,7 +54,7 @@ export default function Pricing(){
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button className="btn-simple" color="primary">
+                    <Button onClick={() => {window.location.href = "/pricing#WalletCollector"}} className="btn btn-simple" color="primary">
                       Buy
                     </Button>
                   </CardFooter>
@@ -89,7 +91,7 @@ export default function Pricing(){
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button className="btn-simple" color="success">
+                    <Button  onClick={() => {window.location.href = "/pricing#TokenChecker"}} className="btn-simple" color="success">
                       Buy
                     </Button>
                   </CardFooter>
@@ -121,7 +123,7 @@ export default function Pricing(){
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button className="btn-simple" color="info">
+                    <Button  onClick={() => {window.location.href = "/pricing#purgeInactiveMembers"}} className="btn-simple" color="info">
                       Buy
                     </Button>
                   </CardFooter>
@@ -161,7 +163,7 @@ export default function Pricing(){
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button className="btn-simple" color="primary">
+                    <Button  onClick={() => {window.location.href = "/pricing#SafetyCollabs"}} className="btn-simple" color="primary">
                       Buy
                     </Button>
                   </CardFooter>
@@ -198,7 +200,7 @@ export default function Pricing(){
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button className="btn-simple" color="success">
+                    <Button onClick={() => {window.location.href = "/pricing#DiscordLock"}} className="btn-simple" color="success">
                       Buy
                     </Button>
                   </CardFooter>
@@ -230,7 +232,7 @@ export default function Pricing(){
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button className="btn-simple" color="info">
+                    <Button onClick={() => {window.location.href = "/pricing#DailyMint"}} className="btn-simple" color="info">
                       Buy
                     </Button>
                   </CardFooter>
@@ -262,7 +264,7 @@ export default function Pricing(){
 						</Row>
 					</CardBody>
 					<CardFooter className="text-center">
-					<Button className="btn-simple" color="info">
+					<Button onClick={() => {window.location.href = "/pricing#RaidToEarn"}} className="btn-simple" color="info">
 						Buy
 					</Button>
 					</CardFooter>

@@ -6,9 +6,8 @@ import { Container } from "reactstrap";
 import { useState } from "react";
 import { Stepper, Button, Group, TextInput,  Code , Card, Text, Badge, Checkbox} from '@mantine/core';
 import { useForm } from '@mantine/form';
-
+import { event } from "jquery";
 export default function Pricing_page(){
-
 	React.useEffect(() => {
 		document.body.classList.toggle("landing-page");
 		return function cleanup() {
@@ -58,9 +57,22 @@ setActive((current) => {
 	}
 	return current < 3 ? current + 1 : current;
 });
-
+let BotName = "";
 const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
-
+	if (window.location.hash === '#WalletCollector')
+		BotName = "Wallet collector";
+	else if (window.location.hash === '#TokenChecker')
+		BotName = "FP/Token checker";
+	else if (window.location.hash === '#purgeInactiveMembers')
+		BotName = "Purge inactive members";
+	else if (window.location.hash === '#SafetyCollabs')
+		BotName = "Safety collabs";
+	else if (window.location.hash === '#DiscordLock')
+	BotName = "Discord Lock";
+	else if (window.location.hash === '#DailyMint')
+		BotName = "Daily mint";
+	else if (window.location.hash === '#RaidToEarn')
+		BotName = "Raid to earn";
 	return (
 	<>
 	<Navbar index={2} />
@@ -87,8 +99,6 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
             src={require("assets/img/cercuri.png")}
 			/>
           <div className="Landing-page w-100 ">
-
-			
 			<Stepper active={active} breakpoint="sm">
 				<Stepper.Step label="First step" description="Personal information">
 					<TextInput label="Twitter Username"  placeholder="Twitter Username" {...form.getInputProps('username')} />
@@ -114,7 +124,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
 							<Text weight={500}>{`Discord invite : ${form.values.DiscordInvite}`}</Text>
 						</Group>
 						<Group position="apart" mt="md" mb="xs">
-							<Text weight={500}>{`Discord Bot : ${form.values.DiscordInvite}`}</Text>
+							<Text weight={500}>{`Discord Bot : ${BotName} Bot`}</Text>
 
 						</Group>
 						{/* <Text size="sm" color="dimmed">
