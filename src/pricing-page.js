@@ -18,17 +18,18 @@ export default function Pricing_page(){
 	const [active, setActive] = useState(0);
   const form = useForm({
     initialValues: {
-      username: '',
+      Twitterusername: '',
       DiscordUsername: '',
       DiscordInvite: '',
+      DiscordBot: '',
     },
     validate: (values) => {
       if (active === 0) {
         return {
-          username:
-            values.username.trim().length < 4
+          Twitterusername:
+            values.Twitterusername.trim().length < 4
               ? 'Username must include at least 4 characters'
-              : values.username[0] !== '@'
+              : values.Twitterusername[0] !== '@'
 			  ? 'Twitter username must begin with @'
 			  : null,
           DiscordUsername:
@@ -61,19 +62,19 @@ setActive((current) => {
 let BotName = "";
 const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
 	if (window.location.hash === '#WalletCollector')
-		BotName = "Wallet collector";
+		form.values.DiscordBot = BotName = "Wallet collector";
 	else if (window.location.hash === '#TokenChecker')
-		BotName = "FP/Token checker";
+	form.values.DiscordBot = BotName = "FP/Token checker";
 	else if (window.location.hash === '#purgeInactiveMembers')
-		BotName = "Purge inactive members";
+	form.values.DiscordBot = BotName = "Purge inactive members";
 	else if (window.location.hash === '#SafetyCollabs')
-		BotName = "Safety collabs";
+	form.values.DiscordBot = BotName = "Safety collabs";
 	else if (window.location.hash === '#DiscordLock')
-	BotName = "Discord Lock";
+	form.values.DiscordBot = BotName = "Discord Lock";
 	else if (window.location.hash === '#DailyMint')
-		BotName = "Daily mint";
+	form.values.DiscordBot = BotName = "Daily mint";
 	else if (window.location.hash === '#RaidToEarn')
-		BotName = "Raid to earn";
+	form.values.DiscordBot = BotName = "Raid to earn";
 	return (
 	<>
 	<Navbar index={2} />
@@ -102,18 +103,18 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
           <div className="Landing-page w-100 ">
 			<Stepper color="cyan.3" active={active} breakpoint="sm">
 				<Stepper.Step className="step-container" label="First step" description="Personal information">
-					<TextInput label="Twitter Username"  placeholder="Twitter Username" {...form.getInputProps('username')} />
-					<TextInput label="Discord Username" placeholder="Discord Username" {...form.getInputProps('DiscordUsername')} />
+					<TextInput label="Twitter Username"  placeholder="@Safetylabs" {...form.getInputProps('Twitterusername')} />
+					<TextInput label="Discord Username" placeholder="Safety#0000" {...form.getInputProps('DiscordUsername')} />
 				</Stepper.Step>
 				<Stepper.Step className="step-container" label="Second step" description="Discord server">
-					<TextInput label="Discord invite" placeholder="Discord invite" {...form.getInputProps('DiscordInvite')} />
+					<TextInput label="Discord invite" placeholder="https://discord.gg/ID" {...form.getInputProps('DiscordInvite')} />
 				</Stepper.Step>
 				<Stepper.Step className="step-container" label="Final step" description="Payment">
 					 <Card shadow="sm" p="lg" radius="md" withBorder>
 						<Card.Section>
 						</Card.Section>
 						<Group position="apart" mt="md" mb="xs">
-							<Text weight={500}>{`Twitter Username : ${form.values.username}`}</Text>
+							<Text weight={500}>{`Twitter Username : ${form.values.Twitterusername}`}</Text>
 							<Badge color="pink" variant="light">
 							On Sale
 							</Badge>
