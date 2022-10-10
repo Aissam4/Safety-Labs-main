@@ -7,6 +7,16 @@ import { Container } from "reactstrap";
 import { useState } from "react";
 import { Stepper, Button, Group, TextInput, PasswordInput, Code } from '@mantine/core';
 import { useForm } from '@mantine/form';
+import {
+	ListGroupItem,
+	ListGroup,
+	Card,
+	CardHeader,
+	CardBody,
+	CardFooter,
+	Row,
+	Col
+} from "reactstrap";
 export default function Pricing_page(){
 	React.useEffect(() => {
 		document.body.classList.toggle("landing-page");
@@ -18,10 +28,9 @@ export default function Pricing_page(){
 
   const form = useForm({
     initialValues: {
-      sername: '',
+      username: '',
       DiscordUsername: '',
       DiscordInvite: '',
-      email: '',
       website: '',
       github: '',
     },
@@ -30,13 +39,13 @@ export default function Pricing_page(){
         return {
           username:
             values.username.trim().length < 4
-              ? 'Username must include at least 6 characters'
+              ? 'Username must include at least 4 characters'
               : values.username[0] !== '@'
 			  ? 'Twitter username must begin with @'
 			  : null,
           DiscordUsername:
-            values.DiscordUsername.trim().length < 2
-              ? 'DiscordUsername must include at least 6 characters'
+            values.DiscordUsername.trim().length < 5
+              ? 'DiscordUsername must include at least 5 characters'
 			  : values.DiscordUsername.lastIndexOf("#") === -1
 			  ? 'DiscordUsername must include #1234'
               : null,
@@ -44,8 +53,11 @@ export default function Pricing_page(){
 	}
       if (active === 1) {
         return {
-          DiscordInvite: values.name.trim().length < 6 ? 'Discord invite must include at least 6 characters' : null,
-          email: /^\S+@\S+$/.test(values.email) ? null : 'Invalid email',
+          DiscordInvite: values.DiscordInvite.length < 6
+		  	? 'Discord invite must include at least 6 characters'
+			: /^(ftp|http|https):\/\/[^ "]+$/.test(values.DiscordInvite)
+			? null
+			: 'Discord invite must be https://discord.gg/id',
         };
       }
       return {};
@@ -96,16 +108,16 @@ return (
 				</Stepper.Step>
 				<Stepper.Step label="Second step" description="Discord server">
 					<TextInput label="Discord invite" placeholder="Discord invite" {...form.getInputProps('DiscordInvite')} />
-					<TextInput mt="md" label="Email" placeholder="Email" {...form.getInputProps('email')} />
 				</Stepper.Step>
-				<Stepper.Step label="Final step" description="Social media">
-					<TextInput label="Website" placeholder="Website" {...form.getInputProps('website')} />
+				<Stepper.Step label="Final step" description="Payment">
+					{/* <TextInput label="Website" placeholder="Website" {...form.getInputProps('website')} />
 					<TextInput
 						mt="md"
 						label="GitHub"
 						placeholder="GitHub"
 						{...form.getInputProps('github')}
-					/>
+					/> */}
+					
 				</Stepper.Step>
 				<Stepper.Completed>
 					Completed! Form values:
@@ -116,12 +128,13 @@ return (
 		</Stepper>
 
 		<Group position="right" mt="xl">
-			{active !== 0 && (
+			{active < 2 && (
 			<Button variant="default" onClick={prevStep}>
 				Back
 			</Button>
 			)}
-			{active !== 3 && <Button onClick={nextStep}>Next step</Button>}
+			{active < 2 && <Button onClick={nextStep}>Next step</Button>}
+			{active === 2 && <Button onClick={nextStep}>Buy</Button>}
 		</Group>
 
         	</div>
