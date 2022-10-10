@@ -135,7 +135,7 @@ export default function LandingPage() {
 		  <div id="empty-pricing"></div>
 			<Pricing />
         </section>
-        <Footer />
+        <Footer index={1}/>
       </div>
     </>
   );

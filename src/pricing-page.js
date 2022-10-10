@@ -7,6 +7,7 @@ import { useState } from "react";
 import { Stepper, Button, Group, TextInput,  Code , Card, Text, Badge, Checkbox} from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { event } from "jquery";
+import Footer from "Footer";
 export default function Pricing_page(){
 	React.useEffect(() => {
 		document.body.classList.toggle("landing-page");
@@ -182,6 +183,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
             src={require("assets/img/path3.png")}
           />
         </section>
+		<Footer index={2} />
       </div></>
 );
 }

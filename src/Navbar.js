@@ -47,6 +47,13 @@ export default function ExamplesNavbar({index}){
     setCollapseOut("");
   };
   
+  useEffect(() => {
+	  if (window.location.hash === "#empty-roadmap") {
+		  window.location.href = "#empty-roadmap";
+	  }
+	  else if (window.location.hash === "#empty")
+	  window.location.href = "#empty";
+	}, [])
   let scrollToFeatures = () =>
   {
 	if (index === 1)
@@ -54,13 +61,6 @@ export default function ExamplesNavbar({index}){
 	else if (index === 2)
 		window.location.href = "/#empty";
 }
-useEffect(() => {
-	if (window.location.hash === "#empty-roadmap") {
-		window.location.href = "#empty-roadmap";
-	}
-	else if (window.location.hash === "#empty")
-	window.location.href = "#empty";
-  }, [])
 
   let scrollToRoadmap = () =>
   {

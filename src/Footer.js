@@ -12,7 +12,28 @@ import {
   UncontrolledTooltip
 } from "reactstrap";
 
-export default function Footer() {
+export default function Footer({index}) {
+	let scrollToFeatures = () =>
+  	{
+		if (index === 1)
+			window.location.href = "#empty";
+		else if (index === 2)
+			window.location.href = "/#empty";
+	}
+	let scrollToRoadmap = () =>
+	{
+		if (index === 1)
+			window.location.href = "#empty-roadmap";
+		else if (index === 2)
+			window.location.href='/#empty-roadmap'
+	}
+	let scrollToPricing = () =>
+	{
+		if (index === 1)
+			window.location.href = "#empty-pricing";
+		else if (index === 2)
+			window.location.href='/#empty-pricing'
+	}
   return (
     <footer className="footer">
       <Container>
@@ -22,16 +43,21 @@ export default function Footer() {
           </Col>
           <Col md="2">
             <Nav>
-              <NavItem>
-                <NavLink to="/pricing" tag={Link}>
-                  Pricing
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink  tag={Link}>
-                  Roadmap
-                </NavLink>
-              </NavItem>
+            <NavItem>
+              <NavLink tag={Link} onClick={scrollToFeatures}>
+                Features
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink tag={Link} onClick={scrollToRoadmap}>
+                Roadmap
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink tag={Link} onClick={scrollToPricing}>
+                Pricing
+              </NavLink>
+            </NavItem>
             </Nav>
           </Col>
           <Col md="3">
