@@ -4,6 +4,12 @@ import "assets/css/nucleo-icons.css";
 import "assets/scss/blk-design-system-react.scss";
 import Navbar from './Navbar';
 import { Container } from "reactstrap";
+// import {
+// 	ErrorPaymentEvent,
+// 	HelioPay,
+// 	PendingPaymentEvent,
+// 	SuccessPaymentEvent,
+//   } from "@heliofi/react";
 export default function Pricing_page(){
 	React.useEffect(() => {
 		document.body.classList.toggle("landing-page");
@@ -13,7 +19,7 @@ export default function Pricing_page(){
 	  }, []);
 return (
 	<>
-	<Navbar />
+	<Navbar index={2} />
       <div className="wrapper">
         <div className="page-header">
           <img
@@ -45,14 +51,12 @@ return (
             alt="..."
             className="shapes circle"
             src={require("assets/img/cercuri.png")}
-          />
+			/>
           <div className="Landing-page w-100 ">
           </div>
         </div>
-        <section id="features">
           <section>
           </section>
-        </section>
         <section className="section section-lg">
           <img
             alt="..."

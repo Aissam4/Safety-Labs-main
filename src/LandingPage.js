@@ -27,7 +27,7 @@ export default function LandingPage() {
   AOS.init();
   return (
     <>
-      <Navbar />
+      <Navbar index={1} />
       <div className="wrapper">
         <div className="page-header">
           <img

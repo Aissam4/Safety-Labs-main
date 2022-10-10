@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import 'style.css';
 import {
@@ -12,8 +12,9 @@ import {
 	Row,
 	Col,
 } from "reactstrap";
+import LandingPage from "LandingPage";
 
-export default function ExamplesNavbar() {
+export default function ExamplesNavbar({index}){
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   const [collapseOut, setCollapseOut] = React.useState("");
   const [color, setColor] = React.useState("navbar-transparent");
@@ -46,13 +47,28 @@ export default function ExamplesNavbar() {
   const onCollapseExited = () => {
     setCollapseOut("");
   };
+  
   let scrollToFeatures = () =>
   {
+	if (index === 1)
+		window.location.href = "#empty";
+	else if (index === 2)
+		window.location.href = "/#empty";
+}
+useEffect(() => {
+	if (window.location.hash == "#empty-roadmap") {
+		window.location.href = "#empty-roadmap";
+	}
+	else if (window.location.hash == "#empty")
 	window.location.href = "#empty";
-  }
+  }, [])
+
   let scrollToRoadmap = () =>
   {
-	window.location.href = "#empty-roadmap";
+	if (index === 1)
+		window.location.href = "#empty-roadmap";
+	else if (index === 2)
+		window.location.href='/#empty-roadmap'
   }
   return (
     <Navbar className={"fixed-top " + color} color-on-scroll="100" expand="lg">
@@ -64,8 +80,7 @@ export default function ExamplesNavbar() {
           <button
             aria-expanded={collapseOpen}
             className="navbar-toggler navbar-toggler"
-            onClick={toggleCollapse}
-          >
+            onClick={toggleCollapse}>
             <span className="navbar-toggler-bar bar1" />
             <span className="navbar-toggler-bar bar2" />
             <span className="navbar-toggler-bar bar3" />
