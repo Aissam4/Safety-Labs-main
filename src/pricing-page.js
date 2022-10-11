@@ -2,27 +2,37 @@ import React from "react";
 import "assets/css/nucleo-icons.css";
 import "assets/scss/blk-design-system-react.scss";
 import Navbar from './Navbar';
-import './style.css'
+import './assets/css/style.css'
 import { Container } from "reactstrap";
 import axios from "axios";
 import { useState } from "react";
 import { Stepper, Button, Group, TextInput,  Code , Card, Text, Badge} from '@mantine/core';
 import { useForm } from '@mantine/form';
 import Footer from "Footer";
-export default function Pricing_page(){
+export default function Pricing_page()
+{
+	const [active, setActive] = useState(0);
+	let BotName = "";
+	function post_data(data) {
+		axios.post("http://localhost:1337/api/orders", {"data": data}).then(res => {
+			console.log(res)
+		}).catch(err => {
+			console.log(err)
+		})
+	}
 	React.useEffect(() => {
 		document.body.classList.toggle("landing-page");
 		return function cleanup() {
 		  document.body.classList.toggle("landing-page");
 		};
 	  }, []);
-	const [active, setActive] = useState(0);
   const form = useForm({
     initialValues: {
       Twitterusername: '',
       DiscordUsername: '',
       DiscordInvite: '',
       DiscordBot: '',
+	  Reference:'',
     },
     validate: (values) => {
       if (active === 0) {
@@ -60,7 +70,6 @@ setActive((current) => {
 	}
 	return current < 3 ? current + 1 : current;
 });
-let BotName = "";
 const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
 	if (window.location.hash === '#WalletCollector')
 		form.values.DiscordBot = BotName = "Wallet collector";
@@ -109,6 +118,7 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
 				</Stepper.Step>
 				<Stepper.Step className="step-container" label="Second step" description="Discord server">
 					<TextInput label="Discord invite" placeholder="https://discord.gg/ID" {...form.getInputProps('DiscordInvite')} />
+					<TextInput label="Referred by" placeholder="Optional" {...form.getInputProps('Reference')} />
 				</Stepper.Step>
 				<Stepper.Step className="step-container" label="Final step" description="Payment">
 					 <Card shadow="sm" p="lg" radius="md" withBorder>
@@ -130,21 +140,15 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
 							<Text weight={500}>{`Discord Bot : ${BotName} Bot`}</Text>
 						</Group>
 						<Button variant="light" color="blue" fullWidth mt="md" radius="md" onClick={nextStep}>
-							Buy
+							Confirm
 						</Button>
 					</Card>
 				</Stepper.Step>
 				<Stepper.Completed>
 					Completed successfully
-					{axios.post("http://localhost:1337/api/safety-labs-data", {data: JSON.stringify(form.values, null, 2)}).then(res => {
-						console.log(res)
-					}).catch(err => {
-						console.log(err)
-					})}
-					{/* <Code block mt="xl">
-						{JSON.stringify(form.values, null, 2)}
-					</Code> */}
-
+					<Button variant="light" color="blue" fullWidth mt="md" radius="md" onClick={() => {post_data(form.values) }}>
+						Buy
+					</Button>
 				</Stepper.Completed>
 		</Stepper>
 		<Group position="right" mt="xl">
@@ -189,13 +193,3 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
       </div></>
 );
 }
-
-
-
-
-// {
-// 	"Twitterusername": "@safety_labs",
-// 	"DiscordUsername": "sadfsadfs#1234",
-// 	"DiscordInvite": "https://discord.gg/disygjdgfjdgshjfgs",
-// 	"DiscordBot": "Wallet collector"
-//   }

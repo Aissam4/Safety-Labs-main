@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import 'style.css';
+import './assets/css/style.css'
 import {
 	NavItem,
 	NavLink,
@@ -14,74 +14,70 @@ import {
 } from "reactstrap";
 
 export default function ExamplesNavbar({index}){
-  const [collapseOpen, setCollapseOpen] = React.useState(false);
-  const [collapseOut, setCollapseOut] = React.useState("");
-  const [color, setColor] = React.useState("navbar-transparent");
-  React.useEffect(() => {
-    window.addEventListener("scroll", changeColor);
-    return function cleanup() {
-      window.removeEventListener("scroll", changeColor);
-    };
-  }, []);
-  const changeColor = () => {
-    if (
-      document.documentElement.scrollTop > 99 ||
-      document.body.scrollTop > 99
-    ) {
-      setColor("bg-info");
-    } else if (
-      document.documentElement.scrollTop < 100 ||
-      document.body.scrollTop < 100
-    ) {
-      setColor("navbar-transparent");
-    }
-  };
-  const toggleCollapse = () => {
-    document.documentElement.classList.toggle("nav-open");
-    setCollapseOpen(!collapseOpen);
-  };
-  const onCollapseExiting = () => {
-    setCollapseOut("collapsing-out");
-  };
-  const onCollapseExited = () => {
-    setCollapseOut("");
-  };
-  
-  useEffect(() => {
-	  if (window.location.hash === "#empty-roadmap") {
-		  window.location.href = "#empty-roadmap";
-	  }
-	  else if (window.location.hash === "#empty")
-	  window.location.href = "#empty";
+	const [collapseOpen, setCollapseOpen] = React.useState(false);
+	const [collapseOut, setCollapseOut] = React.useState("");
+	const [color, setColor] = React.useState("navbar-transparent");
+	React.useEffect(() => {
+		window.addEventListener("scroll", changeColor);
+		return function cleanup() {
+			window.removeEventListener("scroll", changeColor);};
+	}, []);
+	const changeColor = () => {
+		if ( document.documentElement.scrollTop > 99 || document.body.scrollTop > 99 )
+			setColor("bg-info");
+		else if ( document.documentElement.scrollTop < 100 || document.body.scrollTop < 100 )
+			setColor("navbar-transparent");
+	};
+	const toggleCollapse = () =>
+	{
+		document.documentElement.classList.toggle("nav-open");
+		setCollapseOpen(!collapseOpen);
+	};
+	const onCollapseExiting = () =>
+	{
+		setCollapseOut("collapsing-out");
+	};
+	const onCollapseExited = () =>
+	{
+		setCollapseOut("");
+	};
+	useEffect(() =>
+	{
+		if (window.location.hash === "#empty-roadmap")
+			window.location.href = "#empty-roadmap";
+		else if (window.location.hash === "#empty")
+			window.location.href = "#empty";
+		else if (window.location.hash === "#empty-pricing")
+			window.location.href = "#empty-pricing";
 	}, [])
-  let scrollToFeatures = () =>
-  {
-	if (index === 1)
-		window.location.href = "#empty";
-	else if (index === 2)
-		window.location.href = "/#empty";
-}
+	let scrollToFeatures = () =>
+	{
+		if (index === 1)
+			window.location.href = "#empty";
+		else if (index === 2)
+			window.location.href = "/#empty";
+	}
 
-  let scrollToRoadmap = () =>
-  {
-	if (index === 1)
-		window.location.href = "#empty-roadmap";
-	else if (index === 2)
-		window.location.href='/#empty-roadmap'
-  }
-  let scrollToPricing = () =>
-  {
-	if (index === 1)
-		window.location.href = "#empty-pricing";
-	else if (index === 2)
-		window.location.href='/#empty-pricing'
-  }
+	let scrollToRoadmap = () =>
+	{
+		if (index === 1)
+			window.location.href = "#empty-roadmap";
+		else if (index === 2)
+			window.location.href='/#empty-roadmap'
+	}
+	let scrollToPricing = () =>
+	{
+		if (index === 1)
+			window.location.href = "#empty-pricing";
+		else if (index === 2)
+			window.location.href='/#empty-pricing'
+	}
   return (
     <Navbar className={"fixed-top " + color} color-on-scroll="100" expand="lg">
       <Container>
         <div className="navbar-translate">
 		<a href="/" onclick="window.location.reload(); return false;"><NavbarBrand id="navbar-brand">
-			<img className="Safety-logo" alt="Safety-Labs-Logo" src={require("./Safety-Labs-logo.png")}/>
+			<img className="Safety-logo" alt="Safety-Labs-Logo" src={require("./assets/images/Safety-Labs-logo.png")}/>
           </NavbarBrand></a>
           <button
             aria-expanded={collapseOpen}
@@ -121,7 +117,7 @@ export default function ExamplesNavbar({index}){
             <NavItem className="p-0">
               <NavLink
                 data-placement="bottom"
-                href="#"
+                href="https://twitter.com/Safetylabs_"
                 rel="noopener noreferrer"
                 target="_blank"
                 title="Follow us on Twitter"
@@ -131,12 +127,13 @@ export default function ExamplesNavbar({index}){
               </NavLink>
             </NavItem>
             <NavItem className="p-0">
+			{/* missing discord url  */}
               <NavLink
                 data-placement="bottom"
                 href="#"
                 rel="noopener noreferrer"
                 target="_blank"
-                title="Follow us on Instagram"
+                title="join us on Discrd "
               >
                 <i className="fab fa-discord" />
                 <p className="d-lg-none d-xl-none">Discord</p>

@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.css'
+import './assets/css/style.css'
 import {
 	ListGroupItem,
 	ListGroup,
@@ -11,8 +11,8 @@ import {
 	Row,
 	Col,
 } from "reactstrap";
-import { Link } from "react-router-dom";
-export default function Pricing(){
+export default function Pricing()
+{
 	return (
 		<div >
 			 <h1 data-aos="fade-down"

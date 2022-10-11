@@ -13,7 +13,7 @@ root.render(
 		<Switch>
 			<Route exact path='/' component={LandingPage}></Route>
 			<Route path='/pricing' component={Pricing_page}></Route>
-			{/* <Route exact path="*" component={NoPage}></Route> */}
+			<Route exact path="*" component={NoPage}></Route>
     	</Switch>
   </BrowserRouter>
 );

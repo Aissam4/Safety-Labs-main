@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import 'style.css'
+import './assets/css/style.css'
 import {
   Button,
   NavItem,
@@ -39,7 +39,7 @@ export default function Footer({index}) {
       <Container>
         <Row>
           <Col md="4">
-		  <a href="/"><img className="Safety-logo-footer" alt="Safety-Labs-Logo" src={require("./Safety-Labs-logo.png")}/></a>
+		  <a href="/"><img className="Safety-logo-footer" alt="Safety-Labs-Logo" src={require("./assets/images/Safety-Labs-logo.png")}/></a>
           </Col>
           <Col md="2">
             <Nav>

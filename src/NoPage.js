@@ -1,16 +1,19 @@
 import React from "react";
-import 'style.css'
+import './assets/css/style.css'
 import "assets/css/nucleo-icons.css";
 import "assets/scss/blk-design-system-react.scss";
-
+import Navbar from 'Navbar.js'
 export default function NoPage(){
 return (
+	<>
+		<Navbar index={2} />
 	<div  className="not-found-container">
-		<img
+		<img 
             alt="404 page not found"
-            src={require("404-robot.png")}
-          />
+            src={require("./assets/robots/404-robot.png")}
+			/>
 		  <h1>PAGE NOT FOUND</h1>
     </div>
+			</>
 );
 }
