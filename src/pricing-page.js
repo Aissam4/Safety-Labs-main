@@ -85,6 +85,8 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
 	form.values.DiscordBot = BotName = "Daily mint";
 	else if (window.location.hash === '#RaidToEarn')
 	form.values.DiscordBot = BotName = "Raid to earn";
+	else
+		window.location.href = "404"
 	return (
 	<>
 	<Navbar index={2} />

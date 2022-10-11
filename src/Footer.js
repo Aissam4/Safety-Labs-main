@@ -80,7 +80,7 @@ export default function Footer({index}) {
               <Button
                 className="btn-icon btn-neutral btn-round btn-simple"
                 color="default"
-                href="#"
+                href="https://twitter.com/Safetylabs_"
                 id="tooltip622135962"
                 target="_blank"
               >

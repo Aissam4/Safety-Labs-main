@@ -1,31 +1,27 @@
 import React from "react";
 import './assets/css/style.css'
 import {
-	Container,
 	Button,
 	Row,
 	Col
 } from "reactstrap";
-
 import 'react-vertical-timeline-component/style.min.css';
 // import { HelioPay } from '@heliofi/react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
 import Navbar from "Navbar.js";
 import Footer from "Footer.js";
 import Roadmap from "Roadmap.js";
 import Features from "Features.js";
 import Pricing from "Pricing.js";
 export default function LandingPage() {
-  React.useEffect(() => {
-    document.body.classList.toggle("landing-page");
-    return function cleanup() {
-      document.body.classList.toggle("landing-page");
-    };
-  }, []);
-  AOS.init();
-  return (
+	React.useEffect(() => {
+		document.body.classList.toggle("landing-page");
+		return function cleanup() {
+			document.body.classList.toggle("landing-page");
+		};}, []);
+	AOS.init();
+	return (
     <>
       <Navbar index={1} />
       <div className="wrapper">
@@ -67,24 +63,22 @@ export default function LandingPage() {
 					Safe servers and facilitate community managment
                 </h1>
                 <p className="text-white mb-3">
-					Safety Labs provides a set of bots that help keep your server safe and CM easy!...
+					Safety Labs provides a set of bots that help keep your server safe and community managment easy
                 </p>
                 <div className="btn-wrapper">
                   <div className="button-container">
                     <Button
+					  href="https://twitter.com/Safetylabs_"
                       className="btn-icon btn-simple btn-round btn-neutral"
                       color="default"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
+					  target="_blank">
                       <i className="fab fa-twitter" />
                     </Button>
                     <Button
                       className="btn-icon btn-simple btn-round btn-neutral"
                       color="default"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
+                      href=""
+                      onClick={(e) => e.preventDefault()}>
                       <i className="fab fa-discord" />
                     </Button>
                   </div>
@@ -108,27 +102,25 @@ export default function LandingPage() {
         </section>
         <section className="section section-lg">
           <img
-            alt="..."
+            alt=""
             className="path"
             src={require("assets/img/path4.png")}
           />
           <img
-            alt="..."
+            alt=""
             className="path2"
             src={require("assets/img/path5.png")}
           />
           <img
-            alt="..."
+            alt=""
             className="path3"
             src={require("assets/img/path2.png")}
           />
-          <Container>
-			  <Roadmap />
-      </Container>
+		<Roadmap />
         </section>
          <section className="d-flex align-items-center flex-column pricing-redirection section section-lg section-coins pt-0">
           <img
-            alt="..."
+            alt=""
             className="path"
             src={require("assets/img/path3.png")}
           />
