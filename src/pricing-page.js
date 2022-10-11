@@ -128,7 +128,6 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
 						</Group>
 						<Group position="apart" mt="md" mb="xs">
 							<Text weight={500}>{`Discord Bot : ${BotName} Bot`}</Text>
-
 						</Group>
 						<Button variant="light" color="blue" fullWidth mt="md" radius="md" onClick={nextStep}>
 							Buy
@@ -148,7 +147,6 @@ const prevStep = () => setActive((current) => (current > 0 ? current - 1 : curre
 
 				</Stepper.Completed>
 		</Stepper>
-
 		<Group position="right" mt="xl">
 			{active < 2 && (
 			<Button variant="default" onClick={prevStep}>
