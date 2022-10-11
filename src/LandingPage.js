@@ -8,7 +8,7 @@ import {
 } from "reactstrap";
 
 import 'react-vertical-timeline-component/style.min.css';
-// import { HelioPay } from '@heliofi/react';
+import { HelioPay } from '@heliofi/react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -18,6 +18,8 @@ import Roadmap from "Roadmap.js";
 import Features from "Features.js";
 import Pricing from "Pricing.js";
 export default function LandingPage() {
+  window.Buffer = window.Buffer || require("buffer").Buffer;
+  
   React.useEffect(() => {
     document.body.classList.toggle("landing-page");
     return function cleanup() {
@@ -63,6 +65,12 @@ export default function LandingPage() {
           <div className="Landing-page w-100 ">
             <Row className="row-grid text-left mb-5">
               <Col className="Safe-text" lg="6.5" md="6">
+                <HelioPay
+                  cluster="devnet"
+                  paymentRequestId="6345be2d9341ec98f3ab764a"
+                  totalAmount={"1"}
+                  supportedCurrencies={["USDC"]}
+                />
                 <h1 className="text-white">
 					Safe servers and facilitate community managment
                 </h1>
