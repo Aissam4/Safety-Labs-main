@@ -2,7 +2,7 @@ import React, {useMemo} from "react";
 import "assets/css/nucleo-icons.css";
 import "assets/scss/blk-design-system-react.scss";
 import { Container } from "reactstrap";
-import axios from "axios";
+// import axios from "axios";
 import { useState } from "react";
 import { Stepper, Image, Button, Group, TextInput, Card, Text, Badge} from '@mantine/core';
 import Navbar from './Navbar';
@@ -23,7 +23,7 @@ import {
     TorusWalletAdapter,
 } from '@solana/wallet-adapter-wallets';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
-import { useConnection, useWallet } from '@solana/wallet-adapter-react';
+// import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
 import 'react-vertical-timeline-component/style.min.css';
@@ -34,8 +34,8 @@ export default function Pricing_page()
 {
 	const solNetwork = WalletAdapterNetwork.Mainnet;
     const endpoint = useMemo(() => clusterApiUrl(solNetwork), [solNetwork]);
-	const { connection } = useConnection();
-	const { publicKey, sendTransaction } = useWallet();
+	// const { connection } = useConnection();
+	// const { publicKey, sendTransaction } = useWallet();
 	const [active, setActive] = useState(0);
 	let BotName = "";
 	let BotImage = "";
@@ -52,23 +52,13 @@ export default function Pricing_page()
         ],
         [solNetwork]
     );
-	// const sendSolanaTransaction = (amount) => {
-    //     const transaction = new solanaWeb3.Transaction().add(
-	// 				solanaWeb3.SystemProgram.transfer({
-	// 					fromPubkey: publicKey,
-	// 					toPubkey: new solanaWeb3.PublicKey(toAddress),
-	// 					lamports: solanaWeb3.LAMPORTS_PER_SOL * amount,
-	// 				})
-	// 			);
-    //     const signature = await sendTransaction(transaction, connection);
-    // }
-	function post_data(data) {
-		axios.post("http://localhost:1337/api/orders", {"data": data}).then(res => {
-			console.log(res)
-		}).catch(err => {
-			console.log(err)
-		})
-	}
+	// function post_data(data) {
+	// 	axios.post("http://localhost:1337/api/orders", {"data": data}).then(res => {
+	// 		console.log(res)
+	// 	}).catch(err => {
+	// 		console.log(err)
+	// 	})
+	// }
 	React.useEffect(() => {
 		document.body.classList.toggle("landing-page");
 		return function cleanup() {
