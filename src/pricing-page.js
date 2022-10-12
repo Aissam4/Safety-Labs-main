@@ -145,6 +145,11 @@ export default function Pricing_page()
 			form.values.DiscordBot = BotName = "Raid to earn";
 			BotImage = "robot-earn.png"
 		}
+		else if (window.location.hash === '#TwitterSales')
+		{
+			form.values.DiscordBot = BotName = "Twitter Sales"
+			BotImage = "lock-sales.png"
+		}
 		else
 			window.location.href = "404";
 	return (

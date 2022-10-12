@@ -49,6 +49,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "5.0.1",
     "react-scroll-motion": "^0.3.0",
+    "react-spring": "^9.5.5",
     "react-vertical-timeline-component": "^3.5.2",
     "reactstrap": "8.7.1",
     "sass": "1.54.0",

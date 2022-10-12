@@ -220,6 +220,36 @@ export default function Pricing()
                 <Card className="card-coin card-plain">
 					<CardHeader>
 					<img
+						alt="..."
+						className="img-center img-fluid"
+						src={require("assets/robots/lock-sales.png")}
+					/>
+					</CardHeader>
+					<CardBody>
+						<Row>
+							<Col className="text-center" md="12">
+								<h4 className="text-uppercase">Twitter Sales</h4>
+								<hr className="line-info" />
+							</Col>
+							<ListGroup>
+								<ListGroupItem>Tweet sales of your NFT Project</ListGroupItem>
+								<ListGroupItem>help you to grow your community</ListGroupItem>
+								<ListGroupItem>You can Set any twitter page</ListGroupItem>
+							</ListGroup>
+						</Row>
+					</CardBody>
+					<CardFooter className="text-center">
+					<Button onClick={() => {window.location.href = "/pricing#TwitterSales"}} className="btn-simple" color="info">
+						Buy
+					</Button>
+					</CardFooter>
+				</Card>
+			<div className="space-between"></div>
+			</Col>
+			  <Col md="4">
+                <Card className="card-coin card-plain">
+					<CardHeader>
+					<img
 					alt="..."
 					className="img-center img-fluid"
 					src={require("assets/robots/robot-earn.png")}
