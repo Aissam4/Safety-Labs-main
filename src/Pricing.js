@@ -16,7 +16,7 @@ import {
 export default function Pricing()
 {
 	return (
-		<div >
+		<div className='w-75'>
 			 <h1 className="features text-center">PRICING</h1>
             <Row>
               <Col md="4">
@@ -38,8 +38,8 @@ export default function Pricing()
                     <Row>
                       <ListGroup>
                         <ListGroupItem>Collect whitelisted members wallet</ListGroupItem>
-                        <ListGroupItem>Accurate inside your server</ListGroupItem>
-                        <ListGroupItem>Easy and quick</ListGroupItem>
+                        <ListGroupItem><br />Accurate inside your server</ListGroupItem>
+                        <ListGroupItem><br />Easy and quick</ListGroupItem>
                       </ListGroup>
                     </Row>
                   </CardBody>
@@ -69,9 +69,9 @@ export default function Pricing()
                     </Row>
                     <Row>
                       <ListGroup>
-                        <ListGroupItem>Track down any collection Floor price</ListGroupItem>
-                        <ListGroupItem>Tracks the prices of any token</ListGroupItem>
-                        <ListGroupItem>Display the prices on your server</ListGroupItem>	
+                        <ListGroupItem>Track any collection Floor price</ListGroupItem>
+                        <ListGroupItem><br />Tracks the prices of any token</ListGroupItem>
+                        <ListGroupItem><br />Display the prices on your server</ListGroupItem>	
                       </ListGroup>
                     </Row>
                   </CardBody>
@@ -102,8 +102,8 @@ export default function Pricing()
                     <Row>
                       <ListGroup>
                         <ListGroupItem>Tracking your active members</ListGroupItem>
-                        <ListGroupItem>Warn your members about being active</ListGroupItem>
-                        <ListGroupItem>send message to your members</ListGroupItem>
+                        <ListGroupItem><br />Warn your members being active</ListGroupItem>
+                        <ListGroupItem><br />send message to your members</ListGroupItem>
                       </ListGroup>
                     </Row>
                   </CardBody>
@@ -136,8 +136,8 @@ export default function Pricing()
                     <Row>
                       <ListGroup>
                         <ListGroupItem>assigning roles easy and fast</ListGroupItem>
-                        <ListGroupItem>Bulk assign of a specific role</ListGroupItem>
-                        <ListGroupItem>Easy and quick</ListGroupItem>
+                        <ListGroupItem><br />Bulk assign of a specific role</ListGroupItem>
+                        <ListGroupItem><br />Easy and quick</ListGroupItem>
                       </ListGroup>
                     </Row>
                   </CardBody>
@@ -169,8 +169,8 @@ export default function Pricing()
                     <Row>
                       <ListGroup>
                         <ListGroupItem>Set a password of your discord bot</ListGroupItem>
-                        <ListGroupItem>Secure your discord server</ListGroupItem>
-                        <ListGroupItem>Easy to use</ListGroupItem>
+                        <ListGroupItem><br />Secure your discord server</ListGroupItem>
+                        <ListGroupItem><br />Easy to use</ListGroupItem>
                       </ListGroup>
                     </Row>
                   </CardBody>
@@ -199,10 +199,10 @@ export default function Pricing()
                       </Col>
                     </Row>
                     <Row>
-                      <ListGroup>
+                      <ListGroup> 
                         <ListGroupItem>Track all daily mints</ListGroupItem>
-                        <ListGroupItem>Display daily mints to your members</ListGroupItem>
-                        <ListGroupItem>You can never miss a mint</ListGroupItem>
+                        <ListGroupItem><br />Display daily mints to your members</ListGroupItem>
+                        <ListGroupItem><br />You can never miss a mint</ListGroupItem>
                       </ListGroup>
                     </Row>
                   </CardBody>
@@ -233,8 +233,8 @@ export default function Pricing()
 							</Col>
 							<ListGroup>
 								<ListGroupItem>Tweet sales of your NFT Project</ListGroupItem>
-								<ListGroupItem>help you to grow your community</ListGroupItem>
-								<ListGroupItem>You can Set any twitter page</ListGroupItem>
+								<ListGroupItem><br />help you to grow your community</ListGroupItem>
+								<ListGroupItem><br />You can Set any twitter page</ListGroupItem>
 							</ListGroup>
 						</Row>
 					</CardBody>
@@ -263,8 +263,8 @@ export default function Pricing()
 							</Col>
 							<ListGroup>
 								<ListGroupItem>Create a raid contest for members</ListGroupItem>
-								<ListGroupItem>Reward your members for them raid</ListGroupItem>
-								<ListGroupItem>raid and earn prizes </ListGroupItem>
+								<ListGroupItem><br />Reward your members for them raid</ListGroupItem>
+								<ListGroupItem><br />raid and earn prizes </ListGroupItem>
 							</ListGroup>
 						</Row>
 					</CardBody>
