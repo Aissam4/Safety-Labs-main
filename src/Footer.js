@@ -41,32 +41,23 @@ export default function Footer({index}) {
           <Col md="4">
 		  <a href="/"><img className="Safety-logo-footer" alt="Safety-Labs-Logo" src={require("./assets/images/Safety-Labs-logo.png")}/></a>
           </Col>
-          <Col md="2">
-            <Nav>
-            <NavItem>
-              <NavLink tag={Link} onClick={scrollToFeatures}>
-                Features
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink tag={Link} onClick={scrollToRoadmap}>
-                Roadmap
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink tag={Link} onClick={scrollToPricing}>
-                Pricing
-              </NavLink>
-            </NavItem>
-            </Nav>
-          </Col>
           <Col md="3">
             <Nav>
-              <NavItem>
-                <NavLink href="#">
-                  Team
-                </NavLink>
-              </NavItem>
+				<NavItem>
+					<NavLink tag={Link} onClick={scrollToFeatures}>
+						Features
+					</NavLink>
+				</NavItem>
+				<NavItem>
+					<NavLink tag={Link} onClick={scrollToRoadmap}>
+						Roadmap
+					</NavLink>
+				</NavItem>
+				<NavItem>
+					<NavLink tag={Link} onClick={scrollToPricing}>
+						Pricing
+					</NavLink>
+				</NavItem>
             </Nav>
           </Col>
           <Col md="3">

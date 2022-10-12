@@ -15,21 +15,10 @@ export default function Pricing()
 {
 	return (
 		<div >
-			 <h1 data-aos="fade-down"
-				data-aos-offset="200"
-				data-aos-delay="18"
-				data-aos-duration="780"
-				data-aos-easing="ease-in-out"
-				data-aos-once="false" className="features text-center">PRICING</h1>
+			 <h1 className="features text-center">PRICING</h1>
             <Row>
               <Col md="4">
-                <Card
-					data-aos="flip-left"
-					data-aos-offset="200"
-					data-aos-delay="18"
-					data-aos-duration="780"
-					data-aos-easing="ease-in-out"
-					className="card-coin card-plain">
+                <Card className="card-coin card-plain">
                   <CardHeader>
                     <img
                       alt="..."
@@ -61,12 +50,7 @@ export default function Pricing()
 				<div className="space-between"></div>
               </Col>
               <Col md="4">
-                <Card data-aos="flip-left"
-					data-aos-offset="200"
-					data-aos-delay="18"
-					data-aos-duration="780"
-					data-aos-easing="ease-in-out"
-					className="card-coin card-plain">
+                <Card className="card-coin card-plain">
                   <CardHeader>
                     <img
                       alt="..."
@@ -98,7 +82,7 @@ export default function Pricing()
 				<div className="space-between"></div>
               </Col>
               <Col md="4">
-                <Card data-aos="flip-left" className="card-coin card-plain">
+                <Card className="card-coin card-plain">
                   <CardHeader>
                     <img
                       alt="..."
@@ -132,13 +116,7 @@ export default function Pricing()
             </Row>
             <Row className='mt-5'>
               <Col md="4">
-                <Card
-					data-aos="flip-left"
-					data-aos-offset="200"
-					data-aos-delay="18"
-					data-aos-duration="780"
-					data-aos-easing="ease-in-out"
-					className="card-coin card-plain">
+                <Card className="card-coin card-plain">
                   <CardHeader>
                     <img
                       alt="..."
@@ -170,11 +148,7 @@ export default function Pricing()
 				<div className="space-between"></div>
               </Col>
               <Col md="4">
-                <Card data-aos="flip-left"
-					data-aos-offset="200"
-					data-aos-delay="18"
-					data-aos-duration="780"
-					data-aos-easing="ease-in-out"
+                <Card 
 					className="card-coin card-plain">
                   <CardHeader>
                     <img
@@ -207,7 +181,7 @@ export default function Pricing()
 				<div className="space-between"></div>
               </Col>
               <Col md="4">
-                <Card data-aos="flip-left" className="card-coin card-plain">
+                <Card className="card-coin card-plain">
                   <CardHeader>
                     <img
                       alt="..."
@@ -241,7 +215,7 @@ export default function Pricing()
 			<div className="space-between"></div>
 			<Row className='last-card-container'>
 			  <Col md="4">
-                <Card data-aos="flip-left" className="card-coin card-plain">
+                <Card className="card-coin card-plain">
 					<CardHeader>
 					<img
 					alt="..."

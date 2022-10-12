@@ -52,6 +52,16 @@ export default function Pricing_page()
         ],
         [solNetwork]
     );
+	// const sendSolanaTransaction = (amount) => {
+    //     const transaction = new solanaWeb3.Transaction().add(
+	// 				solanaWeb3.SystemProgram.transfer({
+	// 					fromPubkey: publicKey,
+	// 					toPubkey: new solanaWeb3.PublicKey(toAddress),
+	// 					lamports: solanaWeb3.LAMPORTS_PER_SOL * amount,
+	// 				})
+	// 			);
+    //     const signature = await sendTransaction(transaction, connection);
+    // }
 	function post_data(data) {
 		axios.post("http://localhost:1337/api/orders", {"data": data}).then(res => {
 			console.log(res)
