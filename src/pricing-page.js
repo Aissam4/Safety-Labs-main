@@ -4,7 +4,7 @@ import "assets/scss/blk-design-system-react.scss";
 import { Container } from "reactstrap";
 import axios from "axios";
 import { useState } from "react";
-import { Stepper, Button, Group, TextInput, Card, Text, Badge} from '@mantine/core';
+import { Stepper, Image, Button, Group, TextInput, Card, Text, Badge} from '@mantine/core';
 import Navbar from './Navbar';
 import './assets/css/style.css'
 import { useForm } from '@mantine/form';
@@ -14,6 +14,7 @@ export default function Pricing_page()
 {
 	const [active, setActive] = useState(0);
 	let BotName = "";
+	let BotImage = "";
 	function post_data(data) {
 		axios.post("http://localhost:1337/api/orders", {"data": data}).then(res => {
 			console.log(res)
@@ -73,19 +74,40 @@ export default function Pricing_page()
 	});
 	const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
 		if (window.location.hash === '#WalletCollector')
+		{
 			form.values.DiscordBot = BotName = "Wallet collector";
+			BotImage = "robot-search.png"
+		}
 		else if (window.location.hash === '#TokenChecker')
+		{	
 			form.values.DiscordBot = BotName = "FP/Token checker";
+			BotImage = "robot-money.png"
+		}
 		else if (window.location.hash === '#purgeInactiveMembers')
+		{
 			form.values.DiscordBot = BotName = "Purge inactive members";
+			BotImage = "robot-message.png"
+		}
 		else if (window.location.hash === '#SafetyCollabs')
+		{
 			form.values.DiscordBot = BotName = "Safety collabs";
+			BotImage = "robot-send.png"
+		}
 		else if (window.location.hash === '#DiscordLock')
+		{
 			form.values.DiscordBot = BotName = "Discord Lock";
+			BotImage = "lock-robot.png"
+		}
 		else if (window.location.hash === '#DailyMint')
+		{
 			form.values.DiscordBot = BotName = "Daily mint";
+			BotImage = "robot-hi.png"
+		}
 		else if (window.location.hash === '#RaidToEarn')
+		{
 			form.values.DiscordBot = BotName = "Raid to earn";
+			BotImage = "robot-earn.png"
+		}
 		else
 			window.location.href = "404";
 	return (
@@ -125,7 +147,8 @@ export default function Pricing_page()
 				</Stepper.Step>
 				<Stepper.Step className="step-container" label="Final step" description="Payment">
 					 <Card shadow="sm" p="lg" radius="md" withBorder>
-						<Card.Section>
+						<Card.Section className="d-flex justify-content-center">
+								<Image className="form-bot" height={200} width={150} alt="" src={require(`./assets/robots/${BotImage}`)} />
 						</Card.Section>
 						<Group position="apart" mt="md" mb="xs">
 							<Text weight={500}>{`Twitter Username : ${form.values.Twitterusername}`}</Text>
@@ -142,6 +165,8 @@ export default function Pricing_page()
 						<Group position="apart" mt="md" mb="xs">
 							<Text weight={500}>{`Discord Bot : ${BotName} Bot`}</Text>
 						</Group>
+						<Group position="apart" mt="md" mb="xs">
+ 						</Group>
 						<Button variant="light" color="blue" fullWidth mt="md" radius="md" onClick={nextStep}>
 							Confirm
 						</Button>
@@ -156,9 +181,9 @@ export default function Pricing_page()
 		</Stepper>
 		<Group position="right" mt="xl">
 			{active < 2 && active > 0 && (
-			<Button variant="default" onClick={prevStep}>
-				Back
-			</Button>
+				<Button variant="default" onClick={prevStep}>
+					Back
+				</Button>
 			)}
 			{active < 2 && <Button className="next-step-container" onClick={nextStep}>Next step</Button>}
 		</Group>
