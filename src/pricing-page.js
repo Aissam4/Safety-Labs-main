@@ -9,6 +9,7 @@ import Navbar from './Navbar';
 import './assets/css/style.css'
 import { useForm } from '@mantine/form';
 import Footer from "Footer";
+import { act } from "react-dom/test-utils";
 export default function Pricing_page()
 {
 	const [active, setActive] = useState(0);
@@ -55,7 +56,7 @@ export default function Pricing_page()
 				return {
 					DiscordInvite: values.DiscordInvite.length < 6
 					? 'Discord invite must include at least 6 characters'
-					: /^(ftp|http|https):\/\/[^ "]+$/.test(values.DiscordInvite)
+					: /^(ftp|http|https):\/\/discord.gg\/[^ "]+$/.test(values.DiscordInvite)
 					? null
 					: 'Discord invite must be https://discord.gg/id',
 				};
@@ -154,7 +155,7 @@ export default function Pricing_page()
 				</Stepper.Completed>
 		</Stepper>
 		<Group position="right" mt="xl">
-			{active < 2 && (
+			{active < 2 && active > 0 && (
 			<Button variant="default" onClick={prevStep}>
 				Back
 			</Button>
