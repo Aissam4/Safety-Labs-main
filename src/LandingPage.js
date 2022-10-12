@@ -19,7 +19,7 @@ export default function LandingPage() {
 			document.body.classList.toggle("landing-page");
 		};}, []);
 	return (
-    <>
+    <> 
       <Navbar index={1} />
       <div className="wrapper">
         <div className="page-header">
@@ -56,6 +56,7 @@ export default function LandingPage() {
           <div className="Landing-page w-100 ">
             <Row className="row-grid text-left mb-5">
               <Col className="Safe-text" lg="6.5" md="6">
+			  
                 <h1 className="text-white">
 					Safe servers and facilitate community managment
                 </h1>

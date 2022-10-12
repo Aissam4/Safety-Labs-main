@@ -12,8 +12,9 @@ import {
 	Row,
 	Col,
 } from "reactstrap";
-
-export default function ExamplesNavbar({index}){
+import 'react-vertical-timeline-component/style.min.css';
+export default function ExamplesNavbar({index})
+{
 	const [collapseOpen, setCollapseOpen] = React.useState(false);
 	const [collapseOut, setCollapseOut] = React.useState("");
 	const [color, setColor] = React.useState("navbar-transparent");
@@ -74,77 +75,77 @@ export default function ExamplesNavbar({index}){
 	}
   return (
     <Navbar className={"fixed-top " + color} color-on-scroll="100" expand="lg">
-      <Container>
-        <div className="navbar-translate">
-		<a href="/" onclick="window.location.reload(); return false;"><NavbarBrand id="navbar-brand">
-			<img className="Safety-logo" alt="Safety-Labs-Logo" src={require("./assets/images/Safety-Labs-logo.png")}/>
-          </NavbarBrand></a>
-          <button
-            aria-expanded={collapseOpen}
-            className="navbar-toggler navbar-toggler"
-            onClick={toggleCollapse}>
-            <span className="navbar-toggler-bar bar1" />
-            <span className="navbar-toggler-bar bar2" />
-            <span className="navbar-toggler-bar bar3" />
-          </button>
-        </div>
-        <Collapse
-          className={"justify-content-end " + collapseOut}
-          navbar
-          isOpen={collapseOpen}
-          onExiting={onCollapseExiting}
-          onExited={onCollapseExited}
-        >
-          <div className="navbar-collapse-header">
-            <Row>
-              <Col className="collapse-brand" xs="6">
-                <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                  SAFETY LABS
-                </a>
-              </Col>
-              <Col className="collapse-close text-right" xs="6">
-                <button
-                  aria-expanded={collapseOpen}
-                  className="navbar-toggler"
-                  onClick={toggleCollapse}
-                >
-                  <i className="tim-icons icon-simple-remove" />
-                </button>
-              </Col>
-            </Row>
-          </div>
-          <Nav navbar>
-            <NavItem className="p-0">
-              <NavLink
-                data-placement="bottom"
-                href="https://twitter.com/Safetylabs_"
-                rel="noopener noreferrer"
-                target="_blank"
-                title="Follow us on Twitter"
-              >
-                <i className="fab fa-twitter" />
-                <p className="d-lg-none d-xl-none">Twitter</p>
-              </NavLink>
-            </NavItem>
+					<Container>
+						<div className="navbar-translate">
+							<a href="/" onclick="window.location.reload(); return false;"><NavbarBrand id="navbar-brand">
+								<img className="Safety-logo" alt="Safety-Labs-Logo" src={require("./assets/images/Safety-Labs-logo.png")}/>
+							</NavbarBrand></a>
+							<button
+								aria-expanded={collapseOpen}
+								className="navbar-toggler navbar-toggler"
+								onClick={toggleCollapse}>
+								<span className="navbar-toggler-bar bar1" />
+								<span className="navbar-toggler-bar bar2" />
+								<span className="navbar-toggler-bar bar3" />
+							</button>
+						</div>
+						<Collapse
+							className={"justify-content-end " + collapseOut}
+							navbar
+							isOpen={collapseOpen}
+							onExiting={onCollapseExiting}
+							onExited={onCollapseExited}
+							>
+						<div className="navbar-collapse-header">
+							<Row>
+								<Col className="collapse-brand" xs="6">
+									<a href="#pablo" onClick={(e) => e.preventDefault()}>
+									SAFETY LABS
+									</a>
+								</Col>
+							<Col className="collapse-close text-right" xs="6">
+								<button
+									aria-expanded={collapseOpen}
+									className="navbar-toggler"
+									onClick={toggleCollapse}
+									>
+									<i className="tim-icons icon-simple-remove" />
+								</button>
+							</Col>
+							</Row>
+						</div>
+						<Nav navbar>
+							<NavItem className="p-0">
+								<NavLink
+									data-placement="bottom"
+									href="https://twitter.com/Safetylabs_"
+									rel="noopener noreferrer"
+									target="_blank"
+									title="Follow us on Twitter"
+									>
+									<i className="fab fa-twitter" />
+									<p className="d-lg-none d-xl-none">Twitter</p>
+								</NavLink>
+							</NavItem>
 
-            <NavItem>
-              <NavLink tag={Link} onClick={scrollToFeatures}>
-                Features
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink tag={Link} onClick={scrollToRoadmap}>
-                Roadmap
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink tag={Link} onClick={scrollToPricing}>
-                Pricing
-              </NavLink>
-            </NavItem>
-          </Nav>
-        </Collapse>
-      </Container>
+							<NavItem>
+								<NavLink tag={Link} onClick={scrollToFeatures}>
+									Features
+								</NavLink>
+							</NavItem>
+							<NavItem>
+								<NavLink tag={Link} onClick={scrollToRoadmap}>
+									Roadmap
+								</NavLink>
+							</NavItem>
+							<NavItem>
+								<NavLink tag={Link} onClick={scrollToPricing}>
+									Pricing
+								</NavLink>
+							</NavItem>
+						</Nav>
+						</Collapse>
+					</Container>
     </Navbar>
   );
 }
