@@ -72,6 +72,13 @@ export default function LandingPage() {
 					  target="_blank">
                       <i className="fab fa-twitter" />
                     </Button>
+                    <Button
+					  href="https://docs.safetylabs.io/"
+                      className="btn-icon btn-simple btn-round btn-neutral"
+                      color="default"
+					  target="_blank">
+                      <i className="fa fa-book" />
+                    </Button>
                   </div>
                 </div>
               </Col >

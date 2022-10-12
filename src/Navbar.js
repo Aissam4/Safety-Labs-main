@@ -127,6 +127,18 @@ export default function ExamplesNavbar({index})
 									<p className="d-lg-none d-xl-none">Twitter</p>
 								</NavLink>
 							</NavItem>
+							<NavItem className="p-0">
+								<NavLink
+									data-placement="bottom"
+									href="https://docs.safetylabs.io/"
+									rel="noopener noreferrer"
+									target="_blank"
+									title="For more informations"
+									>
+									<i class="fa fa-book"></i>
+									<p className="d-lg-none d-xl-none">Twitter</p>
+								</NavLink>
+							</NavItem>
 
 							<NavItem>
 								<NavLink tag={Link} onClick={scrollToFeatures}>
