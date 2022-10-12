@@ -9,7 +9,7 @@ import Navbar from './Navbar';
 import './assets/css/style.css'
 import { useForm } from '@mantine/form';
 import Footer from "Footer";
-import { act } from "react-dom/test-utils";
+// import { HelioPay } from '@heliofi/react';
 export default function Pricing_page()
 {
 	const [active, setActive] = useState(0);
@@ -177,7 +177,10 @@ export default function Pricing_page()
 					<Button variant="light" color="blue" fullWidth mt="md" radius="md" onClick={() => {post_data(form.values) }}>
 						Buy
 					</Button>
+			
 				</Stepper.Completed>
+						
+				
 		</Stepper>
 		<Group position="right" mt="xl">
 			{active < 2 && active > 0 && (
@@ -187,7 +190,6 @@ export default function Pricing_page()
 			)}
 			{active < 2 && <Button className="next-step-container" onClick={nextStep}>Next step</Button>}
 		</Group>
-
         	</div>
         </div>
           <section></section>

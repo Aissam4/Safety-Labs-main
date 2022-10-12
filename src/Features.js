@@ -4,8 +4,11 @@ import {
 	Row,
 	Col
 } from "reactstrap";
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 export default function features()
 {
+	AOS.init();
 	return (
 		<div>
 			<h1  data-aos="fade-down"

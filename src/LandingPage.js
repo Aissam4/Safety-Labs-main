@@ -6,21 +6,18 @@ import {
 	Col
 } from "reactstrap";
 import 'react-vertical-timeline-component/style.min.css';
-// import { HelioPay } from '@heliofi/react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import Navbar from "Navbar.js";
 import Footer from "Footer.js";
 import Roadmap from "Roadmap.js";
 import Features from "Features.js";
 import Pricing from "Pricing.js";
 export default function LandingPage() {
+	window.Buffer = window.Buffer || require("buffer").Buffer;
 	React.useEffect(() => {
 		document.body.classList.toggle("landing-page");
 		return function cleanup() {
 			document.body.classList.toggle("landing-page");
 		};}, []);
-	AOS.init();
 	return (
     <>
       <Navbar index={1} />
