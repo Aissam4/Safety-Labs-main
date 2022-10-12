@@ -64,12 +64,7 @@ export default function Footer({index}) {
             <Nav>
               <NavItem>
                 <NavLink href="#">
-				Features
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="#">
-                  About Us
+                  Team
                 </NavLink>
               </NavItem>
             </Nav>
@@ -86,21 +81,6 @@ export default function Footer({index}) {
               >
                 <i className="fab fa-twitter" />
               </Button>
-              <UncontrolledTooltip delay={0} target="tooltip622135962">
-                Follow us
-              </UncontrolledTooltip>
-              <Button
-                className="btn-icon btn-neutral btn-round btn-simple"
-                color="default"
-                href="#"
-                id="tooltip318450378"
-                target="_blank"
-              >
-                <i className="fab fa-discord" />
-              </Button>
-              <UncontrolledTooltip delay={0} target="tooltip318450378">
-                Follow us
-              </UncontrolledTooltip>
             </div>
           </Col>
         </Row>

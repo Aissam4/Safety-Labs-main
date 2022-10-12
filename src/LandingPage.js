@@ -74,20 +74,13 @@ export default function LandingPage() {
 					  target="_blank">
                       <i className="fab fa-twitter" />
                     </Button>
-                    <Button
-                      className="btn-icon btn-simple btn-round btn-neutral"
-                      color="default"
-                      href=""
-                      onClick={(e) => e.preventDefault()}>
-                      <i className="fab fa-discord" />
-                    </Button>
                   </div>
                 </div>
               </Col >
               <Col className="block mb-5" lg="40" md="6">
                 <img
                   alt="by fulvector on Freepik"
-                  className="blockchain mb-5 pb-5 w-100 img-fluid"
+                  className="blockchain mb-5 pt-4 img-fluid"
                   src={require("./assets/images/Blockchian.png")}
                 />
               </Col>
@@ -96,9 +89,7 @@ export default function LandingPage() {
         </div>
 		<div id="empty"></div>
         <section id="features">
-          <section>
 			  <Features />
-          </section>
         </section>
         <section className="section section-lg">
           <img
@@ -119,12 +110,12 @@ export default function LandingPage() {
 		<Roadmap />
         </section>
          <section className="d-flex align-items-center flex-column pricing-redirection section section-lg section-coins pt-0">
-          <img
-            alt=""
-            className="path"
-            src={require("assets/img/path3.png")}
-          />
-		  <div id="empty-pricing"></div>
+			<img
+				alt=""
+				className="path"
+				src={require("assets/img/path3.png")}
+			/>
+			<div id="empty-pricing"></div>
 			<Pricing />
         </section>
         <Footer index={1}/>

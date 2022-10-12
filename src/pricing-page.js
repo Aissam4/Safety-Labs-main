@@ -1,12 +1,12 @@
 import React from "react";
 import "assets/css/nucleo-icons.css";
 import "assets/scss/blk-design-system-react.scss";
-import Navbar from './Navbar';
-import './assets/css/style.css'
 import { Container } from "reactstrap";
 import axios from "axios";
 import { useState } from "react";
-import { Stepper, Button, Group, TextInput,  Code , Card, Text, Badge} from '@mantine/core';
+import { Stepper, Button, Group, TextInput, Card, Text, Badge} from '@mantine/core';
+import Navbar from './Navbar';
+import './assets/css/style.css'
 import { useForm } from '@mantine/form';
 import Footer from "Footer";
 export default function Pricing_page()
@@ -26,67 +26,67 @@ export default function Pricing_page()
 		  document.body.classList.toggle("landing-page");
 		};
 	  }, []);
-  const form = useForm({
-    initialValues: {
-      Twitterusername: '',
-      DiscordUsername: '',
-      DiscordInvite: '',
-      DiscordBot: '',
-	  Reference:'',
-    },
-    validate: (values) => {
-      if (active === 0) {
-        return {
-          Twitterusername:
-            values.Twitterusername.trim().length < 4
-              ? 'Username must include at least 4 characters'
-              : values.Twitterusername[0] !== '@'
-			  ? 'Twitter username must begin with @'
-			  : null,
-          DiscordUsername:
-            values.DiscordUsername.trim().length < 5
-              ? 'DiscordUsername must include at least 5 characters'
-			  : values.DiscordUsername.lastIndexOf("#") === -1
-			  ? 'DiscordUsername must include #1234'
-              : null,
-        };
-	}
-      if (active === 1) {
-        return {
-          DiscordInvite: values.DiscordInvite.length < 6
-		  	? 'Discord invite must include at least 6 characters'
-			: /^(ftp|http|https):\/\/[^ "]+$/.test(values.DiscordInvite)
-			? null
-			: 'Discord invite must be https://discord.gg/id',
-        };
-      }
-      return {};
-    },
-});
-const nextStep = () =>
-setActive((current) => {
-	if (form.validate().hasErrors) {
-		return current;
-	}
-	return current < 3 ? current + 1 : current;
-});
-const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
-	if (window.location.hash === '#WalletCollector')
-		form.values.DiscordBot = BotName = "Wallet collector";
-	else if (window.location.hash === '#TokenChecker')
-	form.values.DiscordBot = BotName = "FP/Token checker";
-	else if (window.location.hash === '#purgeInactiveMembers')
-	form.values.DiscordBot = BotName = "Purge inactive members";
-	else if (window.location.hash === '#SafetyCollabs')
-	form.values.DiscordBot = BotName = "Safety collabs";
-	else if (window.location.hash === '#DiscordLock')
-	form.values.DiscordBot = BotName = "Discord Lock";
-	else if (window.location.hash === '#DailyMint')
-	form.values.DiscordBot = BotName = "Daily mint";
-	else if (window.location.hash === '#RaidToEarn')
-	form.values.DiscordBot = BotName = "Raid to earn";
-	else
-		window.location.href = "404"
+	const form = useForm({
+		initialValues: {
+			Twitterusername: '',
+			DiscordUsername: '',
+			DiscordInvite: '',
+			DiscordBot: '',
+			Reference:'',
+		},
+		validate: (values) => {
+			if (active === 0) {
+				return {
+					Twitterusername:
+					values.Twitterusername.trim().length < 4
+					? 'Username must include at least 4 characters'
+					: values.Twitterusername[0] !== '@'
+					? 'Twitter username must begin with @'
+					: null,
+					DiscordUsername:
+					values.DiscordUsername.trim().length < 5
+					? 'DiscordUsername must include at least 5 characters'
+					: values.DiscordUsername.lastIndexOf("#") === -1 || !(/[0-9]{4,}$/.test(values.DiscordUsername))
+					? 'DiscordUsername must end with #1234'
+					: null
+				};
+			}
+			if (active === 1) {
+				return {
+					DiscordInvite: values.DiscordInvite.length < 6
+					? 'Discord invite must include at least 6 characters'
+					: /^(ftp|http|https):\/\/[^ "]+$/.test(values.DiscordInvite)
+					? null
+					: 'Discord invite must be https://discord.gg/id',
+				};
+			}
+			return {};
+		},
+	});
+	const nextStep = () =>
+		setActive((current) => {
+			if (form.validate().hasErrors) {
+				return current;
+			}
+			return current < 3 ? current + 1 : current;
+	});
+	const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
+		if (window.location.hash === '#WalletCollector')
+			form.values.DiscordBot = BotName = "Wallet collector";
+		else if (window.location.hash === '#TokenChecker')
+			form.values.DiscordBot = BotName = "FP/Token checker";
+		else if (window.location.hash === '#purgeInactiveMembers')
+			form.values.DiscordBot = BotName = "Purge inactive members";
+		else if (window.location.hash === '#SafetyCollabs')
+			form.values.DiscordBot = BotName = "Safety collabs";
+		else if (window.location.hash === '#DiscordLock')
+			form.values.DiscordBot = BotName = "Discord Lock";
+		else if (window.location.hash === '#DailyMint')
+			form.values.DiscordBot = BotName = "Daily mint";
+		else if (window.location.hash === '#RaidToEarn')
+			form.values.DiscordBot = BotName = "Raid to earn";
+		else
+			window.location.href = "404";
 	return (
 	<>
 	<Navbar index={2} />

@@ -126,19 +126,7 @@ export default function ExamplesNavbar({index}){
                 <p className="d-lg-none d-xl-none">Twitter</p>
               </NavLink>
             </NavItem>
-            <NavItem className="p-0">
-			{/* missing discord url  */}
-              <NavLink
-                data-placement="bottom"
-                href="#"
-                rel="noopener noreferrer"
-                target="_blank"
-                title="join us on Discrd "
-              >
-                <i className="fab fa-discord" />
-                <p className="d-lg-none d-xl-none">Discord</p>
-              </NavLink>
-            </NavItem>
+
             <NavItem>
               <NavLink tag={Link} onClick={scrollToFeatures}>
                 Features
