@@ -97,30 +97,52 @@
 .wallet-adapter-button-trigger {
     background-color: #BD00FA !important;
 }
-.deck {
-	position: absolute;
-	width: 300px;
-	height: 200px;
-	will-change: transform;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	touch-action: none;
-  }
-  
-  .deck > div {
-	background-color: white;
-	background-size: auto 85%;
-	background-repeat: no-repeat;
-	background-position: center center;
-	width: 45vh;
-	max-width: 150px;
-	height: 85vh;
-	max-height: 285px;
-	will-change: transform;
-	border-radius: 10px;
-	box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3);
-  }
-  .price{
+.price{
 	font-size: 2vh;
+}
+.display-card{
+	background-color: #FF3CAC;
+background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+
+	padding-top: 3vh;
+}
+.confirm-button {
+	text-transform: uppercase;
+	letter-spacing: 2.6px;
+	font-weight: 700;
+	color: #313133;
+	background: #65D9E8;
+  	background: linear-gradient(90deg, #65d9e8 0%, #65d9e8 100%);
+	border: none;
+	border-radius: 1000px;
+	box-shadow: 12px 12px 24px rgba(76, 203, 190, 0.64);
+	transition: all 0.3s ease-in-out 0s;
+	cursor: pointer;
+	outline: none;
+	position: relative;
+}
+.confirm-button:hover, .confirm-button:focus {
+	color: #313133;
+	transform: translateY(-6px);
+}
+  
+.confirm-button:hover::before, .confirm-button:focus::before {
+	opacity: 1;
+}
+.confirm-button:hover::after, .confirm-button:focus::after {
+	animation: none;
+	display: none;
+}
+  
+  @keyframes ring {
+	0% {
+	  width: 30px;
+	  height: 30px;
+	  opacity: 1;
+	}
+	100% {
+	  width: 300px;
+	  height: 300px;
+	  opacity: 0;
+	}
   }

@@ -148,7 +148,7 @@ export default function Pricing_page()
 		else if (window.location.hash === '#TwitterSales')
 		{
 			form.values.DiscordBot = BotName = "Twitter Sales"
-			BotImage = "lock-"
+			BotImage = "lock-sales.png"
 		}
 		else
 			window.location.href = "404";
@@ -191,9 +191,9 @@ export default function Pricing_page()
 								<TextInput label="Referred by" placeholder="Optional" {...form.getInputProps('Reference')} />
 							</Stepper.Step>
 							<Stepper.Step className="step-container" label="Final step" description="Payment">
-								<Card shadow="sm" p="lg" radius="md" withBorder>
+								<Card className="display-card" shadow="sm" p="lg" radius="lg">
 									<Card.Section className="d-flex justify-content-center">
-											<Image className="form-bot" height={200} width={150} alt="" src={require(`./assets/robots/${BotImage}`)} />
+											<Image height={200} width={150} alt="" src={require(`./assets/robots/${BotImage}`)} />
 									</Card.Section>
 									<Group position="apart" mt="md" mb="xs">
 										<Text weight={500}>{`Twitter Username : ${form.values.Twitterusername}`}</Text>
@@ -212,7 +212,7 @@ export default function Pricing_page()
 									</Group>
 									<Group position="apart" mt="md" mb="xs">
 									</Group>
-									<Button variant="light" color="blue" fullWidth mt="md" radius="md" onClick={nextStep}>
+									<Button className="confirm-button" variant="light" color="blue" fullWidth mt="md" radius="md" onClick={nextStep}>
 										Confirm
 									</Button>
 								</Card>

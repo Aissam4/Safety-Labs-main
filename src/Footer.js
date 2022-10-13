@@ -62,15 +62,24 @@ export default function Footer({index}) {
           <Col md="3">
             <h3 className="title">Follow us:</h3>
             <div className="btn-wrapper profile">
-              <Button
-                className="btn-icon btn-neutral btn-round btn-simple"
-                color="default"
-                href="https://twitter.com/Safetylabs_"
-                id="tooltip622135962"
-                target="_blank"
-              >
-                <i className="fab fa-twitter" />
-              </Button>
+				<Button
+					className="btn-icon btn-neutral btn-round btn-simple"
+					color="default"
+					href="https://twitter.com/Safetylabs_"
+					id="tooltip622135962"
+					target="_blank"
+				>
+					<i className="fab fa-twitter" />
+				</Button>
+				<Button
+					className="btn-icon btn-neutral btn-round btn-simple"
+					color="default"
+					href="https://docs.safetylabs.io/"
+					id="tooltip622135962"
+					target="_blank"
+					>
+					<i className="fa fa-book" />
+				</Button>
             </div>
           </Col>
         </Row>
