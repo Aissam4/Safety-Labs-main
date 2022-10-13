@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 export default function Roadmap(){
 return (

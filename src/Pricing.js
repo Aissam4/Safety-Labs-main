@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './assets/css/style.css'
 import {
 	ListGroupItem,
@@ -38,9 +37,12 @@ export default function Pricing()
                     <Row>
                       <ListGroup>
                         <ListGroupItem>Collect whitelisted members wallet</ListGroupItem>
-                        <ListGroupItem><br />Accurate inside your server</ListGroupItem>
-                        <ListGroupItem><br />Easy and quick</ListGroupItem>
+                        <ListGroupItem>Accurate inside your server</ListGroupItem>
+                        <ListGroupItem>Easy and quick</ListGroupItem>
                       </ListGroup>
+					  <ListGroup>
+						<p className='price'><br /><b>50$/</b>month</p>
+					  </ListGroup>
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
@@ -70,9 +72,12 @@ export default function Pricing()
                     <Row>
                       <ListGroup>
                         <ListGroupItem>Track any collection Floor price</ListGroupItem>
-                        <ListGroupItem><br />Tracks the prices of any token</ListGroupItem>
-                        <ListGroupItem><br />Display the prices on your server</ListGroupItem>	
+                        <ListGroupItem>Tracks the prices of any token</ListGroupItem>
+                        <ListGroupItem>Display the prices on your server</ListGroupItem>	
                       </ListGroup>
+					  <ListGroup>
+						<p className='price'><br /><b>25$/</b>month</p>
+					  </ListGroup>
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
@@ -95,16 +100,19 @@ export default function Pricing()
                   <CardBody>
                     <Row>
                       <Col className="text-center" md="12">
-                        <h4 className="text-uppercase">Purge inactive members</h4>
+                        <h4 className="text-uppercase">Purge inactive wl members</h4>
                         <hr className="line-info" />
                       </Col>
                     </Row>
                     <Row>
                       <ListGroup>
                         <ListGroupItem>Tracking your active members</ListGroupItem>
-                        <ListGroupItem><br />Warn your members being active</ListGroupItem>
-                        <ListGroupItem><br />send message to your members</ListGroupItem>
+                        <ListGroupItem>Warn your members about being active</ListGroupItem>
+                        <ListGroupItem>send message to your members</ListGroupItem>
                       </ListGroup>
+					  <ListGroup>
+						<p className='price'><br /><b>50$/</b>month</p>
+					  </ListGroup>
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
@@ -136,9 +144,12 @@ export default function Pricing()
                     <Row>
                       <ListGroup>
                         <ListGroupItem>assigning roles easy and fast</ListGroupItem>
-                        <ListGroupItem><br />Bulk assign of a specific role</ListGroupItem>
-                        <ListGroupItem><br />Easy and quick</ListGroupItem>
+                        <ListGroupItem>Bulk assign of a specific role</ListGroupItem>
+                        <ListGroupItem>Quick Collabs</ListGroupItem>
                       </ListGroup>
+					  <ListGroup>
+						<p className='price'><br /><b>80$/</b>month</p>
+					  </ListGroup>
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
@@ -169,9 +180,12 @@ export default function Pricing()
                     <Row>
                       <ListGroup>
                         <ListGroupItem>Set a password of your discord bot</ListGroupItem>
-                        <ListGroupItem><br />Secure your discord server</ListGroupItem>
-                        <ListGroupItem><br />Easy to use</ListGroupItem>
+                        <ListGroupItem>Secure your discord server</ListGroupItem>
+                        <ListGroupItem>Easy to use</ListGroupItem>
                       </ListGroup>
+					  <ListGroup>
+						<p className='price'><br /><b>80$/</b>month</p>
+					  </ListGroup>
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
@@ -201,9 +215,12 @@ export default function Pricing()
                     <Row>
                       <ListGroup> 
                         <ListGroupItem>Track all daily mints</ListGroupItem>
-                        <ListGroupItem><br />Display daily mints to your members</ListGroupItem>
-                        <ListGroupItem><br />You can never miss a mint</ListGroupItem>
+                        <ListGroupItem>Display daily mints to your members</ListGroupItem>
+                        <ListGroupItem>You can never miss a mint</ListGroupItem>
                       </ListGroup>
+					  <ListGroup>
+						<p className='price'><br /><b>50$/</b>month</p>
+					  </ListGroup>
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
@@ -233,9 +250,12 @@ export default function Pricing()
 							</Col>
 							<ListGroup>
 								<ListGroupItem>Tweet sales of your NFT Project</ListGroupItem>
-								<ListGroupItem><br />help you to grow your community</ListGroupItem>
-								<ListGroupItem><br />You can Set any twitter page</ListGroupItem>
+								<ListGroupItem>help you to grow your community</ListGroupItem>
+								<ListGroupItem>You can Set any twitter page</ListGroupItem>
 							</ListGroup>
+							<ListGroup>
+								<p className='price'><br /><b>80$/</b>month</p>
+					  		</ListGroup>
 						</Row>
 					</CardBody>
 					<CardFooter className="text-center">
@@ -263,8 +283,11 @@ export default function Pricing()
 							</Col>
 							<ListGroup>
 								<ListGroupItem>Create a raid contest for members</ListGroupItem>
-								<ListGroupItem><br />Reward your members for them raid</ListGroupItem>
-								<ListGroupItem><br />raid and earn prizes </ListGroupItem>
+								<ListGroupItem>Reward your members for them raid</ListGroupItem>
+								<ListGroupItem>raid and earn prizes </ListGroupItem>
+							</ListGroup>
+							<ListGroup>
+								<p className='price'><br /><b>80$/</b>month</p>
 							</ListGroup>
 						</Row>
 					</CardBody>

@@ -148,7 +148,7 @@ export default function Pricing_page()
 		else if (window.location.hash === '#TwitterSales')
 		{
 			form.values.DiscordBot = BotName = "Twitter Sales"
-			BotImage = "lock-sales.png"
+			BotImage = "lock-"
 		}
 		else
 			window.location.href = "404";
