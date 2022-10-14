@@ -29,7 +29,7 @@ export default function Pricing()
                   </CardHeader>
                   <CardBody>
                     <Row>
-                      <Col className="text-center" md="12">
+                      <Col className="text-center" >
                         <h4 className="text-uppercase">Wallet collector</h4>
                         <hr className="line-primary" />
                       </Col>
@@ -39,10 +39,8 @@ export default function Pricing()
                         <ListGroupItem>Collect whitelisted members wallet</ListGroupItem>
                         <ListGroupItem>Accurate inside your server</ListGroupItem>
                         <ListGroupItem>Easy and quick</ListGroupItem>
+                        <ListGroupItem><p className='price'><br /><b>50$/</b>month</p></ListGroupItem>
                       </ListGroup>
-					  <ListGroup>
-						<p className='price'><br /><b>50$/</b>month</p>
-					  </ListGroup>
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
@@ -74,10 +72,8 @@ export default function Pricing()
                         <ListGroupItem>Track any collection Floor price</ListGroupItem>
                         <ListGroupItem>Tracks the prices of any token</ListGroupItem>
                         <ListGroupItem>Display the prices on your server</ListGroupItem>	
+                        <ListGroupItem><p className='price'><br /><b>25$/</b>month</p></ListGroupItem>	
                       </ListGroup>
-					  <ListGroup>
-						<p className='price'><br /><b>25$/</b>month</p>
-					  </ListGroup>
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
@@ -109,10 +105,8 @@ export default function Pricing()
                         <ListGroupItem>Tracking your active members</ListGroupItem>
                         <ListGroupItem>Warn your members about being active</ListGroupItem>
                         <ListGroupItem>send message to your members</ListGroupItem>
+                        <ListGroupItem><p className='price'><br /><b>50$/</b>month</p></ListGroupItem>
                       </ListGroup>
-					  <ListGroup>
-						<p className='price'><br /><b>50$/</b>month</p>
-					  </ListGroup>
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
@@ -146,10 +140,8 @@ export default function Pricing()
                         <ListGroupItem>assigning roles easy and fast</ListGroupItem>
                         <ListGroupItem>Bulk assign of a specific role</ListGroupItem>
                         <ListGroupItem>Quick Collabs</ListGroupItem>
+                        <ListGroupItem><p className='price'><br /><b>80$/</b>month</p></ListGroupItem>
                       </ListGroup>
-					  <ListGroup>
-						<p className='price'><br /><b>80$/</b>month</p>
-					  </ListGroup>
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
@@ -182,10 +174,8 @@ export default function Pricing()
                         <ListGroupItem>Set a password of your discord bot</ListGroupItem>
                         <ListGroupItem>Secure your discord server</ListGroupItem>
                         <ListGroupItem>Easy to use</ListGroupItem>
+                        <ListGroupItem><p className='price'><br /><b>80$/</b>month</p></ListGroupItem>
                       </ListGroup>
-					  <ListGroup>
-						<p className='price'><br /><b>80$/</b>month</p>
-					  </ListGroup>
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
@@ -217,10 +207,8 @@ export default function Pricing()
                         <ListGroupItem>Track all daily mints</ListGroupItem>
                         <ListGroupItem>Display daily mints to your members</ListGroupItem>
                         <ListGroupItem>You can never miss a mint</ListGroupItem>
+                        <ListGroupItem><p className='price'><br /><b>50$/</b>month</p></ListGroupItem>
                       </ListGroup>
-					  <ListGroup>
-						<p className='price'><br /><b>50$/</b>month</p>
-					  </ListGroup>
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
@@ -252,10 +240,8 @@ export default function Pricing()
 								<ListGroupItem>Tweet sales of your NFT Project</ListGroupItem>
 								<ListGroupItem>help you to grow your community</ListGroupItem>
 								<ListGroupItem>You can Set any twitter page</ListGroupItem>
+								<ListGroupItem><p className='price'><br /><b>80$/</b>month</p></ListGroupItem>
 							</ListGroup>
-							<ListGroup>
-								<p className='price'><br /><b>80$/</b>month</p>
-					  		</ListGroup>
 						</Row>
 					</CardBody>
 					<CardFooter className="text-center">
@@ -284,10 +270,8 @@ export default function Pricing()
 							<ListGroup>
 								<ListGroupItem>Create a raid contest for members</ListGroupItem>
 								<ListGroupItem>Reward your members for them raid</ListGroupItem>
-								<ListGroupItem>raid and earn prizes </ListGroupItem>
-							</ListGroup>
-							<ListGroup>
-								<p className='price'><br /><b>80$/</b>month</p>
+								<ListGroupItem>raid and earn prizes</ListGroupItem>
+								<ListGroupItem><p className='price'><br /><b>80$/</b>month</p></ListGroupItem>
 							</ListGroup>
 						</Row>
 					</CardBody>
