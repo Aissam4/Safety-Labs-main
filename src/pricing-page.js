@@ -9,8 +9,8 @@ import './assets/css/style.css'
 import { useForm } from '@mantine/form';
 import Footer from "Footer";
 import { HelioPay } from '@heliofi/react';
-// import 'react-vertical-timeline-component/style.min.css';
-// require('@solana/wallet-adapter-react-ui/styles.css');
+import 'react-vertical-timeline-component/style.min.css';
+require('@solana/wallet-adapter-react-ui/styles.css');
 
 export default function Pricing_page()
 {
@@ -119,7 +119,7 @@ export default function Pricing_page()
 			window.location.href = "404";
 	return (
 	<>
-					<Navbar index={2} />
+				<Navbar index={2} />
 					<div className="wrapper">
 						<div className="page-header">
 						<img
@@ -142,7 +142,7 @@ export default function Pricing_page()
 							className="shapes circle"
 							src={require("assets/img/cercuri.png")}
 							/>
-					<div className="Landing-page w-100 h-100">
+					<div className="pricing-page-container w-100 h-100">
 						<Stepper color="cyan.3" active={active} breakpoint="sm">
 							<Stepper.Step className="step-container" label="First step" description="Personal information">
 								<TextInput label="Twitter Username"  placeholder="@Safetylabs" {...form.getInputProps('Twitterusername')} />
@@ -152,7 +152,7 @@ export default function Pricing_page()
 								<TextInput label="Discord invite" placeholder="https://discord.gg/ID" {...form.getInputProps('DiscordInvite')} />
 								<TextInput label="Referred by" placeholder="Optional" {...form.getInputProps('Reference')} />
 							</Stepper.Step>
-							<Stepper.Step className="step-container" label="Final step" description="Payment">
+							<Stepper.Step className="w step-container" label="Final step" description="Payment">
 								<Card className="display-card" shadow="lg" p="lg" radius="lg">
 									<Card.Section className="d-flex justify-content-center">
 											<Image height={200} width={150} alt="" src={require(`./assets/robots/${BotImage}`)} />
@@ -172,19 +172,22 @@ export default function Pricing_page()
 									<Group position="apart" mt="md" mb="xs">
 										<Text weight={500}>{`Discord Bot : ${BotName} Bot`}</Text>
 									</Group>
-										<HelioPay
-											cluster='mainnet-beta'
-											className='Connect-wallet-button'
-											payButtonTitle='PAY'
-											paymentRequestId='63487b1e2c15f73dde403554'
-											supportedCurrencies={["USDC", "SOL", "DUST"]}
-											totalAmount={0.3}
-											theme={{ colors: { primary: '#65d9e8' }}}
-										/>
+									<HelioPay
+										cluster='mainnet-beta'
+										className='Connect-wallet-button'
+										payButtonTitle='BUY'
+										paymentRequestId='63487b1e2c15f73dde403554'
+										supportedCurrencies={["USDC", "SOL", "DUST"]}
+										totalAmount={3}
+										theme={{ colors: { primary: '#65d9e8' }}}
+									/>
+									<Group position="apart" mt="md" mb="xl"></Group>
+									<Group position="apart" mt="md" mb="xl"></Group>
+									<Group position="apart" mt="md" mb="xl"></Group>
+									<Group position="apart" mt="md" mb="xl"></Group>
 								</Card>
 							</Stepper.Step>
 							<Stepper.Completed>
-
 							</Stepper.Completed>
 					</Stepper>
 					<Group position="right" mt="xl">

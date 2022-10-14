@@ -53,7 +53,7 @@ export default function LandingPage() {
             className="shapes circle"
             src={require("assets/img/cercuri.png")}
           />
-          <div className="Landing-page w-100 ">
+          <div className="Landing-page w-100">
             <Row className="row-grid text-left mb-5">
               <Col className="Safe-text" lg="6.5" md="6">
 			  
