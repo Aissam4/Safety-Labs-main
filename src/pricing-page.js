@@ -1,57 +1,23 @@
-import React, {useMemo} from "react";
+import React from "react";
 import "assets/css/nucleo-icons.css";
 import "assets/scss/blk-design-system-react.scss";
 import { Container } from "reactstrap";
-// import axios from "axios";
 import { useState } from "react";
 import { Stepper, Image, Button, Group, TextInput, Card, Text, Badge} from '@mantine/core';
 import Navbar from './Navbar';
 import './assets/css/style.css'
 import { useForm } from '@mantine/form';
 import Footer from "Footer";
-
-import { clusterApiUrl } from '@solana/web3.js';
-import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
-import {
-    GlowWalletAdapter,
-    LedgerWalletAdapter,
-    PhantomWalletAdapter,
-    SlopeWalletAdapter,
-    SolflareWalletAdapter,
-    SolletExtensionWalletAdapter,
-    SolletWalletAdapter,
-    TorusWalletAdapter,
-} from '@solana/wallet-adapter-wallets';
-import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
-// import { useConnection, useWallet } from '@solana/wallet-adapter-react';
-import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
-import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
+import { HelioPay } from '@heliofi/react';
 import 'react-vertical-timeline-component/style.min.css';
 require('@solana/wallet-adapter-react-ui/styles.css');
 
 
 export default function Pricing_page()
 {
-	const solNetwork = WalletAdapterNetwork.Mainnet;
-    const endpoint = useMemo(() => clusterApiUrl(solNetwork), [solNetwork]);
-	// const { connection } = useConnection();
-	// const { publicKey, sendTransaction } = useWallet();
 	const [active, setActive] = useState(0);
 	let BotName = "";
 	let BotImage = "";
-    const wallets = useMemo(
-        () => [
-            new PhantomWalletAdapter(),
-            new GlowWalletAdapter(),
-            new SlopeWalletAdapter(),
-            new SolflareWalletAdapter({ solNetwork }),
-            new TorusWalletAdapter(),
-            new LedgerWalletAdapter(),
-            new SolletExtensionWalletAdapter(),
-            new SolletWalletAdapter(),
-        ],
-        [solNetwork]
-    );
 	// function post_data(data) {
 	// 	axios.post("http://localhost:1337/api/orders", {"data": data}).then(res => {
 	// 		console.log(res)
@@ -154,9 +120,6 @@ export default function Pricing_page()
 			window.location.href = "404";
 	return (
 	<>
-		<ConnectionProvider endpoint={endpoint}>
-			<WalletProvider wallets={wallets}>
-				<WalletModalProvider>
 					<Navbar index={2} />
 					<div className="wrapper">
 						<div className="page-header">
@@ -180,7 +143,7 @@ export default function Pricing_page()
 							className="shapes circle"
 							src={require("assets/img/cercuri.png")}
 							/>
-					<div className="Landing-page w-100 ">
+					<div className="Landing-page w-100 h-100">
 						<Stepper color="cyan.3" active={active} breakpoint="sm">
 							<Stepper.Step className="step-container" label="First step" description="Personal information">
 								<TextInput label="Twitter Username"  placeholder="@Safetylabs" {...form.getInputProps('Twitterusername')} />
@@ -191,7 +154,7 @@ export default function Pricing_page()
 								<TextInput label="Referred by" placeholder="Optional" {...form.getInputProps('Reference')} />
 							</Stepper.Step>
 							<Stepper.Step className="step-container" label="Final step" description="Payment">
-								<Card className="display-card" shadow="sm" p="lg" radius="lg">
+								<Card className="display-card" shadow="lg" p="lg" radius="lg">
 									<Card.Section className="d-flex justify-content-center">
 											<Image height={200} width={150} alt="" src={require(`./assets/robots/${BotImage}`)} />
 									</Card.Section>
@@ -210,17 +173,19 @@ export default function Pricing_page()
 									<Group position="apart" mt="md" mb="xs">
 										<Text weight={500}>{`Discord Bot : ${BotName} Bot`}</Text>
 									</Group>
-									<Group position="apart" mt="md" mb="xs">
-									</Group>
-									<Button className="confirm-button" variant="light" color="blue" fullWidth mt="md" radius="md" onClick={nextStep}>
-										Confirm
-									</Button>
+										<HelioPay
+											cluster='mainnet-beta'
+											className='Connect-wallet-button'
+											payButtonTitle='PAY'
+											paymentRequestId='63487b1e2c15f73dde403554'
+											supportedCurrencies={["USDC", "SOL", "DUST"]}
+											totalAmount={0.3}
+											theme={{ colors: { primary: '#65d9e8' }}}
+										/>
 								</Card>
 							</Stepper.Step>
 							<Stepper.Completed>
-								<Group className="cnw">
-									<WalletMultiButton />
-								</Group>
+
 							</Stepper.Completed>
 					</Stepper>
 					<Group position="right" mt="xl">
@@ -261,10 +226,8 @@ export default function Pricing_page()
 					/>
 					</section>
 					<Footer index={2} />
-				</div>
-			</WalletModalProvider>
-		</WalletProvider>
-		</ConnectionProvider>
+					</div>
+
 	  </>
 );
 }
