@@ -8,7 +8,9 @@ import Navbar from './Navbar';
 import './assets/css/style.css'
 import { useForm } from '@mantine/form';
 import Footer from "Footer";
-import { HelioPay } from '@heliofi/react';
+import {
+HelioPay
+  } from '@heliofi/react';
 import 'react-vertical-timeline-component/style.min.css';
 require('@solana/wallet-adapter-react-ui/styles.css');
 
@@ -177,8 +179,8 @@ export default function Pricing_page()
 										className='Connect-wallet-button'
 										payButtonTitle='BUY'
 										paymentRequestId='63487b1e2c15f73dde403554'
-										supportedCurrencies={["USDC", "SOL", "DUST"]}
-										totalAmount={3}
+										supportedCurrencies={["SOL", "DUST"]}
+										totalAmount={0.1}
 										theme={{ colors: { primary: '#65d9e8' }}}
 									/>
 									<Group position="apart" mt="md" mb="xl"></Group>
