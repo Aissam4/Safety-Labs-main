@@ -179,8 +179,8 @@ export default function Pricing_page()
 										className='Connect-wallet-button'
 										payButtonTitle='BUY'
 										paymentRequestId='63487b1e2c15f73dde403554'
-										supportedCurrencies={["SOL", "DUST"]}
-										totalAmount={0.1}
+										supportedCurrencies={["USDC"]}
+										totalAmount={10}
 										theme={{ colors: { primary: '#65d9e8' }}}
 									/>
 									<Group position="apart" mt="md" mb="xl"></Group>
