@@ -172,8 +172,8 @@ export default function Pricing()
                     <Row>
                       <ListGroup>
                         <ListGroupItem>Set a password of your discord bot</ListGroupItem>
+                        <ListGroupItem>provide added security measures</ListGroupItem>
                         <ListGroupItem>Secure your discord server</ListGroupItem>
-                        <ListGroupItem>Easy to use</ListGroupItem>
                         <ListGroupItem><p className='price'><br /><b>80$/</b>month</p></ListGroupItem>
                       </ListGroup>
                     </Row>
