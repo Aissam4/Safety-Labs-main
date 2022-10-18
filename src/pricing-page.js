@@ -19,6 +19,7 @@ export default function Pricing_page()
 	const [active, setActive] = useState(0);
 	let BotName = "";
 	let BotImage = "";
+	let BotPrice = undefined;
 	// function post_data(data) {
 	// 	axios.post("http://localhost:1337/api/orders", {"data": data}).then(res => {
 	// 		console.log(res)
@@ -81,44 +82,54 @@ export default function Pricing_page()
 		{
 			form.values.DiscordBot = BotName = "Wallet collector";
 			BotImage = "robot-search.png"
+			BotPrice = 50;
 		}
 		else if (window.location.hash === '#TokenChecker')
 		{	
 			form.values.DiscordBot = BotName = "FP/Token checker";
 			BotImage = "robot-money.png"
+			BotPrice = 25;
 		}
 		else if (window.location.hash === '#purgeInactiveMembers')
 		{
 			form.values.DiscordBot = BotName = "Purge inactive members";
 			BotImage = "robot-message.png"
+			BotPrice = 50;
 		}
 		else if (window.location.hash === '#SafetyCollabs')
 		{
 			form.values.DiscordBot = BotName = "Safety collabs";
 			BotImage = "robot-send.png"
+			BotPrice = 80;
 		}
 		else if (window.location.hash === '#DiscordLock')
 		{
 			form.values.DiscordBot = BotName = "Discord Lock";
 			BotImage = "lock-robot.png"
+			BotPrice = 80;
 		}
 		else if (window.location.hash === '#DailyMint')
 		{
 			form.values.DiscordBot = BotName = "Daily mint";
 			BotImage = "robot-hi.png"
+			BotPrice = 50;
 		}
 		else if (window.location.hash === '#RaidToEarn')
 		{
 			form.values.DiscordBot = BotName = "Raid to earn";
 			BotImage = "robot-earn.png"
+			BotPrice = 80;
 		}
 		else if (window.location.hash === '#TwitterSales')
 		{
 			form.values.DiscordBot = BotName = "Twitter Sales"
 			BotImage = "lock-sales.png"
+			BotPrice = 80;
 		}
-		else
+		else{
 			window.location.href = "404";
+			BotPrice = undefined;
+		}
 	return (
 	<>
 				<Navbar index={2} />
@@ -178,9 +189,9 @@ export default function Pricing_page()
 										cluster='mainnet-beta'
 										className='Connect-wallet-button'
 										payButtonTitle='BUY'
-										paymentRequestId='63487b1e2c15f73dde403554'
+										paymentRequestId='634d7bd4a4e1d5b173728166'
 										supportedCurrencies={["USDC"]}
-										totalAmount={10}
+										totalAmount={BotPrice}
 										theme={{ colors: { primary: '#65d9e8' }}}
 									/>
 									<Group position="apart" mt="md" mb="xl"></Group>
