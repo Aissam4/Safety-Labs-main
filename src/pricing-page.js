@@ -12,6 +12,7 @@ import {
 HelioPay
   } from '@heliofi/react';
 import 'react-vertical-timeline-component/style.min.css';
+import { useWindowEvent } from "@mantine/hooks";
 require('@solana/wallet-adapter-react-ui/styles.css');
 
 export default function Pricing_page()
@@ -126,10 +127,9 @@ export default function Pricing_page()
 			BotImage = "lock-sales.png"
 			BotPrice = 80;
 		}
-		else{
-			window.location.href = "404";
+		else
 			BotPrice = undefined;
-		}
+
 	return (
 	<>
 				<Navbar index={2} />
@@ -167,7 +167,7 @@ export default function Pricing_page()
 							</Stepper.Step>
 							<Stepper.Step className="w step-container" label="Final step" description="Payment">
 								<Card className="display-card" shadow="lg" p="lg" radius="lg">
-									<Card.Section className="d-flex justify-content-center">
+									<Card.Section className="d-flex justify-content-center pt-3">
 											<Image height={200} width={150} alt="" src={require(`./assets/robots/${BotImage}`)} />
 									</Card.Section>
 									<Group position="apart" mt="md" mb="xs">
