@@ -242,7 +242,6 @@ export default function Pricing_page()
 					</section>
 					<Footer index={2} />
 					</div>
-
 	  </>
 );
 }

@@ -104,7 +104,7 @@ export default function Pricing()
                       <ListGroup>
                         <ListGroupItem>Tracking your active members</ListGroupItem>
                         <ListGroupItem>Warn your members about being active</ListGroupItem>
-                        <ListGroupItem>send message to your members</ListGroupItem>
+                        <ListGroupItem>send messages to your community</ListGroupItem>
                         <ListGroupItem><p className='price'><br /><b>50$/</b>month</p></ListGroupItem>
                       </ListGroup>
                     </Row>
@@ -137,7 +137,7 @@ export default function Pricing()
                     </Row>
                     <Row>
                       <ListGroup>
-                        <ListGroupItem>assigning roles easy and fast</ListGroupItem>
+                        <ListGroupItem>assigning roles convenient and quick</ListGroupItem>
                         <ListGroupItem>Bulk assign of a specific role</ListGroupItem>
                         <ListGroupItem>Quick Collabs</ListGroupItem>
                         <ListGroupItem><p className='price'><br /><b>80$/</b>month</p></ListGroupItem>
@@ -205,7 +205,7 @@ export default function Pricing()
                     <Row>
                       <ListGroup> 
                         <ListGroupItem>Track all daily mints</ListGroupItem>
-                        <ListGroupItem>Display daily mints to your members</ListGroupItem>
+                        <ListGroupItem>Display daily mints on your discord</ListGroupItem>
                         <ListGroupItem>You can never miss a mint</ListGroupItem>
                         <ListGroupItem><p className='price'><br /><b>50$/</b>month</p></ListGroupItem>
                       </ListGroup>
@@ -237,7 +237,7 @@ export default function Pricing()
 								<hr className="line-info" />
 							</Col>
 							<ListGroup>
-								<ListGroupItem>Tweet sales of your NFT Project</ListGroupItem>
+								<ListGroupItem>Tweet sales details of your NFT Project</ListGroupItem>
 								<ListGroupItem>help you to grow your community</ListGroupItem>
 								<ListGroupItem>You can Set any twitter page</ListGroupItem>
 								<ListGroupItem><p className='price'><br /><b>80$/</b>month</p></ListGroupItem>
@@ -269,8 +269,8 @@ export default function Pricing()
 							</Col>
 							<ListGroup>
 								<ListGroupItem>Create a raid contest for members</ListGroupItem>
-								<ListGroupItem>Reward your members for them raid</ListGroupItem>
-								<ListGroupItem>raid and earn prizes</ListGroupItem>
+								<ListGroupItem>Reward your members for The raid</ListGroupItem>
+								<ListGroupItem>Provide an easy set-up for tasks</ListGroupItem>
 								<ListGroupItem><p className='price'><br /><b>80$/</b>month</p></ListGroupItem>
 							</ListGroup>
 						</Row>
