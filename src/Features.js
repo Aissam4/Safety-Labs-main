@@ -56,12 +56,12 @@ export default function features()
 			  <Row className="flex-row-reverse">
 				<Col className="mb-5 text-center" lg="40" md="6">
                 <img
-				  data-aos="fade-up-left"
-				  data-aos-delay="9"
-    			  data-aos-duration="800"
-                  alt="by fulvector on Freepik"
-                  className="mb-5 pb-5 w-100 h-100 img-fuild"
-                  src={require("./assets/images/robot.png")}
+					data-aos="fade-up-left"
+					data-aos-delay="9"
+					data-aos-duration="800"
+					alt="by fulvector on Freepik"
+					className="mb-5 pb-5 w-100 h-100 img-fuild"
+					src={require("./assets/images/robot.png")}
                 />
               </Col>
                 <Col md="6">
