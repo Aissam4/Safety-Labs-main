@@ -57,7 +57,6 @@ export default function LandingPage() {
           <div className="Landing-page w-100">
             <Row className="row-grid text-left mb-5">
               <Col className="Safe-text" lg="6.5" md="6">
-			  
                 <h1 className="text-white">
 					Safe servers and facilitate community managment
                 </h1>
@@ -83,11 +82,11 @@ export default function LandingPage() {
                   </div>
                 </div>
               </Col >
-              <Col className="block mb-5" lg="40" md="6">
+              <Col className="block mb-5">
                 <img
                   alt="by fulvector on Freepik"
                   className="blockchain mb-5 pt-4 img-fluid"
-                  src={require("./assets/images/Blockchian.png")}
+                  src={require("./assets/images/Blockchian1.png")}
                 />
               </Col>
             </Row>
