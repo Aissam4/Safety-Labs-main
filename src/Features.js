@@ -11,7 +11,7 @@ export default function features()
 	AOS.init();
 	return (
 		<div>
-			<h1  data-aos="fade-down"
+			<h1 data-aos="fade-down"
 				data-aos-offset="200"
 				data-aos-delay="9"
 				data-aos-duration="400"

@@ -187,12 +187,10 @@ export default function Pricing_page()
 									</Group>
 									<HelioPay
 										cluster='mainnet-beta'
-										className='Connect-wallet-button'
-										payButtonTitle='BUY'
-										paymentRequestId='634d7bd4a4e1d5b173728166'
+										payButtonTitle='PAY'
+										paymentRequestId='6359669b30b7bff13d7f1fc0'
 										supportedCurrencies={["USDC"]}
 										totalAmount={BotPrice}
-										theme={{ colors: { primary: '#65d9e8' }}}
 									/>
 									<Group position="apart" mt="md" mb="xl"></Group>
 									<Group position="apart" mt="md" mb="xl"></Group>
