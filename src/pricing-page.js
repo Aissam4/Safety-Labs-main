@@ -12,7 +12,8 @@ import {
 HelioPay
   } from '@heliofi/react';
 import 'react-vertical-timeline-component/style.min.css';
-import { useWindowEvent } from "@mantine/hooks";
+// import { useWindowEvent } from "@mantine/hooks";
+import axios from 'axios'
 require('@solana/wallet-adapter-react-ui/styles.css');
 
 export default function Pricing_page()
@@ -21,13 +22,14 @@ export default function Pricing_page()
 	let BotName = "";
 	let BotImage = "";
 	let BotPrice = undefined;
-	// function post_data(data) {
-	// 	axios.post("http://localhost:1337/api/orders", {"data": data}).then(res => {
-	// 		console.log(res)
-	// 	}).catch(err => {
-	// 		console.log(err)
-	// 	})
-	// }
+	function post_data(data) {
+		console.log(data);
+		axios.post("http://localhost:1337/api/orders", {"data": data}).then(res => {
+			console.log(res)
+		}).catch(err => {
+			console.log(err)
+		})
+	}
 	React.useEffect(() => {
 		document.body.classList.toggle("landing-page");
 		return function cleanup() {
@@ -190,7 +192,8 @@ export default function Pricing_page()
 										payButtonTitle='PAY'
 										paymentRequestId='6359669b30b7bff13d7f1fc0'
 										supportedCurrencies={["USDC"]}
-										totalAmount={BotPrice}
+										totalAmount={0.1}
+										onSuccess={() => {post_data(form.values) }}
 									/>
 									<Group position="apart" mt="md" mb="xl"></Group>
 									<Group position="apart" mt="md" mb="xl"></Group>
