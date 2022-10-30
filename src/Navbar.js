@@ -11,7 +11,11 @@ import {
 	Navbar,
 	Row,
 	Col,
-	Button
+	Button,
+	UncontrolledDropdown,
+	DropdownToggle,
+	DropdownMenu,
+	DropdownItem 
 } from "reactstrap";
 import 'react-vertical-timeline-component/style.min.css';
 export default function ExamplesNavbar({index})
@@ -20,6 +24,7 @@ export default function ExamplesNavbar({index})
 	const [collapseOut, setCollapseOut] = React.useState("");
 	const [color, setColor] = React.useState("navbar-transparent");
 	const isMartianWalletInstalled = window.martian;
+	var status;
 	React.useEffect(() => {
 		window.addEventListener("scroll", changeColor);
 		return function cleanup() {
@@ -90,7 +95,6 @@ export default function ExamplesNavbar({index})
 	async function MartianIsConnect()
 	{
 		let state = await window.martian.isConnected();
-		console.log(`the state is ${state}`);
 		if (state)
 			return (true);
 		else
@@ -177,7 +181,7 @@ export default function ExamplesNavbar({index})
 									Pricing
 								</NavLink>
 							</NavItem>
-							<NavItem className="ConnectWalletContainer">
+							{/* <NavItem className="ConnectWalletContainer">
 								<Button 
 									className="nav-link d-lg-block pl-3 pr-3"
 									color="success" 
@@ -199,16 +203,24 @@ export default function ExamplesNavbar({index})
 								<Button 
 									className="nav-link d-lg-block pl-3 pr-3"
 									color="success"
-									onClick={() => { MartianIsConnect().then((res) => {
-										if (res)
-											console.log("connected!");
-										else
-											console.log("disconnected!");
-									})}}
+									onClick={() => {	MartianIsConnect().then((res) => {console.log(res);})}}
 								>
 									<i className="tim-icons icon-wallet-43" />isConnected
 								</Button>
-							</NavItem>
+							</NavItem> */}
+							<UncontrolledDropdown group>
+								<DropdownToggle className="nav-link d-lg-block pl-3 pr-3" caret color="success" data-toggle="dropdown">
+									<i className="tim-icons icon-wallet-43 pr-2" />Connect Wallet
+								</DropdownToggle>
+								<DropdownMenu>
+										<DropdownItem>
+											<i className="tim-icons icon-button-power pr-2" />
+											Sign out
+										</DropdownItem>
+										<DropdownItem>Another Action</DropdownItem>
+										<DropdownItem>Something else here</DropdownItem>
+								</DropdownMenu>
+							</UncontrolledDropdown>
 						</Nav>
 						</Collapse>
 					</Container>

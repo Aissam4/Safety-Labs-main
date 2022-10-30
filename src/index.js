@@ -8,6 +8,7 @@ import { Switch, Route } from "react-router-dom";
 import Pricing_page from "./pricing-page.js"
 import NoPage from "NoPage.js";
 const root = ReactDOM.createRoot(document.getElementById("root"));
+export default root;
 root.render(
 	<BrowserRouter>
 		<Switch>
