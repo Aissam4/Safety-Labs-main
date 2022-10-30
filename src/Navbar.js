@@ -12,7 +12,7 @@ import {
 	Row,
 	Col,
 	Button,
-	UncontrolledDropdown,
+	UncontrolledButtonDropdown,
 	DropdownToggle,
 	DropdownMenu,
 	DropdownItem 
@@ -25,6 +25,7 @@ export default function ExamplesNavbar({index})
 	const [color, setColor] = React.useState("navbar-transparent");
 	const isMartianWalletInstalled = window.martian;
 	var status;
+	let address = undefined;
 	React.useEffect(() => {
 		window.addEventListener("scroll", changeColor);
 		return function cleanup() {
@@ -82,7 +83,7 @@ export default function ExamplesNavbar({index})
 	}
 	const MartianConnection = () => {
 		if (isMartianWalletInstalled)
-			return (window.martian.connect());
+			return (address = window.martian.connect());
 		else
 			return (window.open("https://martianwallet.xyz/", "_blank"));
 	}
@@ -181,46 +182,26 @@ export default function ExamplesNavbar({index})
 									Pricing
 								</NavLink>
 							</NavItem>
-							{/* <NavItem className="ConnectWalletContainer">
-								<Button 
-									className="nav-link d-lg-block pl-3 pr-3"
-									color="success" 
+							<UncontrolledButtonDropdown>
+								<Button
+									className='ConnectWalletButton mr-0'
+									id="caret"
+									size="sm"
+									color="success"
 									onClick={MartianConnection}
 								>
-									<i className="tim-icons icon-wallet-43" />Connect Wallet
+									<i className="tim-icons icon-wallet-43 pr-3" />
+									Connect Wallet
 								</Button>
-							</NavItem>
-							<NavItem className="ConnectWalletContainer">
-								<Button 
-									className="nav-link d-lg-block pl-3 pr-3"
-									color="success" 
-									onClick={MartianDisconnection}
-								>
-									<i className="tim-icons icon-wallet-43" />Disconnect Wallet
-								</Button>
-							</NavItem>
-							<NavItem className="ConnectWalletContainer">
-								<Button 
-									className="nav-link d-lg-block pl-3 pr-3"
-									color="success"
-									onClick={() => {	MartianIsConnect().then((res) => {console.log(res);})}}
-								>
-									<i className="tim-icons icon-wallet-43" />isConnected
-								</Button>
-							</NavItem> */}
-							<UncontrolledDropdown group>
-								<DropdownToggle className="nav-link d-lg-block pl-3 pr-3" caret color="success" data-toggle="dropdown">
-									<i className="tim-icons icon-wallet-43 pr-2" />Connect Wallet
-								</DropdownToggle>
-								<DropdownMenu>
-										<DropdownItem>
-											<i className="tim-icons icon-button-power pr-2" />
-											Sign out
-										</DropdownItem>
-										<DropdownItem>Another Action</DropdownItem>
-										<DropdownItem>Something else here</DropdownItem>
+								<DropdownToggle caret className=" h-100 mb-0" color="success" data-toggle="dropdown"/>
+								<DropdownMenu className=" drop m-0 p-0">
+									<DropdownItem onClick={MartianDisconnection}>
+										<i className="tim-icons icon-button-power" />
+										Sign out
+									</DropdownItem>
+									<DropdownItem disabled>Action</DropdownItem>
 								</DropdownMenu>
-							</UncontrolledDropdown>
+						</UncontrolledButtonDropdown>
 						</Nav>
 						</Collapse>
 					</Container>

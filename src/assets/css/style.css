@@ -54,6 +54,17 @@
 	width: 16vh;
 }
 
+@media only screen and (max-width: 990px)
+{
+	.drop{
+		transform: translate3d(calc(100% - 160%), 36px, 0px) !important;
+	}
+	.ConnectWalletButton{
+		height: 2.42vh;
+	}
+
+
+}
 .pricing-redirection-container{
 	display: flex;
 	justify-content: center;
@@ -105,12 +116,6 @@
 	background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
 }
 
-@media only screen and (min-width: 600px)
-{
-	.ConnectWalletContainer{
-		margin-top: 7px;
-	}
-}
 .confirm-button {
 	text-transform: uppercase;
 	letter-spacing: 2.6px;
