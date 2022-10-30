@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import './assets/css/style.css'
 import {
@@ -24,8 +24,8 @@ export default function ExamplesNavbar({index})
 	const [collapseOut, setCollapseOut] = React.useState("");
 	const [color, setColor] = React.useState("navbar-transparent");
 	const isMartianWalletInstalled = window.martian;
-	var status;
-	let address = undefined;
+	const [address, setAdress] = useState();
+	const [state, setState] = useState();
 	React.useEffect(() => {
 		window.addEventListener("scroll", changeColor);
 		return function cleanup() {
@@ -81,25 +81,21 @@ export default function ExamplesNavbar({index})
 		else if (index === 2)
 			window.location.href='/#empty-pricing'
 	}
-	const MartianConnection = () => {
-		if (isMartianWalletInstalled)
-			return (address = window.martian.connect());
+	async function MartianConnection(){
+		if (isMartianWalletInstalled){
+				let res = (await window.martian.connect());
+				let	status = (await window.martian.isConnected());
+				setAdress(res);
+				if (status)
+					setState("Connected");
+			}
 		else
 			return (window.open("https://martianwallet.xyz/", "_blank"));
 	}
 	const MartianDisconnection = () => {
-		if (isMartianWalletInstalled)
-			return (window.martian.disconnect());
-		else
-			return (window.open("https://martianwallet.xyz/", "_blank"));
-	}
-	async function MartianIsConnect()
-	{
-		let state = await window.martian.isConnected();
-		if (state)
-			return (true);
-		else
-			return (false);
+		setAdress(undefined);
+		setState(undefined);
+		return (window.martian.disconnect());
 	}
   return (
     <Navbar className={"fixed-top " + color} color-on-scroll="100" expand="lg">
@@ -188,18 +184,18 @@ export default function ExamplesNavbar({index})
 									id="caret"
 									size="sm"
 									color="success"
-									onClick={MartianConnection}
+									onClick={() => MartianConnection()}
 								>
 									<i className="tim-icons icon-wallet-43 pr-3" />
-									Connect Wallet
+										{state || "Connect Wallet"}
 								</Button>
 								<DropdownToggle caret className=" h-100 mb-0" color="success" data-toggle="dropdown"/>
-								<DropdownMenu className=" drop m-0 p-0">
+								<DropdownMenu className="drop m-0 p-0">
 									<DropdownItem onClick={MartianDisconnection}>
 										<i className="tim-icons icon-button-power" />
 										Sign out
 									</DropdownItem>
-									<DropdownItem disabled>Action</DropdownItem>
+									<DropdownItem disabled>{address?.address || "disconnected"}</DropdownItem>
 								</DropdownMenu>
 						</UncontrolledButtonDropdown>
 						</Nav>
