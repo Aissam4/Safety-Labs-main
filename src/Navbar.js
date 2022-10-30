@@ -11,6 +11,7 @@ import {
 	Navbar,
 	Row,
 	Col,
+	Button
 } from "reactstrap";
 import 'react-vertical-timeline-component/style.min.css';
 export default function ExamplesNavbar({index})
@@ -18,6 +19,7 @@ export default function ExamplesNavbar({index})
 	const [collapseOpen, setCollapseOpen] = React.useState(false);
 	const [collapseOut, setCollapseOut] = React.useState("");
 	const [color, setColor] = React.useState("navbar-transparent");
+	const isMartianWalletInstalled = window.martian;
 	React.useEffect(() => {
 		window.addEventListener("scroll", changeColor);
 		return function cleanup() {
@@ -72,6 +74,27 @@ export default function ExamplesNavbar({index})
 			window.location.href = "#empty-pricing";
 		else if (index === 2)
 			window.location.href='/#empty-pricing'
+	}
+	const MartianConnection = () => {
+		if (isMartianWalletInstalled)
+			return (window.martian.connect());
+		else
+			return (window.open("https://martianwallet.xyz/", "_blank"));
+	}
+	const MartianDisconnection = () => {
+		if (isMartianWalletInstalled)
+			return (window.martian.disconnect());
+		else
+			return (window.open("https://martianwallet.xyz/", "_blank"));
+	}
+	async function MartianIsConnect()
+	{
+		let state = await window.martian.isConnected();
+		console.log(`the state is ${state}`);
+		if (state)
+			return (true);
+		else
+			return (false);
 	}
   return (
     <Navbar className={"fixed-top " + color} color-on-scroll="100" expand="lg">
@@ -139,7 +162,6 @@ export default function ExamplesNavbar({index})
 									<p className="d-lg-none d-xl-none">Twitter</p>
 								</NavLink>
 							</NavItem>
-
 							<NavItem>
 								<NavLink tag={Link} onClick={scrollToFeatures}>
 									Features
@@ -154,6 +176,38 @@ export default function ExamplesNavbar({index})
 								<NavLink tag={Link} onClick={scrollToPricing}>
 									Pricing
 								</NavLink>
+							</NavItem>
+							<NavItem className="ConnectWalletContainer">
+								<Button 
+									className="nav-link d-lg-block pl-3 pr-3"
+									color="success" 
+									onClick={MartianConnection}
+								>
+									<i className="tim-icons icon-wallet-43" />Connect Wallet
+								</Button>
+							</NavItem>
+							<NavItem className="ConnectWalletContainer">
+								<Button 
+									className="nav-link d-lg-block pl-3 pr-3"
+									color="success" 
+									onClick={MartianDisconnection}
+								>
+									<i className="tim-icons icon-wallet-43" />Disconnect Wallet
+								</Button>
+							</NavItem>
+							<NavItem className="ConnectWalletContainer">
+								<Button 
+									className="nav-link d-lg-block pl-3 pr-3"
+									color="success"
+									onClick={() => { MartianIsConnect().then((res) => {
+										if (res)
+											console.log("connected!");
+										else
+											console.log("disconnected!");
+									})}}
+								>
+									<i className="tim-icons icon-wallet-43" />isConnected
+								</Button>
 							</NavItem>
 						</Nav>
 						</Collapse>

@@ -14392,6 +14392,11 @@
   dependencies:
     "object-visit" "^1.0.0"
 
+"martian@^1.0.0":
+  "integrity" "sha512-E3UkW5Tgyto6y/nMbVH9N3rfXxHQh539Xw2lm8vSemxkQo2VnKdnc1JqRqGNgn0U47GidyIJSVhtO5U7YDxTGA=="
+  "resolved" "https://registry.npmjs.org/martian/-/martian-1.0.0.tgz"
+  "version" "1.0.0"
+
 "matchdep@^2.0.0":
   "integrity" "sha512-LFgVbaHIHMqCRuCZyfCtUOq9/Lnzhi7Z0KFUE2fhD54+JN2jLh3hC02RLkqauJ3U4soU6H1J3tfj/Byk7GoEjA=="
   "resolved" "https://registry.npmjs.org/matchdep/-/matchdep-2.0.0.tgz"
