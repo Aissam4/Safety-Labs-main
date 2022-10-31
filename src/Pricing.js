@@ -35,7 +35,7 @@ export default function Pricing()
                       </Col>
                     </Row>
                     <Row>
-                      <ListGroup>
+                      <ListGroup className='card-text'>
                         <ListGroupItem>Collect whitelisted members wallet</ListGroupItem>
                         <ListGroupItem>Accurate inside your server</ListGroupItem>
                         <ListGroupItem>Easy and quick</ListGroupItem>
@@ -68,7 +68,7 @@ export default function Pricing()
                       </Col>
                     </Row>
                     <Row>
-                      <ListGroup>
+                      <ListGroup  className='card-text'>
                         <ListGroupItem>Track any collection Floor price</ListGroupItem>
                         <ListGroupItem>Tracks the prices of any token</ListGroupItem>
                         <ListGroupItem>Display the prices on your server</ListGroupItem>	
@@ -101,7 +101,7 @@ export default function Pricing()
                       </Col>
                     </Row>
                     <Row>
-                      <ListGroup>
+                      <ListGroup className='card-text'>
                         <ListGroupItem>Tracking your active members</ListGroupItem>
                         <ListGroupItem>Warn your members about being active</ListGroupItem>
                         <ListGroupItem>send messages to your community</ListGroupItem>
@@ -136,7 +136,7 @@ export default function Pricing()
                       </Col>
                     </Row>
                     <Row>
-                      <ListGroup>
+                      <ListGroup className='card-text'>
                         <ListGroupItem>assigning roles convenient and quick</ListGroupItem>
                         <ListGroupItem>Bulk assign of a specific role</ListGroupItem>
                         <ListGroupItem>Quick Collabs</ListGroupItem>
@@ -170,7 +170,7 @@ export default function Pricing()
                       </Col>
                     </Row>
                     <Row>
-                      <ListGroup>
+                      <ListGroup className='card-text'>
                         <ListGroupItem>Set a password of your discord bot</ListGroupItem>
                         <ListGroupItem>provide added security measures</ListGroupItem>
                         <ListGroupItem>Secure your discord server</ListGroupItem>
@@ -203,7 +203,7 @@ export default function Pricing()
                       </Col>
                     </Row>
                     <Row>
-                      <ListGroup> 
+                      <ListGroup className='card-text'> 
                         <ListGroupItem>Track all daily mints</ListGroupItem>
                         <ListGroupItem>Display daily mints on your discord</ListGroupItem>
                         <ListGroupItem>You can never miss a mint</ListGroupItem>
@@ -236,7 +236,7 @@ export default function Pricing()
 								<h4 className="text-uppercase">Twitter Sales</h4>
 								<hr className="line-info" />
 							</Col>
-							<ListGroup>
+							<ListGroup className='card-text'>
 								<ListGroupItem>Tweet sales details of your NFT Project</ListGroupItem>
 								<ListGroupItem>help you to grow your community</ListGroupItem>
 								<ListGroupItem>You can Set any twitter page</ListGroupItem>
@@ -267,7 +267,7 @@ export default function Pricing()
 								<h4 className="text-uppercase">Raid to earn</h4>
 								<hr className="line-info" />
 							</Col>
-							<ListGroup>
+							<ListGroup className='card-text'>
 								<ListGroupItem>Create a raid contest for members</ListGroupItem>
 								<ListGroupItem>Reward your members for The raid</ListGroupItem>
 								<ListGroupItem>Provide an easy set-up for tasks</ListGroupItem>

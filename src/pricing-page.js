@@ -1,19 +1,15 @@
-import React from "react";
-import "assets/css/nucleo-icons.css";
-import "assets/scss/blk-design-system-react.scss";
+import React, { useState } from "react";
 import { Container } from "reactstrap";
-import { useState } from "react";
 import { Stepper, Image, Button, Group, TextInput, Card, Text, Badge} from '@mantine/core';
 import Navbar from './Navbar';
-import './assets/css/style.css'
 import { useForm } from '@mantine/form';
 import Footer from "Footer";
-import {
-HelioPay
-  } from '@heliofi/react';
-import 'react-vertical-timeline-component/style.min.css';
-// import { useWindowEvent } from "@mantine/hooks";
+import { HelioPay } from '@heliofi/react';
+import "assets/css/nucleo-icons.css";
 import axios from 'axios'
+import "assets/scss/blk-design-system-react.scss";
+import 'react-vertical-timeline-component/style.min.css';
+import './assets/css/style.css'
 require('@solana/wallet-adapter-react-ui/styles.css');
 
 export default function Pricing_page()
@@ -24,7 +20,7 @@ export default function Pricing_page()
 	let BotPrice = undefined;
 	function post_data(data) {
 		console.log(data);
-		axios.post("http://localhost:1337/api/orders", {"data": data}).then(res => {
+		axios.post("http://132.226.196.89:8080/api/Buyers/add", {data}).then(res => {
 			console.log(res)
 		}).catch(err => {
 			console.log(err)
@@ -79,7 +75,7 @@ export default function Pricing_page()
 				return current;
 			}
 			return current < 3 ? current + 1 : current;
-	});
+		});
 	const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
 		if (window.location.hash === '#WalletCollector')
 		{
