@@ -1,7 +1,6 @@
 import React from "react";
 import './assets/css/style.css'
 import "assets/css/nucleo-icons.css";
-// import "assets/scss/blk-design-system-react.scss";
 import Navbar from 'Navbar.js'
 export default function NoPage(){
 return (

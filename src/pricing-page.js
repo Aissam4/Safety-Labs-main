@@ -6,6 +6,7 @@ import { useForm } from '@mantine/form';
 import Footer from "Footer";
 import { HelioPay } from '@heliofi/react';
 import "assets/css/nucleo-icons.css";
+import 'react-vertical-timeline-component/style.min.css';
 import axios from 'axios'
 import "assets/scss/blk-design-system-react.scss";
 import 'react-vertical-timeline-component/style.min.css';
