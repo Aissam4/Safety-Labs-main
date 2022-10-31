@@ -4,7 +4,8 @@ import { Stepper, Image, Button, Group, TextInput, Card, Text, Badge} from '@man
 import Navbar from './Navbar';
 import { useForm } from '@mantine/form';
 import Footer from "Footer";
-import { HelioPay } from '@heliofi/react';
+import { Button as Button_} from "reactstrap";
+// import { HelioPay } from '@heliofi/react';
 import "assets/css/nucleo-icons.css";
 import 'react-vertical-timeline-component/style.min.css';
 import axios from 'axios'
@@ -184,14 +185,22 @@ export default function Pricing_page()
 									<Group position="apart" mt="md" mb="xs">
 										<Text weight={500}>{`Discord Bot : ${BotName} Bot`}</Text>
 									</Group>
-									<HelioPay
+									{/* <HelioPay
 										cluster='mainnet-beta'
 										payButtonTitle='PAY'
 										paymentRequestId='6359669b30b7bff13d7f1fc0'
 										supportedCurrencies={["USDC"]}
 										totalAmount={0.1}
 										onSuccess={() => {post_data(form.values) }}
-									/>
+									/> */}
+									<Button_
+										color="success"
+										onClick={() => {
+											
+										}}
+									>
+											Buy
+									</Button_>
 									<Group position="apart" mt="md" mb="xl"></Group>
 									<Group position="apart" mt="md" mb="xl"></Group>
 									<Group position="apart" mt="md" mb="xl"></Group>
