@@ -41,13 +41,13 @@ admin.post('/admin/login', async (req: Request, res: Response) => {
                         jwt: token
                     })
                 } else {
-                    res.status(401).json({
-                        message: 'Login failed'
+                    res.status(403).json({
+                        message: {password: 'password is incorrect'}
                     })
                 }
             } else {
-                res.status(401).json({
-                    message: 'Login failed'
+                res.status(403).json({
+                    message: {username: 'username does not exist'}
                 })
             }
         }).catch((err) => {
@@ -55,6 +55,10 @@ admin.post('/admin/login', async (req: Request, res: Response) => {
                 message: 'Login failed',
                 err
             })
+        })
+    } else {
+        res.status(403).json({
+            message: 'username and password are required'
         })
     }
 

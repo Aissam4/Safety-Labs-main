@@ -8,7 +8,7 @@ dotenv.config();
 // cors configuration
 import cors from 'cors';
 const options: cors.CorsOptions = {
-	origin: ['https://hoppscotch.io'],
+	origin: "*",
 };
 app.use(cors(options));
 // to allow Express server to use the cors middleware
