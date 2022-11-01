@@ -47,13 +47,13 @@ Buyers.post('/Buyers/add', (req: Request, res: Response) => {
 
 Buyers.get('/Buyers', checkAuth, (req: Request, res: Response) => {
 	try {
-        const size: number = +(req.query.size as string) || 5;
-        const page: number = +(req.query.page as string) || 0;
+        //const size: number = +(req.query.size as string) || 5;
+        //const page: number = +(req.query.page as string) || 0;
 
 		prisma.buyer
 			.findMany({
-				take: size,
-                skip: page * size,
+				//take: size,
+                //skip: page * size,
 				orderBy: {
 					id: 'desc',
 				},
