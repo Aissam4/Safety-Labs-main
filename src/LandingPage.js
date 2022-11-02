@@ -13,12 +13,14 @@ import Features from "Features.js";
 import Pricing from "Pricing.js";
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
-import { PhantomWalletAdapter } from '@solana/wallet-adapter-wallets';
 import {
-    WalletModalProvider,
-    WalletDisconnectButton,
-    WalletMultiButton
-} from '@solana/wallet-adapter-react-ui';
+    PhantomWalletAdapter,
+    SolflareWalletAdapter,
+    SolletExtensionWalletAdapter,
+    SolletWalletAdapter,
+    TorusWalletAdapter,
+} from '@solana/wallet-adapter-wallets';
+import { WalletModalProvider as  ReactUIWalletModalProvider, WalletDisconnectButton, WalletMultiButton} from '@solana/wallet-adapter-react-ui';
 import { clusterApiUrl } from '@solana/web3.js';
 export default function LandingPage() {
   const network = WalletAdapterNetwork.Devnet;
@@ -36,7 +38,14 @@ export default function LandingPage() {
            * will be compiled into your application, and only the dependencies of wallets that
            * your users connect to will be loaded.
            */
-          new PhantomWalletAdapter(),
+		//    new SolletWalletAdapter({ network }),
+			//new SolflareWalletAdapter(),
+			// new WalletAdapter(),
+        	new PhantomWalletAdapter(),
+            new SolflareWalletAdapter(),
+            new SolletWalletAdapter({ network }),
+            new SolletExtensionWalletAdapter({ network }),
+            new TorusWalletAdapter(),
       ],
       []
   );
@@ -52,6 +61,13 @@ export default function LandingPage() {
       <Navbar index={1} />
       <div className="wrapper">
         <div className="page-header">
+			<ConnectionProvider endpoint={endpoint}>
+				<WalletProvider wallets={wallets} onError={()=>{}} autoConnect>
+					<ReactUIWalletModalProvider>
+							<WalletMultiButton />
+					</ReactUIWalletModalProvider>
+				</WalletProvider>
+			</ConnectionProvider>
           <img
             alt="..."
             className="path"
