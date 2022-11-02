@@ -11,7 +11,7 @@ export default function features()
 	AOS.init();
 	return (
 		<div>
-			<h1 data-aos="fade-down"
+			<h1  data-aos="fade-down"
 				data-aos-offset="200"
 				data-aos-delay="9"
 				data-aos-duration="400"
@@ -37,16 +37,15 @@ export default function features()
               </Col>
                 <Col md="6">
                   <div data-aos="fade-left" data-aos-duration="900" className="pl-md-5">
+                    <h1 className="bots" >PRE MINT BOTS</h1>
 					<div className='feature_content'>
-						<p><strong><b>Safety collabs&nbsp;:&nbsp;&nbsp;</b></strong>This BOT is designed to make assigning roles convenient and quick. The BOT comes with a newly developed function that can “bulk-assign” a specific role to multiple members. The command only requires you to type the following: /assign-role (role) to list (winners#1111 winner2#1111 winner3#1111)</p>
+						<p><strong><b>Safety collabs&nbsp;:&nbsp;&nbsp;</b></strong>is a bot that make assigning roles easy and fast, the bot can do bulk assign of a specific role to a single or multiple members</p>
 						<br />
-						<p><strong><b>Purge inactive whitelist members&nbsp;:&nbsp;&nbsp;</b></strong>This BOT sends messages to your community and reminds them to stay active in order to continue holding a specified role. Additionally, the BOT comes with a dashboard that allows you to keep track of active members</p>
+						<p><strong><b>Purge inactive whitelist members&nbsp;:&nbsp;&nbsp;</b></strong>this bot can send message to your members and warn them about being active to keep a specified role also also the bot allows you to keep track of your active members on a dashboard</p>
 						<br />
-						<p><strong><b>Wallets collector&nbsp;:&nbsp;&nbsp;</b></strong>This BOT allows you to collect wallets from Whitelisted members automatically</p>
+						<p><strong><b>Wallets collector&nbsp;:&nbsp;&nbsp;</b></strong>you can collect wallet of your whitelisted members easy and quick and accurate inside your server!</p>
 						<br />
-						<p><strong><b>Discord Lock&nbsp;:&nbsp;&nbsp;</b></strong>This BOT allows you to set a password for your discord Server to provide added security measures</p>
-						<br />
-						<p><strong><b>Twitter Sales&nbsp;:&nbsp;&nbsp;</b></strong>This BOT tracks sales of your NFT Project and updates the selected twitter page with posts containing details of the sales</p>
+						<p><strong><b>Discord Lock&nbsp;:&nbsp;&nbsp;</b></strong>you can set a password and only members with password can get access to your server!</p>
 					</div>
                   </div>
                 </Col>
@@ -56,24 +55,24 @@ export default function features()
 			  <Row className="flex-row-reverse">
 				<Col className="mb-5 text-center" lg="40" md="6">
                 <img
-					data-aos="fade-up-left"
-					data-aos-delay="9"
-					data-aos-duration="800"
-					alt="by fulvector on Freepik"
-					className="mb-5 pb-5 w-100 h-100 img-fuild"
-					src={require("./assets/images/robot.png")}
+				  data-aos="fade-up-left"
+				  data-aos-delay="9"
+    			  data-aos-duration="800"
+                  alt="by fulvector on Freepik"
+                  className="mb-5 pb-5 w-100 h-100 img-fuild"
+                  src={require("./assets/images/robot.png")}
                 />
               </Col>
                 <Col md="6">
                   <div data-aos="fade-right" data-aos-delay="11" data-aos-duration="1000" className="pl-md-5">
+                    <h1 className="bots" >POST MINT BOTS</h1>
 					<div className='feature_content'>
-						<p><strong><b>daily mint &nbsp;:&nbsp;&nbsp;</b></strong>This BOT tracks all daily mints and displays it on your discord. This allows you to never miss a mint again</p>
+						<p><strong><b>daily mint &nbsp;:&nbsp;&nbsp;</b></strong>the bot can track all daily mints and display it to members, this way you can never miss a mint </p>
+						<p><strong><b>check floor price&nbsp;:&nbsp;&nbsp;</b></strong>you can track down any collection FP from server with  a quick command</p>
 						<br />
-						<p><strong><b>check floor price&nbsp;:&nbsp;&nbsp;</b></strong>This BOT allows you to track down any collection’s Floor Price with a simple command: /fp (collection-name)</p>
+						<p><strong><b>token prices&nbsp;:&nbsp;&nbsp;</b></strong>the bot  tracks the prices of any token, and can display on your server.</p>
 						<br />
-						<p><strong><b>token prices&nbsp;:&nbsp;&nbsp;</b></strong>This BOT tracks the prices of any token(BTC, SOL, ETH, etc.) and displays it on your server</p>
-						<br />
-						<p><strong><b>raid-to-earn&nbsp;:&nbsp;&nbsp;</b></strong>This BOT allows you to create raid contests for members and reward them. Our system provides an easy set-up for task requirements, descriptions, mentions, and awards for completing tasks.</p>
+						<p><strong><b>raid-to-earn&nbsp;:&nbsp;&nbsp;</b></strong>you can create a raid contest for members and reward them</p>
 						<br />
 					</div>
                   </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useMemo} from "react";
 import './assets/css/style.css'
 import {
 	Button,
@@ -11,15 +11,44 @@ import Footer from "Footer.js";
 import Roadmap from "Roadmap.js";
 import Features from "Features.js";
 import Pricing from "Pricing.js";
+import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
+import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
+import { PhantomWalletAdapter } from '@solana/wallet-adapter-wallets';
+import {
+    WalletModalProvider,
+    WalletDisconnectButton,
+    WalletMultiButton
+} from '@solana/wallet-adapter-react-ui';
+import { clusterApiUrl } from '@solana/web3.js';
 export default function LandingPage() {
+  const network = WalletAdapterNetwork.Devnet;
+
+  // You can also provide a custom RPC endpoint.
+  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+
+  const wallets = useMemo(
+      () => [
+          /**
+           * Select the wallets you wish to support, by instantiating wallet adapters here.
+           *
+           * Common adapters can be found in the npm package `@solana/wallet-adapter-wallets`.
+           * That package supports tree shaking and lazy loading -- only the wallets you import
+           * will be compiled into your application, and only the dependencies of wallets that
+           * your users connect to will be loaded.
+           */
+          new PhantomWalletAdapter(),
+      ],
+      []
+  );
+
 	window.Buffer = window.Buffer || require("buffer").Buffer;
 	React.useEffect(() => {
 		document.body.classList.toggle("landing-page");
 		return function cleanup() {
 			document.body.classList.toggle("landing-page");
 		};}, []);
-	return (
-    <> 
+  return (
+    <>
       <Navbar index={1} />
       <div className="wrapper">
         <div className="page-header">
@@ -56,6 +85,7 @@ export default function LandingPage() {
           <div className="Landing-page w-100">
             <Row className="row-grid text-left mb-5">
               <Col className="Safe-text" lg="6.5" md="6">
+			  
                 <h1 className="text-white">
 					Safe servers and facilitate community managment
                 </h1>
@@ -81,11 +111,11 @@ export default function LandingPage() {
                   </div>
                 </div>
               </Col >
-              <Col className="block mb-5">
+              <Col className="block mb-5" lg="40" md="6">
                 <img
                   alt="by fulvector on Freepik"
                   className="blockchain mb-5 pt-4 img-fluid"
-                  src={require("./assets/images/Blockchian1.png")}
+                  src={require("./assets/images/Blockchian.png")}
                 />
               </Col>
             </Row>

@@ -131,26 +131,19 @@
 	animation: none;
 	display: none;
 }
-@media only screen and (max-width: 1360px) {
-	.card-text {
-		font-size: 80%;
-	}
-	.text-uppercase{
-		font-size: 95%;
-	}
-  }
-@keyframes ring {
+  
+  @keyframes ring {
 	0% {
-		width: 30px;
-		height: 30px;
-		opacity: 1;
+	  width: 30px;
+	  height: 30px;
+	  opacity: 1;
 	}
 	100% {
-		width: 300px;
-		height: 300px;
-		opacity: 0;
+	  width: 300px;
+	  height: 300px;
+	  opacity: 0;
 	}
-}
+  }
 .Connect-wallet-button{
 	background-color: red;
 }

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import { Link } from "react-router-dom";
 import './assets/css/style.css'
 import {
@@ -11,18 +11,22 @@ import {
 	Navbar,
 	Row,
 	Col,
+	Button,
+	UncontrolledButtonDropdown,
+	DropdownToggle,
+	DropdownMenu,
+	DropdownItem 
 } from "reactstrap";
-import 'react-vertical-timeline-component/style.min.css';
+import {CopyToClipboard} from 'react-copy-to-clipboard'; 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default function ExamplesNavbar({index})
 {
 	const [collapseOpen, setCollapseOpen] = React.useState(false);
 	const [collapseOut, setCollapseOut] = React.useState("");
+	const [account,setAccount] = useState('Connect Wallet')
 	const [color, setColor] = React.useState("navbar-transparent");
-	React.useEffect(() => {
-		window.addEventListener("scroll", changeColor);
-		return function cleanup() {
-			window.removeEventListener("scroll", changeColor);};
-	}, []);
+
 	const changeColor = () => {
 		if ( document.documentElement.scrollTop > 99 || document.body.scrollTop > 99 )
 			setColor("bg-info");
@@ -44,13 +48,47 @@ export default function ExamplesNavbar({index})
 	};
 	useEffect(() =>
 	{
+		const provider = getProvider();
+			connectWallet();
+			provider.on("connect", (publicKey) => {
+				setAccount(publicKey.toString());
+		});
+			provider.on("disconnect", () => {
+				setAccount('Connect Wallet');
+		});
 		if (window.location.hash === "#empty-roadmap")
 			window.location.href = "#empty-roadmap";
 		else if (window.location.hash === "#empty")
 			window.location.href = "#empty";
 		else if (window.location.hash === "#empty-pricing")
 			window.location.href = "#empty-pricing";
+		window.addEventListener("scroll", changeColor);
+		return function cleanup() {
+			window.removeEventListener("scroll", changeColor);};
+	
 	}, [])
+	const disconnect = async () => {
+		const provider = getProvider();
+		provider.disconnect();
+	}
+	const getProvider = () => {
+		if ('phantom' in window) {
+		  const provider = window.phantom?.solana;
+		  if (provider?.isPhantom) {
+			return provider;
+		  }
+		}
+		window.open('https://phantom.app/', '_blank');
+	  };
+    const connectWallet = async() => {
+		const provider = getProvider();
+		try {
+			const resp = await provider.connect();
+			setAccount(resp.publicKey.toString());
+		} catch (err) {
+			toast.err('Wallet connection failed', {theme : "dark"});
+		}
+	  }
 	let scrollToFeatures = () =>
 	{
 		if (index === 1)
@@ -155,8 +193,37 @@ export default function ExamplesNavbar({index})
 									Pricing
 								</NavLink>
 							</NavItem>
+						<NavItem>
+							<UncontrolledButtonDropdown>
+								<Button
+									className='ConnectWalletButton mr-0'
+									id="caret"
+									size="sm"
+									color="success"
+									onClick={connectWallet}
+								>
+									<i className="tim-icons icon-wallet-43 pr-3" />
+										{account !== 'Connect Wallet' ? "Connected" : account}
+								</Button>
+								<DropdownToggle caret className=" h-100 mb-0" color="success" data-toggle="dropdown"/>
+								<DropdownMenu className="drop m-0 p-0">
+									<DropdownItem onClick={disconnect}>
+										<i className="tim-icons icon-button-power" />
+										Sign out
+									</DropdownItem>
+									<DropdownItem  onClick={()=>toast.success('Copied', {theme: "dark"})}>
+										<CopyToClipboard text={account}>
+											<span>
+												{account !== 'Connect Wallet' ? account : "Desconnected"}
+											</span>
+										</CopyToClipboard>
+									</DropdownItem>
+								</DropdownMenu>
+							</UncontrolledButtonDropdown>
+						</NavItem>
 						</Nav>
 						</Collapse>
+						<ToastContainer autoClose={2000} />
 					</Container>
     </Navbar>
   );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import './assets/css/style.css'
 import {
 	ListGroupItem,
@@ -9,11 +9,61 @@ import {
 	CardBody,
 	CardFooter,
 	Row,
-	Col,
+	Col
 } from "reactstrap";
-
+import { toast } from 'react-toastify';
+import { clusterApiUrl, Connection, SystemProgram, Transaction } from '@solana/web3.js';
 export default function Pricing()
 {
+	const [price,setPrice] = useState('')
+	useEffect(()=> {
+		fetchPrice()
+	},[])
+	const getProvider = () => {
+		if ('phantom' in window) {
+			const provider = window.phantom?.solana;
+			if (provider?.isPhantom)
+				return provider;
+		}
+		window.open('https://phantom.app/', '_blank');
+	};
+	const fetchPrice = async() => {
+		await fetch('https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd')
+		.then((response) => response.json()).then((data) => setPrice(data.solana.usd));
+	}
+	async function buy(BotPrice){
+		let oneUsd = 1 / price;
+		let packagePrice = oneUsd * 0.02 * 1000000000;
+		let packagePriceInt = parseInt(packagePrice)
+		const provider = getProvider()
+		const message = `To avoid digital dognappers, sign below to authenticate with Safety Labs`;
+		const encodedMessage = new TextEncoder().encode(message);
+		await provider.signMessage(encodedMessage, "utf8");
+		const network = clusterApiUrl("mainnet-beta");
+		const connection = new Connection(network);
+		let blockhash = (await connection.getLatestBlockhash("finalized")).blockhash;
+		let transaction = new Transaction({
+			recentBlockhash:blockhash,
+			feePayer:provider.publicKey
+		});
+		transaction.add(
+			SystemProgram.transfer({	
+				fromPubkey: provider.publicKey,
+				toPubkey: '71ayYExpAaobk5YmWVcbyWqSr2QPtBhzMjJ6ZaHPuu87',
+				lamports: packagePriceInt,
+			})
+		);
+		const { signature } = await provider.signAndSendTransaction(transaction);
+		return (await connection.getSignatureStatus(signature));
+	}
+	function MakeTransaction(){
+		buy().then((res, err) => {
+			if (err === undefined && !res.value){
+				toast.success('Transaction Succefully', {theme: "dark"});
+				return ;
+			}
+			}).catch(() => {toast.error('Transaction Failed', {theme: "dark"},);})
+	}
 	return (
 		<div className='w-75'>
 			 <h1 className="features text-center">PRICING</h1>
@@ -35,7 +85,7 @@ export default function Pricing()
                       </Col>
                     </Row>
                     <Row>
-                      <ListGroup className='card-text'>
+                      <ListGroup>
                         <ListGroupItem>Collect whitelisted members wallet</ListGroupItem>
                         <ListGroupItem>Accurate inside your server</ListGroupItem>
                         <ListGroupItem>Easy and quick</ListGroupItem>
@@ -44,7 +94,7 @@ export default function Pricing()
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button onClick={() => {window.location.href = "/pricing#WalletCollector"}} className="btn btn-simple" color="primary">
+                    <Button onClick={() => {MakeTransaction()}} className="btn btn-simple" color="primary">
                       Buy
                     </Button>
                   </CardFooter>
@@ -68,7 +118,7 @@ export default function Pricing()
                       </Col>
                     </Row>
                     <Row>
-                      <ListGroup  className='card-text'>
+                      <ListGroup>
                         <ListGroupItem>Track any collection Floor price</ListGroupItem>
                         <ListGroupItem>Tracks the prices of any token</ListGroupItem>
                         <ListGroupItem>Display the prices on your server</ListGroupItem>	
@@ -77,7 +127,7 @@ export default function Pricing()
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button  onClick={() => {window.location.href = "/pricing#TokenChecker"}} className="btn-simple" color="success">
+                    <Button  onClick={() => {MakeTransaction()}} className="btn-simple" color="success">
                       Buy
                     </Button>
                   </CardFooter>
@@ -101,16 +151,16 @@ export default function Pricing()
                       </Col>
                     </Row>
                     <Row>
-                      <ListGroup className='card-text'>
+                      <ListGroup>
                         <ListGroupItem>Tracking your active members</ListGroupItem>
                         <ListGroupItem>Warn your members about being active</ListGroupItem>
-                        <ListGroupItem>send messages to your community</ListGroupItem>
+                        <ListGroupItem>send message to your members</ListGroupItem>
                         <ListGroupItem><p className='price'><br /><b>50$/</b>month</p></ListGroupItem>
                       </ListGroup>
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button  onClick={() => {window.location.href = "/pricing#purgeInactiveMembers"}} className="btn-simple" color="info">
+                    <Button  onClick={() => {MakeTransaction()}} className="btn-simple" color="info">
                       Buy
                     </Button>
                   </CardFooter>
@@ -136,8 +186,8 @@ export default function Pricing()
                       </Col>
                     </Row>
                     <Row>
-                      <ListGroup className='card-text'>
-                        <ListGroupItem>assigning roles convenient and quick</ListGroupItem>
+                      <ListGroup>
+                        <ListGroupItem>assigning roles easy and fast</ListGroupItem>
                         <ListGroupItem>Bulk assign of a specific role</ListGroupItem>
                         <ListGroupItem>Quick Collabs</ListGroupItem>
                         <ListGroupItem><p className='price'><br /><b>80$/</b>month</p></ListGroupItem>
@@ -145,7 +195,7 @@ export default function Pricing()
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button  onClick={() => {window.location.href = "/pricing#SafetyCollabs"}} className="btn-simple" color="primary">
+                    <Button  onClick={() => {MakeTransaction()}} className="btn-simple" color="primary">
                       Buy
                     </Button>
                   </CardFooter>
@@ -170,16 +220,16 @@ export default function Pricing()
                       </Col>
                     </Row>
                     <Row>
-                      <ListGroup className='card-text'>
+                      <ListGroup>
                         <ListGroupItem>Set a password of your discord bot</ListGroupItem>
-                        <ListGroupItem>provide added security measures</ListGroupItem>
                         <ListGroupItem>Secure your discord server</ListGroupItem>
+                        <ListGroupItem>Easy to use</ListGroupItem>
                         <ListGroupItem><p className='price'><br /><b>80$/</b>month</p></ListGroupItem>
                       </ListGroup>
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button onClick={() => {window.location.href = "/pricing#DiscordLock"}} className="btn-simple" color="success">
+                    <Button onClick={() => {MakeTransaction()}} className="btn-simple" color="success">
                       Buy
                     </Button>
                   </CardFooter>
@@ -203,16 +253,16 @@ export default function Pricing()
                       </Col>
                     </Row>
                     <Row>
-                      <ListGroup className='card-text'> 
+                      <ListGroup> 
                         <ListGroupItem>Track all daily mints</ListGroupItem>
-                        <ListGroupItem>Display daily mints on your discord</ListGroupItem>
+                        <ListGroupItem>Display daily mints to your members</ListGroupItem>
                         <ListGroupItem>You can never miss a mint</ListGroupItem>
                         <ListGroupItem><p className='price'><br /><b>50$/</b>month</p></ListGroupItem>
                       </ListGroup>
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button onClick={() => {window.location.href = "/pricing#DailyMint"}} className="btn-simple" color="info">
+                    <Button onClick={() => {MakeTransaction()}} className="btn-simple" color="info">
                       Buy
                     </Button>
                   </CardFooter>
@@ -236,8 +286,8 @@ export default function Pricing()
 								<h4 className="text-uppercase">Twitter Sales</h4>
 								<hr className="line-info" />
 							</Col>
-							<ListGroup className='card-text'>
-								<ListGroupItem>Tweet sales details of your NFT Project</ListGroupItem>
+							<ListGroup>
+								<ListGroupItem>Tweet sales of your NFT Project</ListGroupItem>
 								<ListGroupItem>help you to grow your community</ListGroupItem>
 								<ListGroupItem>You can Set any twitter page</ListGroupItem>
 								<ListGroupItem><p className='price'><br /><b>80$/</b>month</p></ListGroupItem>
@@ -245,7 +295,7 @@ export default function Pricing()
 						</Row>
 					</CardBody>
 					<CardFooter className="text-center">
-					<Button onClick={() => {window.location.href = "/pricing#TwitterSales"}} className="btn-simple" color="info">
+					<Button onClick={() => {MakeTransaction()}} className="btn-simple" color="info">
 						Buy
 					</Button>
 					</CardFooter>
@@ -267,16 +317,16 @@ export default function Pricing()
 								<h4 className="text-uppercase">Raid to earn</h4>
 								<hr className="line-info" />
 							</Col>
-							<ListGroup className='card-text'>
+							<ListGroup>
 								<ListGroupItem>Create a raid contest for members</ListGroupItem>
-								<ListGroupItem>Reward your members for The raid</ListGroupItem>
-								<ListGroupItem>Provide an easy set-up for tasks</ListGroupItem>
+								<ListGroupItem>Reward your members for them raid</ListGroupItem>
+								<ListGroupItem>raid and earn prizes</ListGroupItem>
 								<ListGroupItem><p className='price'><br /><b>80$/</b>month</p></ListGroupItem>
 							</ListGroup>
 						</Row>
 					</CardBody>
 					<CardFooter className="text-center">
-					<Button onClick={() => {window.location.href = "/pricing#RaidToEarn"}} className="btn-simple" color="info">
+					<Button onClick={() => {MakeTransaction()}} className="btn-simple" color="info">
 						Buy
 					</Button>
 					</CardFooter>

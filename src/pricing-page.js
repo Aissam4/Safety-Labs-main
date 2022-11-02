@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
+import "assets/css/nucleo-icons.css";
+import "assets/scss/blk-design-system-react.scss";
 import { Container } from "reactstrap";
+import { useState } from "react";
 import { Stepper, Image, Button, Group, TextInput, Card, Text, Badge} from '@mantine/core';
 import Navbar from './Navbar';
+import './assets/css/style.css'
 import { useForm } from '@mantine/form';
 import Footer from "Footer";
-import "assets/css/nucleo-icons.css";
-// import axios from 'axios'
-import "assets/scss/blk-design-system-react.scss";
+import { HelioPay} from '@heliofi/react';
 import 'react-vertical-timeline-component/style.min.css';
-import './assets/css/style.css'
 require('@solana/wallet-adapter-react-ui/styles.css');
 
 export default function Pricing_page()
@@ -16,10 +17,8 @@ export default function Pricing_page()
 	const [active, setActive] = useState(0);
 	let BotName = "";
 	let BotImage = "";
-	let BotPrice = undefined;
 	// function post_data(data) {
-	// 	console.log(data);
-	// 	axios.post("http://132.226.196.89:8080/api/Buyers/add", {data}).then(res => {
+	// 	axios.post("http://localhost:1337/api/orders", {"data": data}).then(res => {
 	// 		console.log(res)
 	// 	}).catch(err => {
 	// 		console.log(err)
@@ -74,162 +73,163 @@ export default function Pricing_page()
 				return current;
 			}
 			return current < 3 ? current + 1 : current;
-		});
+	});
 	const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
 		if (window.location.hash === '#WalletCollector')
 		{
 			form.values.DiscordBot = BotName = "Wallet collector";
 			BotImage = "robot-search.png"
-			BotPrice = 50;
 		}
 		else if (window.location.hash === '#TokenChecker')
 		{	
 			form.values.DiscordBot = BotName = "FP/Token checker";
 			BotImage = "robot-money.png"
-			BotPrice = 25;
 		}
 		else if (window.location.hash === '#purgeInactiveMembers')
 		{
 			form.values.DiscordBot = BotName = "Purge inactive members";
 			BotImage = "robot-message.png"
-			BotPrice = 50;
 		}
 		else if (window.location.hash === '#SafetyCollabs')
 		{
 			form.values.DiscordBot = BotName = "Safety collabs";
 			BotImage = "robot-send.png"
-			BotPrice = 80;
 		}
 		else if (window.location.hash === '#DiscordLock')
 		{
 			form.values.DiscordBot = BotName = "Discord Lock";
 			BotImage = "lock-robot.png"
-			BotPrice = 80;
 		}
 		else if (window.location.hash === '#DailyMint')
 		{
 			form.values.DiscordBot = BotName = "Daily mint";
 			BotImage = "robot-hi.png"
-			BotPrice = 50;
 		}
 		else if (window.location.hash === '#RaidToEarn')
 		{
 			form.values.DiscordBot = BotName = "Raid to earn";
 			BotImage = "robot-earn.png"
-			BotPrice = 80;
 		}
 		else if (window.location.hash === '#TwitterSales')
 		{
 			form.values.DiscordBot = BotName = "Twitter Sales"
 			BotImage = "lock-sales.png"
-			BotPrice = 80;
 		}
 		else
-			BotPrice = undefined;
-
+			window.location.href = "404";
 	return (
 	<>
-		<Navbar index={2} />
-			<div className="wrapper">
-				<div className="page-header">
-				<img
-					alt="..."
-					className="path"
-					src={require("assets/img/blob.png")}
-				/>
-				<img
-					alt="..."
-					className="path2"
-					src={require("assets/img/path2.png")}
-				/>
-				<img
-					alt="..."
-					className="shapes wave"
-					src={require("assets/img/waves.png")}
-				/>
-				<img
-					alt="..."
-					className="shapes circle"
-					src={require("assets/img/cercuri.png")}
+				<Navbar index={2} />
+					<div className="wrapper">
+						<div className="page-header">
+						<img
+							alt="..."
+							className="path"
+							src={require("assets/img/blob.png")}
+						/>
+						<img
+							alt="..."
+							className="path2"
+							src={require("assets/img/path2.png")}
+						/>
+						<img
+							alt="..."
+							className="shapes wave"
+							src={require("assets/img/waves.png")}
+						/>
+						<img
+							alt="..."
+							className="shapes circle"
+							src={require("assets/img/cercuri.png")}
+							/>
+					<div className="pricing-page-container w-100 h-100">
+						<Stepper color="cyan.3" active={active} breakpoint="sm">
+							<Stepper.Step className="step-container" label="First step" description="Personal information">
+								<TextInput label="Twitter Username"  placeholder="@Safetylabs" {...form.getInputProps('Twitterusername')} />
+								<TextInput label="Discord Username" placeholder="Safety#0000" {...form.getInputProps('DiscordUsername')} />
+							</Stepper.Step>
+							<Stepper.Step className="step-container" label="Second step" description="Discord server">
+								<TextInput label="Discord invite" placeholder="https://discord.gg/ID" {...form.getInputProps('DiscordInvite')} />
+								<TextInput label="Referred by" placeholder="Optional" {...form.getInputProps('Reference')} />
+							</Stepper.Step>
+							<Stepper.Step className="w step-container" label="Final step" description="Payment">
+								<Card className="display-card" shadow="lg" p="lg" radius="lg">
+									<Card.Section className="d-flex justify-content-center">
+											<Image height={200} width={150} alt="" src={require(`./assets/robots/${BotImage}`)} />
+									</Card.Section>
+									<Group position="apart" mt="md" mb="xs">
+										<Text weight={500}>{`Twitter Username : ${form.values.Twitterusername}`}</Text>
+										<Badge color="pink" variant="light">
+										On Sale
+										</Badge>
+									</Group>
+									<Group position="apart" mt="md" mb="xs">
+										<Text weight={500}>{`Discord Username : ${form.values.DiscordUsername}`}</Text>
+									</Group>
+									<Group position="apart" mt="md" mb="xs">
+										<Text weight={500}>{`Discord invite : ${form.values.DiscordInvite}`}</Text>
+									</Group>
+									<Group position="apart" mt="md" mb="xs">
+										<Text weight={500}>{`Discord Bot : ${BotName} Bot`}</Text>
+									</Group>
+									<HelioPay
+										cluster='mainnet-beta'
+										className='Connect-wallet-button'
+										payButtonTitle='BUY'
+										paymentRequestId='63487b1e2c15f73dde403554'
+										supportedCurrencies={["SOL", "DUST"]}
+										totalAmount={0.1}
+										theme={{ colors: { primary: '#65d9e8' }}}
+									/>
+									<Group position="apart" mt="md" mb="xl"></Group>
+									<Group position="apart" mt="md" mb="xl"></Group>
+									<Group position="apart" mt="md" mb="xl"></Group>
+									<Group position="apart" mt="md" mb="xl"></Group>
+								</Card>
+							</Stepper.Step>
+							<Stepper.Completed>
+							</Stepper.Completed>
+					</Stepper>
+					<Group position="right" mt="xl">
+						{active < 2 && active > 0 && (
+							<Button variant="default" onClick={prevStep}>
+								Back
+							</Button>
+						)}
+						{active < 2 && <Button className="next-step-container" onClick={nextStep}>Next step</Button>}
+					</Group>
+						</div>
+					</div>
+					<section></section>
+					<section className="section section-lg">
+					<img
+						alt="..."
+						className="path"
+						src={require("assets/img/path4.png")}
 					/>
-			<div className="pricing-page-container w-100 h-100">
-				<Stepper color="cyan.3" active={active} breakpoint="sm">
-					<Stepper.Step className="step-container" label="First step" description="Personal information">
-						<TextInput label="Twitter Username"  placeholder="@Safetylabs" {...form.getInputProps('Twitterusername')} />
-						<TextInput label="Discord Username" placeholder="Safety#0000" {...form.getInputProps('DiscordUsername')} />
-					</Stepper.Step>
-					<Stepper.Step className="step-container" label="Second step" description="Discord server">
-						<TextInput label="Discord invite" placeholder="https://discord.gg/ID" {...form.getInputProps('DiscordInvite')} />
-						<TextInput label="Referred by" placeholder="Optional" {...form.getInputProps('Reference')} />
-					</Stepper.Step>
-					<Stepper.Step className="w step-container" label="Final step" description="Payment">
-						<Card className="display-card" shadow="lg" p="lg" radius="lg">
-							<Card.Section className="d-flex justify-content-center pt-3">
-									<Image height={200} width={150} alt="" src={require(`./assets/robots/${BotImage}`)} />
-							</Card.Section>
-							<Group position="apart" mt="md" mb="xs">
-								<Text weight={500}>{`Twitter Username : ${form.values.Twitterusername}`}</Text>
-								<Badge color="pink" variant="light">
-								On Sale
-								</Badge>
-							</Group>
-							<Group position="apart" mt="md" mb="xs">
-								<Text weight={500}>{`Discord Username : ${form.values.DiscordUsername}`}</Text>
-							</Group>
-							<Group position="apart" mt="md" mb="xs">
-								<Text weight={500}>{`Discord invite : ${form.values.DiscordInvite}`}</Text>
-							</Group>
-							<Group position="apart" mt="md" mb="xs">
-								<Text weight={500}>{`Discord Bot : ${BotName} Bot`}</Text>
-							</Group>
-							<Group position="apart" mt="md" mb="xl"></Group>
-							<Group position="apart" mt="md" mb="xl"></Group>
-							<Group position="apart" mt="md" mb="xl"></Group>
-							<Group position="apart" mt="md" mb="xl"></Group>
-						</Card>
-					</Stepper.Step>
-					<Stepper.Completed>
-					</Stepper.Completed>
-			</Stepper>
-			<Group position="right" mt="xl">
-				{active < 2 && active > 0 && (
-					<Button variant="default" onClick={prevStep}>
-						Back
-					</Button>
-				)}
-				{active < 2 && <Button className="next-step-container" onClick={nextStep}>Next step</Button>}
-			</Group>
-				</div>
-			</div>
-			<section></section>
-			<section className="section section-lg">
-			<img
-				alt="..."
-				className="path"
-				src={require("assets/img/path4.png")}
-			/>
-			<img
-				alt="..."
-				className="path2"
-				src={require("assets/img/path5.png")}
-			/>
-			<img
-				alt="..."
-				className="path3"
-				src={require("assets/img/path2.png")}
-			/>
-			<Container>
-		</Container>
-			</section>
-			<section className="d-flex align-items-center flex-column pricing-redirection section section-lg section-coins">
-				<img
-					alt="..."
-					className="path"
-					src={require("assets/img/path3.png")}
-				/>
-			</section>
-			<Footer index={2} />
-			</div>
+					<img
+						alt="..."
+						className="path2"
+						src={require("assets/img/path5.png")}
+					/>
+					<img
+						alt="..."
+						className="path3"
+						src={require("assets/img/path2.png")}
+					/>
+					<Container>
+				</Container>
+					</section>
+					<section className="d-flex align-items-center flex-column pricing-redirection section section-lg section-coins">
+					<img
+						alt="..."
+						className="path"
+						src={require("assets/img/path3.png")}
+					/>
+					</section>
+					<Footer index={2} />
+					</div>
+
 	  </>
 );
 }
