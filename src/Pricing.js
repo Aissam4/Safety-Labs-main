@@ -31,7 +31,7 @@ export default function Pricing()
 		await fetch('https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd')
 		.then((response) => response.json()).then((data) => setPrice(data.solana.usd));
 	}
-	async function buy(BotPrice){
+	async function buy() {
 		let oneUsd = 1 / price;
 		let packagePrice = oneUsd * 0.02 * 1000000000;
 		let packagePriceInt = parseInt(packagePrice)

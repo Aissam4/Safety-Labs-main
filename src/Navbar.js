@@ -27,7 +27,7 @@ export default function ExamplesNavbar({index})
 	const [account,setAccount] = useState('Connect Wallet')
 	const [color, setColor] = React.useState("navbar-transparent");
 
-	const changeColor = () => {
+	const changeColor = () =>{
 		if ( document.documentElement.scrollTop > 99 || document.body.scrollTop > 99 )
 			setColor("bg-info");
 		else if ( document.documentElement.scrollTop < 100 || document.body.scrollTop < 100 )

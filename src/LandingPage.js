@@ -1,4 +1,4 @@
-import React,{useMemo} from "react";
+import React from "react";
 import './assets/css/style.css'
 import {
 	Button,
@@ -11,36 +11,7 @@ import Footer from "Footer.js";
 import Roadmap from "Roadmap.js";
 import Features from "Features.js";
 import Pricing from "Pricing.js";
-import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
-import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
-import { PhantomWalletAdapter } from '@solana/wallet-adapter-wallets';
-import {
-    WalletModalProvider,
-    WalletDisconnectButton,
-    WalletMultiButton
-} from '@solana/wallet-adapter-react-ui';
-import { clusterApiUrl } from '@solana/web3.js';
 export default function LandingPage() {
-  const network = WalletAdapterNetwork.Devnet;
-
-  // You can also provide a custom RPC endpoint.
-  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
-
-  const wallets = useMemo(
-      () => [
-          /**
-           * Select the wallets you wish to support, by instantiating wallet adapters here.
-           *
-           * Common adapters can be found in the npm package `@solana/wallet-adapter-wallets`.
-           * That package supports tree shaking and lazy loading -- only the wallets you import
-           * will be compiled into your application, and only the dependencies of wallets that
-           * your users connect to will be loaded.
-           */
-          new PhantomWalletAdapter(),
-      ],
-      []
-  );
-
 	window.Buffer = window.Buffer || require("buffer").Buffer;
 	React.useEffect(() => {
 		document.body.classList.toggle("landing-page");
