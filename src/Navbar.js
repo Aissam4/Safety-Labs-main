@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect,useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import './assets/css/style.css'
 import {
@@ -17,7 +17,19 @@ import {
 	DropdownMenu,
 	DropdownItem 
 } from "reactstrap";
-import {CopyToClipboard} from 'react-copy-to-clipboard'; 
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
+import { clusterApiUrl } from '@solana/web3.js';
+import {
+    PhantomWalletAdapter,
+    SolflareWalletAdapter,
+    SolletExtensionWalletAdapter,
+    SolletWalletAdapter,
+    TorusWalletAdapter,
+	SlopeWalletAdapter,
+} from '@solana/wallet-adapter-wallets';
+import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
+import { WalletModalProvider as  ReactUIWalletModalProvider, WalletDisconnectButton, WalletMultiButton} from '@solana/wallet-adapter-react-ui';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 export default function ExamplesNavbar({index})
@@ -26,6 +38,19 @@ export default function ExamplesNavbar({index})
 	const [collapseOut, setCollapseOut] = React.useState("");
 	const [account,setAccount] = useState('Connect Wallet')
 	const [color, setColor] = React.useState("navbar-transparent");
+	const network = WalletAdapterNetwork.Devnet;
+	const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+	const wallets = useMemo(
+		() => [
+				new PhantomWalletAdapter(),
+				new SlopeWalletAdapter(),
+				new SolflareWalletAdapter(),
+				new SolletWalletAdapter({ network }),
+				new SolletExtensionWalletAdapter({ network }),
+				new TorusWalletAdapter(),
+		],
+		[]
+	);
 
 	const changeColor = () => {
 		if ( document.documentElement.scrollTop > 99 || document.body.scrollTop > 99 )
@@ -194,32 +219,17 @@ export default function ExamplesNavbar({index})
 								</NavLink>
 							</NavItem>
 						<NavItem>
-							<UncontrolledButtonDropdown>
-								<Button
-									className='ConnectWalletButton mr-0'
-									id="caret"
-									size="sm"
-									color="success"
-									onClick={connectWallet}
-								>
-									<i className="tim-icons icon-wallet-43 pr-3" />
-										{account !== 'Connect Wallet' ? "Connected" : account}
-								</Button>
-								<DropdownToggle caret className=" h-100 mb-0" color="success" data-toggle="dropdown"/>
-								<DropdownMenu className="drop m-0 p-0">
-									<DropdownItem onClick={disconnect}>
-										<i className="tim-icons icon-button-power" />
-										Sign out
-									</DropdownItem>
-									<DropdownItem  onClick={()=>toast.success('Copied', {theme: "dark"})}>
-										<CopyToClipboard text={account}>
-											<span>
-												{account !== 'Connect Wallet' ? account : "Desconnected"}
-											</span>
-										</CopyToClipboard>
-									</DropdownItem>
-								</DropdownMenu>
-							</UncontrolledButtonDropdown>
+						<ConnectionProvider  endpoint={endpoint}>
+							<WalletProvider wallets={wallets} onError={()=>{}} autoConnect>
+								<ReactUIWalletModalProvider >
+										<WalletMultiButton className="ConnectWalletButton">
+											<i className="tim-icons icon-wallet-43 pr-3" />
+											{account !== 'Connect Wallet' ? "Connected" : account}
+										</WalletMultiButton>
+								</ReactUIWalletModalProvider>
+							</WalletProvider>
+						</ConnectionProvider>
+							
 						</NavItem>
 						</Nav>
 						</Collapse>

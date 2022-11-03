@@ -43,7 +43,13 @@
 }
 .bg-info
 {
-	background-image: linear-gradient(45deg, #00DBDE 0%, #FC00FF 100%) !important;
+	background-color: #161941 !important;
+	height: 6vh !important;
+	
+}
+.navbar-transparent{
+	background-color: #5CD3FF !important;
+	height: 6vh !important;
 }
 .Safety-logo{
 	height: 4.5vh;
@@ -131,19 +137,30 @@
 	animation: none;
 	display: none;
 }
-  
-  @keyframes ring {
-	0% {
-	  width: 30px;
-	  height: 30px;
-	  opacity: 1;
-	}
-	100% {
-	  width: 300px;
-	  height: 300px;
-	  opacity: 0;
+.ConnectWalletButton{
+	background-color: #C000FB !important;
+	height: 3vh !important;
+	padding: 0;
+	margin: 0;
+}
+.ConnectWalletButton >  .wallet-adapter-button-start-icon{
+	display: none !important;
+	visibility:hidden !important;
+}
+@media only screen and (max-width: 990px) {
+	.ConnectWalletButton {
+		margin-top: 10px;
 	}
   }
-.Connect-wallet-button{
-	background-color: red;
+@keyframes ring {
+	0% {
+		width: 30px;
+		height: 30px;
+		opacity: 1;
+	}
+	100% {
+		width: 300px;
+		height: 300px;
+		opacity: 0;
+	}
 }

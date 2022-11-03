@@ -19,37 +19,13 @@ import {
     SolletExtensionWalletAdapter,
     SolletWalletAdapter,
     TorusWalletAdapter,
+	SlopeWalletAdapter,
 } from '@solana/wallet-adapter-wallets';
 import { WalletModalProvider as  ReactUIWalletModalProvider, WalletDisconnectButton, WalletMultiButton} from '@solana/wallet-adapter-react-ui';
 import { clusterApiUrl } from '@solana/web3.js';
 export default function LandingPage() {
   const network = WalletAdapterNetwork.Devnet;
-
-  // You can also provide a custom RPC endpoint.
-  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
-
-  const wallets = useMemo(
-      () => [
-          /**
-           * Select the wallets you wish to support, by instantiating wallet adapters here.
-           *
-           * Common adapters can be found in the npm package `@solana/wallet-adapter-wallets`.
-           * That package supports tree shaking and lazy loading -- only the wallets you import
-           * will be compiled into your application, and only the dependencies of wallets that
-           * your users connect to will be loaded.
-           */
-		//    new SolletWalletAdapter({ network }),
-			//new SolflareWalletAdapter(),
-			// new WalletAdapter(),
-        	new PhantomWalletAdapter(),
-            new SolflareWalletAdapter(),
-            new SolletWalletAdapter({ network }),
-            new SolletExtensionWalletAdapter({ network }),
-            new TorusWalletAdapter(),
-      ],
-      []
-  );
-
+  
 	window.Buffer = window.Buffer || require("buffer").Buffer;
 	React.useEffect(() => {
 		document.body.classList.toggle("landing-page");
@@ -61,13 +37,6 @@ export default function LandingPage() {
       <Navbar index={1} />
       <div className="wrapper">
         <div className="page-header">
-			<ConnectionProvider endpoint={endpoint}>
-				<WalletProvider wallets={wallets} onError={()=>{}} autoConnect>
-					<ReactUIWalletModalProvider>
-							<WalletMultiButton />
-					</ReactUIWalletModalProvider>
-				</WalletProvider>
-			</ConnectionProvider>
           <img
             alt="..."
             className="path"
@@ -101,7 +70,6 @@ export default function LandingPage() {
           <div className="Landing-page w-100">
             <Row className="row-grid text-left mb-5">
               <Col className="Safe-text" lg="6.5" md="6">
-			  
                 <h1 className="text-white">
 					Safe servers and facilitate community managment
                 </h1>
