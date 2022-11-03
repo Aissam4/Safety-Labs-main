@@ -11,25 +11,19 @@ import {
 	Navbar,
 	Row,
 	Col,
-	Button,
-	UncontrolledButtonDropdown,
-	DropdownToggle,
-	DropdownMenu,
-	DropdownItem 
 } from "reactstrap";
-import {CopyToClipboard} from 'react-copy-to-clipboard';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import { clusterApiUrl } from '@solana/web3.js';
 import {
-    PhantomWalletAdapter,
-    SolflareWalletAdapter,
-    SolletExtensionWalletAdapter,
-    SolletWalletAdapter,
-    TorusWalletAdapter,
-	SlopeWalletAdapter,
+		PhantomWalletAdapter,
+		SolflareWalletAdapter,
+		SolletExtensionWalletAdapter,
+		SolletWalletAdapter,
+		TorusWalletAdapter,
+		SlopeWalletAdapter,
 } from '@solana/wallet-adapter-wallets';
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
-import { WalletModalProvider as  ReactUIWalletModalProvider, WalletDisconnectButton, WalletMultiButton} from '@solana/wallet-adapter-react-ui';
+import { WalletModalProvider as  ReactUIWalletModalProvider, WalletMultiButton} from '@solana/wallet-adapter-react-ui';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 export default function ExamplesNavbar({index})
@@ -51,28 +45,23 @@ export default function ExamplesNavbar({index})
 		],
 		[]
 	);
-
 	const changeColor = () => {
 		if ( document.documentElement.scrollTop > 99 || document.body.scrollTop > 99 )
 			setColor("bg-info");
 		else if ( document.documentElement.scrollTop < 100 || document.body.scrollTop < 100 )
 			setColor("navbar-transparent");
 	};
-	const toggleCollapse = () =>
-	{
+	const toggleCollapse = () =>{
 		document.documentElement.classList.toggle("nav-open");
 		setCollapseOpen(!collapseOpen);
 	};
-	const onCollapseExiting = () =>
-	{
+	const onCollapseExiting = () =>{
 		setCollapseOut("collapsing-out");
 	};
-	const onCollapseExited = () =>
-	{
+	const onCollapseExited = () =>{
 		setCollapseOut("");
 	};
-	useEffect(() =>
-	{
+	useEffect(() =>{
 		const provider = getProvider();
 			connectWallet();
 			provider.on("connect", (publicKey) => {

@@ -1,4 +1,4 @@
-import React,{useMemo} from "react";
+import React from "react";
 import './assets/css/style.css'
 import {
 	Button,
@@ -11,21 +11,7 @@ import Footer from "Footer.js";
 import Roadmap from "Roadmap.js";
 import Features from "Features.js";
 import Pricing from "Pricing.js";
-import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
-import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
-import {
-    PhantomWalletAdapter,
-    SolflareWalletAdapter,
-    SolletExtensionWalletAdapter,
-    SolletWalletAdapter,
-    TorusWalletAdapter,
-	SlopeWalletAdapter,
-} from '@solana/wallet-adapter-wallets';
-import { WalletModalProvider as  ReactUIWalletModalProvider, WalletDisconnectButton, WalletMultiButton} from '@solana/wallet-adapter-react-ui';
-import { clusterApiUrl } from '@solana/web3.js';
 export default function LandingPage() {
-  const network = WalletAdapterNetwork.Devnet;
-  
 	window.Buffer = window.Buffer || require("buffer").Buffer;
 	React.useEffect(() => {
 		document.body.classList.toggle("landing-page");
@@ -99,7 +85,7 @@ export default function LandingPage() {
                 <img
                   alt="by fulvector on Freepik"
                   className="blockchain mb-5 pt-4 img-fluid"
-                  src={require("./assets/images/Blockchian.png")}
+                  src={require("./assets/images/Blockchian_1_50.png")}
                 />
               </Col>
             </Row>
