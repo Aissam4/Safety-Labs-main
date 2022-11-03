@@ -62,14 +62,10 @@ export default function ExamplesNavbar({index})
 		setCollapseOut("");
 	};
 	useEffect(() =>{
+
 		const provider = getProvider();
-			connectWallet();
-			provider.on("connect", (publicKey) => {
-				setAccount(publicKey.toString());
-		});
-			provider.on("disconnect", () => {
-				setAccount('Connect Wallet');
-		});
+		provider.on('connect', () => {console.log("Connected !")})
+		provider.on('disconnect', () => {console.log("Disconnected !")})
 		if (window.location.hash === "#empty-roadmap")
 			window.location.href = "#empty-roadmap";
 		else if (window.location.hash === "#empty")
@@ -81,10 +77,6 @@ export default function ExamplesNavbar({index})
 			window.removeEventListener("scroll", changeColor);};
 	
 	}, [])
-	const disconnect = async () => {
-		const provider = getProvider();
-		provider.disconnect();
-	}
 	const getProvider = () => {
 		if ('phantom' in window) {
 		  const provider = window.phantom?.solana;
@@ -94,15 +86,6 @@ export default function ExamplesNavbar({index})
 		}
 		window.open('https://phantom.app/', '_blank');
 	  };
-    const connectWallet = async() => {
-		const provider = getProvider();
-		try {
-			const resp = await provider.connect();
-			setAccount(resp.publicKey.toString());
-		} catch (err) {
-			toast.err('Wallet connection failed', {theme : "dark"});
-		}
-	  }
 	let scrollToFeatures = () =>
 	{
 		if (index === 1)
@@ -211,9 +194,9 @@ export default function ExamplesNavbar({index})
 						<ConnectionProvider  endpoint={endpoint}>
 							<WalletProvider wallets={wallets} onError={()=>{}} autoConnect>
 								<ReactUIWalletModalProvider >
-										<WalletMultiButton className="ConnectWalletButton">
+										<WalletMultiButton className="ConnectWalletButton" >
 											<i className="tim-icons icon-wallet-43 pr-3" />
-											{account !== 'Connect Wallet' ? "Connected" : account}
+											{account === 'Connect Wallet' ? account : "Connected"}
 										</WalletMultiButton>
 								</ReactUIWalletModalProvider>
 							</WalletProvider>
