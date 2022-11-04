@@ -141,18 +141,18 @@
 
 @media only screen and (max-width: 1360px) {
 	.card-text {
-		font-size: 70%;
+		font-size: 85%;
 	}
 	.text-uppercase{
-		font-size: 85%;
+		font-size: 99%;
 	}
 }
 @media only screen and (max-width: 1200px) {
 	.card-text {
-		font-size: 100%;
+		font-size: 120%;
 	}
 	.text-uppercase{
-		font-size: 100%;
+		font-size: 130%;
 	}
 }
 

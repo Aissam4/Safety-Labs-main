@@ -89,7 +89,7 @@ export default function Pricing()
                         <ListGroupItem>Collect whitelisted members wallet</ListGroupItem>
                         <ListGroupItem>Accurate inside your server</ListGroupItem>
                         <ListGroupItem>Easy and quick</ListGroupItem>
-                        <ListGroupItem><p className='price'><br /><b>50$/</b>month</p></ListGroupItem>
+                        <ListGroupItem><p className='price'><br /><b>25$/</b>month</p></ListGroupItem>
                       </ListGroup>
                     </Row>
                   </CardBody>
@@ -257,7 +257,7 @@ export default function Pricing()
                         <ListGroupItem>Track all daily mints</ListGroupItem>
                         <ListGroupItem>Display daily mints on your discord</ListGroupItem>
                         <ListGroupItem>You can never miss a mint</ListGroupItem>
-                        <ListGroupItem><p className='price'><br /><b>50$/</b>month</p></ListGroupItem>
+                        <ListGroupItem><p className='price'><br /><b>25$/</b>month</p></ListGroupItem>
                       </ListGroup>
                     </Row>
                   </CardBody>

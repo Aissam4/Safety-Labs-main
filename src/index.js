@@ -7,7 +7,11 @@ import LandingPage from "LandingPage.js";
 import { Switch, Route } from "react-router-dom";
 import Pricing_page from "./pricing-page.js"
 import NoPage from "NoPage.js";
+import { MantineProvider } from '@mantine/core';
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
+
 root.render(
 	<BrowserRouter>
 		<Switch>
