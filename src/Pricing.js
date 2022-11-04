@@ -68,7 +68,7 @@ export default function Pricing()
 		<div className='w-75'>
 			 <h1 className="features text-center">PRICING</h1>
             <Row>
-              <Col md="4">
+              <Col xs="12" sm="12" md="12" xl="4">
                 <Card className="card-coin card-plain">
                   <CardHeader>
                     <img
@@ -85,7 +85,7 @@ export default function Pricing()
                       </Col>
                     </Row>
                     <Row>
-                      <ListGroup>
+                      <ListGroup className='card-text'>
                         <ListGroupItem>Collect whitelisted members wallet</ListGroupItem>
                         <ListGroupItem>Accurate inside your server</ListGroupItem>
                         <ListGroupItem>Easy and quick</ListGroupItem>
@@ -101,7 +101,7 @@ export default function Pricing()
                 </Card>
 				<div className="space-between"></div>
               </Col>
-              <Col md="4">
+              <Col xs="12" sm="12" md="12" xl="4">
                 <Card className="card-coin card-plain">
                   <CardHeader>
                     <img
@@ -118,7 +118,7 @@ export default function Pricing()
                       </Col>
                     </Row>
                     <Row>
-                      <ListGroup>
+                      <ListGroup  className='card-text'>
                         <ListGroupItem>Track any collection Floor price</ListGroupItem>
                         <ListGroupItem>Tracks the prices of any token</ListGroupItem>
                         <ListGroupItem>Display the prices on your server</ListGroupItem>	
@@ -134,7 +134,7 @@ export default function Pricing()
                 </Card>
 				<div className="space-between"></div>
               </Col>
-              <Col md="4">
+              <Col xs="12" sm="12" md="12" xl="4">
                 <Card className="card-coin card-plain">
                   <CardHeader>
                     <img
@@ -151,10 +151,10 @@ export default function Pricing()
                       </Col>
                     </Row>
                     <Row>
-                      <ListGroup>
+                      <ListGroup className='card-text'>
                         <ListGroupItem>Tracking your active members</ListGroupItem>
                         <ListGroupItem>Warn your members about being active</ListGroupItem>
-                        <ListGroupItem>send message to your members</ListGroupItem>
+                        <ListGroupItem>send messages to your community</ListGroupItem>
                         <ListGroupItem><p className='price'><br /><b>50$/</b>month</p></ListGroupItem>
                       </ListGroup>
                     </Row>
@@ -169,7 +169,7 @@ export default function Pricing()
               </Col>
             </Row>
             <Row className='mt-5'>
-              <Col md="4">
+              <Col xs="12" sm="12" md="12" xl="4">
                 <Card className="card-coin card-plain">
                   <CardHeader>
                     <img
@@ -186,8 +186,8 @@ export default function Pricing()
                       </Col>
                     </Row>
                     <Row>
-                      <ListGroup>
-                        <ListGroupItem>assigning roles easy and fast</ListGroupItem>
+                      <ListGroup className='card-text'>
+                        <ListGroupItem>assigning roles convenient and quick</ListGroupItem>
                         <ListGroupItem>Bulk assign of a specific role</ListGroupItem>
                         <ListGroupItem>Quick Collabs</ListGroupItem>
                         <ListGroupItem><p className='price'><br /><b>80$/</b>month</p></ListGroupItem>
@@ -202,7 +202,7 @@ export default function Pricing()
                 </Card>
 				<div className="space-between"></div>
               </Col>
-              <Col md="4">
+              <Col xs="12" sm="12" md="12" xl="4">
                 <Card 
 					className="card-coin card-plain">
                   <CardHeader>
@@ -220,10 +220,10 @@ export default function Pricing()
                       </Col>
                     </Row>
                     <Row>
-                      <ListGroup>
+                      <ListGroup className='card-text'>
                         <ListGroupItem>Set a password of your discord bot</ListGroupItem>
+                        <ListGroupItem>provide added security measures</ListGroupItem>
                         <ListGroupItem>Secure your discord server</ListGroupItem>
-                        <ListGroupItem>Easy to use</ListGroupItem>
                         <ListGroupItem><p className='price'><br /><b>80$/</b>month</p></ListGroupItem>
                       </ListGroup>
                     </Row>
@@ -236,7 +236,7 @@ export default function Pricing()
                 </Card>
 				<div className="space-between"></div>
               </Col>
-              <Col md="4">
+              <Col xs="12" sm="12" md="12" xl="4">
                 <Card className="card-coin card-plain">
                   <CardHeader>
                     <img
@@ -253,9 +253,9 @@ export default function Pricing()
                       </Col>
                     </Row>
                     <Row>
-                      <ListGroup> 
+                      <ListGroup className='card-text'> 
                         <ListGroupItem>Track all daily mints</ListGroupItem>
-                        <ListGroupItem>Display daily mints to your members</ListGroupItem>
+                        <ListGroupItem>Display daily mints on your discord</ListGroupItem>
                         <ListGroupItem>You can never miss a mint</ListGroupItem>
                         <ListGroupItem><p className='price'><br /><b>50$/</b>month</p></ListGroupItem>
                       </ListGroup>
@@ -271,7 +271,7 @@ export default function Pricing()
             </Row>
 			<div className="space-between"></div>
 			<Row className='last-card-container'>
-			  <Col md="4">
+			  <Col xs="12" sm="12" md="12" xl="4">
                 <Card className="card-coin card-plain">
 					<CardHeader>
 					<img
@@ -286,8 +286,8 @@ export default function Pricing()
 								<h4 className="text-uppercase">Twitter Sales</h4>
 								<hr className="line-info" />
 							</Col>
-							<ListGroup>
-								<ListGroupItem>Tweet sales of your NFT Project</ListGroupItem>
+							<ListGroup className='card-text'>
+								<ListGroupItem>Tweet sales details of your NFT Project</ListGroupItem>
 								<ListGroupItem>help you to grow your community</ListGroupItem>
 								<ListGroupItem>You can Set any twitter page</ListGroupItem>
 								<ListGroupItem><p className='price'><br /><b>80$/</b>month</p></ListGroupItem>
@@ -302,7 +302,7 @@ export default function Pricing()
 				</Card>
 			<div className="space-between"></div>
 			</Col>
-			  <Col md="4">
+			  <Col xs="12" sm="12" md="12" xl="4">
                 <Card className="card-coin card-plain">
 					<CardHeader>
 					<img
@@ -317,10 +317,10 @@ export default function Pricing()
 								<h4 className="text-uppercase">Raid to earn</h4>
 								<hr className="line-info" />
 							</Col>
-							<ListGroup>
+							<ListGroup className='card-text'>
 								<ListGroupItem>Create a raid contest for members</ListGroupItem>
-								<ListGroupItem>Reward your members for them raid</ListGroupItem>
-								<ListGroupItem>raid and earn prizes</ListGroupItem>
+								<ListGroupItem>Reward your members for The raid</ListGroupItem>
+								<ListGroupItem>Provide an easy set-up for tasks</ListGroupItem>
 								<ListGroupItem><p className='price'><br /><b>80$/</b>month</p></ListGroupItem>
 							</ListGroup>
 						</Row>
