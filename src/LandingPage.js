@@ -21,8 +21,9 @@ export default function LandingPage() {
 	}, []);
 	const [loader, setLoader] = useState(true);
 	useEffect(() => {
-		// window.onload = () => setLoader(false);
-		setTimeout(() => setLoader(false), 5000);
+		window.onload = () => setLoader(false);
+		setTimeout(() => setLoader(false), 400);
+
 	}, [])
   let mouse = new Mouse({
     mouse: "cirle",
@@ -32,8 +33,7 @@ export default function LandingPage() {
   });
   mouse.mouse();
   return (
-    <>
-      {loader ? (
+    <div>
         <LoadingOverlay
           zIndex={9999}
           visible={loader}
@@ -42,8 +42,7 @@ export default function LandingPage() {
           overlayOpacity={1}
           overlayColor="#1C1F46"
         />
-      ) : (
-        <>
+        <div style={{display: loader ? "none" : null}}>
           <Navbar index={1} />
           <div className="wrapper">
             <div className="page-header">
@@ -151,8 +150,7 @@ export default function LandingPage() {
             </section>
             <Footer index={1} />
           </div>
-        </>
-      )}
-    </>
+        </div>
+    </div>
   );
 }
