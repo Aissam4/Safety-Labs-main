@@ -9,6 +9,7 @@ import './assets/css/style.css'
 import { useForm } from '@mantine/form';
 import Footer from "Footer";
 import { HelioPay} from '@heliofi/react';
+// import axios from "axios";
 import 'react-vertical-timeline-component/style.min.css';
 require('@solana/wallet-adapter-react-ui/styles.css');
 
@@ -17,13 +18,6 @@ export default function Pricing_page()
 	const [active, setActive] = useState(0);
 	let BotName = "";
 	let BotImage = "";
-	// function post_data(data) {
-	// 	axios.post("http://localhost:1337/api/orders", {"data": data}).then(res => {
-	// 		console.log(res)
-	// 	}).catch(err => {
-	// 		console.log(err)
-	// 	})
-	// }
 	React.useEffect(() => {
 		document.body.classList.toggle("landing-page");
 		return function cleanup() {
