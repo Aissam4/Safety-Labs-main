@@ -11,6 +11,7 @@ import Footer from "Footer.js";
 import Roadmap from "Roadmap.js";
 import Features from "Features.js";
 import Pricing from "Pricing.js";
+import { Mouse } from "moussejs";
 export default function LandingPage() {
 	window.Buffer = window.Buffer || require("buffer").Buffer;
 	React.useEffect(() => {
@@ -18,6 +19,13 @@ export default function LandingPage() {
 		return function cleanup() {
 			document.body.classList.toggle("landing-page");
 		};}, []);
+		let mouse = new Mouse({
+			mouse : 'cirle',
+			color: '#C101FE',
+			mousePointer: false,
+			mouseHover: 'border',
+		});
+		mouse.mouse();
   return (
     <>
       <Navbar index={1} />
