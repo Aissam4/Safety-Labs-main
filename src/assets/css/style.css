@@ -91,16 +91,10 @@
 	font-size: 14.5px;
 }
 
-.step-container{
-	color: #F719FE;
+.mantine-ittua2{
+	color: #F719FE !important;
 }
 
-.mantine-ittua2{
-	color: white !important;
-}
-.next-step-container{
-	background-color: #F719FE;
-}
 .wallet-adapter-button-trigger {
     background-color: #BD00FA !important;
 }
@@ -168,7 +162,9 @@
 		opacity: 0;
 	}
 }
-
+.ConnectWalletButton{
+	background-color: red !important;
+}
 @media only screen and (max-width: 990px)
 {
 	.drop{

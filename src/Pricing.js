@@ -12,10 +12,13 @@ import {
 	Col
 } from "reactstrap";
 import { toast } from 'react-toastify';
+import { Modal, Group,  Stepper, Image, TextInput,  Text, Badge} from '@mantine/core';
+import { useForm } from '@mantine/form';
 import { clusterApiUrl, Connection, SystemProgram, Transaction } from '@solana/web3.js';
 export default function Pricing()
 {
 	const [price,setPrice] = useState('')
+	const [opened, setOpened] = useState(false);
 	useEffect(()=> {
 		fetchPrice()
 	},[])
@@ -64,10 +67,73 @@ export default function Pricing()
 			}
 			}).catch(() => {toast.error('Transaction Failed', {theme: "dark"},);})
 	}
+
+
+
+	const [active, setActive] = useState(0);
+	let BotName = "";
+	let BotImage = "";
+	const form = useForm({
+		initialValues: {
+			Twitterusername: '',
+			DiscordUsername: '',
+			DiscordInvite: '',
+			DiscordBot: '',
+			Reference:'',
+		},
+		validate: (values) => {
+				return {
+					Twitterusername:
+					values.Twitterusername.trim().length < 4
+					? 'Username must include at least 4 characters'
+					: values.Twitterusername[0] !== '@'
+					? 'Twitter username must begin with @'
+					: null,
+					DiscordUsername:
+					values.DiscordUsername.trim().length < 5
+					? 'DiscordUsername must include at least 5 characters'
+					: values.DiscordUsername.lastIndexOf("#") === -1 || !(/[0-9]{4,}$/.test(values.DiscordUsername))
+					? 'DiscordUsername must end with #1234'
+					: null,
+					DiscordInvite: values.DiscordInvite.length < 6
+					? 'Discord invite must include at least 6 characters'
+					: /^(ftp|http|https):\/\/discord.gg\/[^ "]+$/.test(values.DiscordInvite)
+					? null
+					: 'Discord invite must be https://discord.gg/id',
+				};
+			return {};
+		},
+	});
+
+	const BuyBot = () =>
+		setActive((current) => {
+			if (form.validate().hasErrors) {
+				return current;
+			}
+			return current < 3 ? current + 1 : current;
+	});
 	return (
 		<div className='w-75'>
+			<>
+				<Modal centered
+					opened={opened}
+					onClose={() => setOpened(false)}
+				>
+					<div className='labels'>
+						<TextInput label="Twitter Username"  placeholder="@Safetylabs" {...form.getInputProps('Twitterusername')} />
+						<TextInput label="Discord Username" placeholder="Safety#0000" {...form.getInputProps('DiscordUsername')} />
+						<TextInput label="Discord invite" placeholder="https://discord.gg/ID" {...form.getInputProps('DiscordInvite')} />
+						<TextInput label="Referred by" placeholder="Optional" {...form.getInputProps('Reference')} />
+					</div>
+					<Group position="right" mt="xl">
+							<Button variant="default" onClick={() => {BuyBot()}}>
+							</Button>
+					</Group>
+
+				</Modal>
+			</>
 			 <h1 className="features text-center">PRICING</h1>
-            <Row>
+			<Row>
               <Col xs="12" sm="12" md="12" xl="4">
                 <Card className="card-coin card-plain">
                   <CardHeader>
@@ -94,7 +160,7 @@ export default function Pricing()
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button onClick={() => {MakeTransaction()}} className="btn btn-simple" color="primary">
+                    <Button onClick={() => {setOpened(true)}} className="btn btn-simple" color="primary">
                       Buy
                     </Button>
                   </CardFooter>
@@ -127,7 +193,7 @@ export default function Pricing()
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button  onClick={() => {MakeTransaction()}} className="btn-simple" color="success">
+                    <Button  onClick={() => {setOpened(true)}} className="btn-simple" color="success">
                       Buy
                     </Button>
                   </CardFooter>
@@ -160,7 +226,7 @@ export default function Pricing()
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button  onClick={() => {MakeTransaction()}} className="btn-simple" color="info">
+                    <Button  onClick={() => {setOpened(true)}} className="btn-simple" color="info">
                       Buy
                     </Button>
                   </CardFooter>
@@ -195,7 +261,7 @@ export default function Pricing()
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button  onClick={() => {MakeTransaction()}} className="btn-simple" color="primary">
+                    <Button  onClick={() => {setOpened(true)}} className="btn-simple" color="primary">
                       Buy
                     </Button>
                   </CardFooter>
@@ -229,7 +295,7 @@ export default function Pricing()
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button onClick={() => {MakeTransaction()}} className="btn-simple" color="success">
+                    <Button onClick={() => {setOpened(true)}} className="btn-simple" color="success">
                       Buy
                     </Button>
                   </CardFooter>
@@ -262,7 +328,7 @@ export default function Pricing()
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button onClick={() => {MakeTransaction()}} className="btn-simple" color="info">
+                    <Button onClick={() => {setOpened(true)}} className="btn-simple" color="info">
                       Buy
                     </Button>
                   </CardFooter>
@@ -295,7 +361,7 @@ export default function Pricing()
 						</Row>
 					</CardBody>
 					<CardFooter className="text-center">
-					<Button onClick={() => {MakeTransaction()}} className="btn-simple" color="info">
+					<Button onClick={() => {setOpened(true)}} className="btn-simple" color="info">
 						Buy
 					</Button>
 					</CardFooter>
@@ -326,7 +392,7 @@ export default function Pricing()
 						</Row>
 					</CardBody>
 					<CardFooter className="text-center">
-					<Button onClick={() => {MakeTransaction()}} className="btn-simple" color="info">
+					<Button onClick={() => {setOpened(true)}} className="btn-simple" color="info">
 						Buy
 					</Button>
 					</CardFooter>
