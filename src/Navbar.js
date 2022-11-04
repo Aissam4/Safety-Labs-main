@@ -25,6 +25,7 @@ export default function ExamplesNavbar({index})
 	const [collapseOpen, setCollapseOpen] = React.useState(false);
 	const [collapseOut, setCollapseOut] = React.useState("");
 	const [account,setAccount] = useState('Connect Wallet')
+	const [provider, setProvider] = useState('');
 	const [color, setColor] = React.useState("navbar-transparent");
 
 	const changeColor = () =>{
@@ -46,47 +47,49 @@ export default function ExamplesNavbar({index})
 	{
 		setCollapseOut("");
 	};
+
+	useEffect(() => {
+		if (provider) {
+			connectWallet();
+			console.log("here",provider)
+		} else {
+			setProvider(window.solana)
+		}
+	}, provider)
+
 	useEffect(() =>
 	{
-		const provider = getProvider();
+		try {
+				setProvider(window.solana)
+		} catch (e) {
+			window.open('https://phantom.app/', '_blank');
+		}
 		connectWallet();
-		provider.on("connect", (publicKey) => {
-				setAccount(publicKey.toString());
-		});
-		provider.on("disconnect", () => {
-				setAccount('Connect Wallet');
-		});
+
+
 		if (window.location.hash === "#empty-roadmap")
-			window.location.href = "#empty-roadmap";
+		window.location.href = "#empty-roadmap";
 		else if (window.location.hash === "#empty")
-			window.location.href = "#empty";
+		window.location.href = "#empty";
 		else if (window.location.hash === "#empty-pricing")
-			window.location.href = "#empty-pricing";
+		window.location.href = "#empty-pricing";
 		window.addEventListener("scroll", changeColor);
 		return function cleanup() {
 			window.removeEventListener("scroll", changeColor);};
-	
+					
 	}, [])
 	const disconnect = async () => {
-		const provider = getProvider();
 		provider.disconnect();
+		provider.on("disconnect", () => {
+					setAccount('Connect Wallet');
+			});
 	}
-	const getProvider = () => {
-		if ('phantom' in window) {
-		  const provider = window.solana;
-		  if (provider.isPhantom) {
-			return provider;
-		  }
-		}
-		window.open('https://phantom.app/');
-		window.location.reload(false);
-	};
-    const connectWallet = async() => {
-		const provider = getProvider();
+	const connectWallet = async() => {
+		console.log(provider);
 		try {
 			const resp = await provider.connect();
 			setAccount(resp.publicKey.toString());
-		} catch (err) {
+		} catch (e) {
 			toast.err('Wallet connection failed', {theme : "dark"});
 		}
 	  }
@@ -208,12 +211,12 @@ export default function ExamplesNavbar({index})
 								</Button>
 								<DropdownToggle caret className=" h-100 mb-0" color="success" data-toggle="dropdown"/>
 								<DropdownMenu className="drop m-0 p-0">
-									<DropdownItem onClick={disconnect}>
+									<DropdownItem onClick={disconnect} disabled={account === 'Connect Wallet' ? true : false}>
 										<i className="tim-icons icon-button-power" />
 										Sign out
 									</DropdownItem>
-									<DropdownItem  onClick={()=>toast.success('Copied', {theme: "dark"})}>
-										<CopyToClipboard text={account}>
+									<DropdownItem  onClick={()=>toast.success('Copied', {theme: "dark"})} disabled={account !== 'Connect Wallet' ? false : true}>
+										<CopyToClipboard text={account} >
 											<span>
 												{account !== 'Connect Wallet' ? (account.substring(0, 10) + "......" ) : "Desconnected"}
 											</span>
