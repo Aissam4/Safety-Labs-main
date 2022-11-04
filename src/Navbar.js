@@ -47,16 +47,7 @@ export default function ExamplesNavbar({index})
 	{
 		setCollapseOut("");
 	};
-
-	useEffect(() => {
-		if (provider) {
-			connectWallet();
-			console.log("here",provider)
-		} else {
-			setProvider(window.solana)
-		}
-	}, provider)
-
+	window.onload = () => {setProvider(window.solana);}
 	useEffect(() =>
 	{
 		try {
@@ -65,8 +56,6 @@ export default function ExamplesNavbar({index})
 			window.open('https://phantom.app/', '_blank');
 		}
 		connectWallet();
-
-
 		if (window.location.hash === "#empty-roadmap")
 		window.location.href = "#empty-roadmap";
 		else if (window.location.hash === "#empty")
