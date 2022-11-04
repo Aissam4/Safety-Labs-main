@@ -22,7 +22,7 @@ export default function LandingPage() {
 	const [loader, setLoader] = useState(true);
 	useEffect(() => {
 		window.onload = () => setLoader(false);
-		setTimeout(() => setLoader(false), 1500);
+		setTimeout(() => setLoader(false), 2000);
 	}, [])
   let mouse = new Mouse({
     mouse: "cirle",

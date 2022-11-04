@@ -1,5 +1,6 @@
 **Safety Labs Project**
 
-responsive cards
-desconnect wallet space
-mobile view form
+Add Bot name to data base
+add make transaction to the modul button
+add backend requist to the modul
+test everything working as well

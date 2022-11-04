@@ -12,7 +12,7 @@ import {
 	Col
 } from "reactstrap";
 import { toast } from 'react-toastify';
-import { Modal, Group,  Stepper, Image, TextInput,  Text, Badge} from '@mantine/core';
+import { Modal, Group,  Stepper, Image, TextInput,  Text, Badge, Button as B} from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { clusterApiUrl, Connection, SystemProgram, Transaction } from '@solana/web3.js';
 export default function Pricing()
@@ -125,9 +125,11 @@ export default function Pricing()
 						<TextInput label="Discord invite" placeholder="https://discord.gg/ID" {...form.getInputProps('DiscordInvite')} />
 						<TextInput label="Referred by" placeholder="Optional" {...form.getInputProps('Reference')} />
 					</div>
+
 					<Group position="right" mt="xl">
-							<Button variant="default" onClick={() => {BuyBot()}}>
-							</Button>
+						<B onClick={() => {BuyBot()}} variant="outline" color="grape" radius="xl" uppercase>
+							BUY
+						</B>
 					</Group>
 
 				</Modal>
