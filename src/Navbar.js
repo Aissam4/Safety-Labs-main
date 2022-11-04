@@ -49,11 +49,11 @@ export default function ExamplesNavbar({index})
 	useEffect(() =>
 	{
 		const provider = getProvider();
-			connectWallet();
-			provider.on("connect", (publicKey) => {
+		connectWallet();
+		provider.on("connect", (publicKey) => {
 				setAccount(publicKey.toString());
 		});
-			provider.on("disconnect", () => {
+		provider.on("disconnect", () => {
 				setAccount('Connect Wallet');
 		});
 		if (window.location.hash === "#empty-roadmap")
@@ -73,13 +73,14 @@ export default function ExamplesNavbar({index})
 	}
 	const getProvider = () => {
 		if ('phantom' in window) {
-		  const provider = window.phantom?.solana;
-		  if (provider?.isPhantom) {
+		  const provider = window.solana;
+		  if (provider.isPhantom) {
 			return provider;
 		  }
 		}
-		window.open('https://phantom.app/', '_blank');
-	  };
+		window.open('https://phantom.app/');
+		window.location.reload(false);
+	};
     const connectWallet = async() => {
 		const provider = getProvider();
 		try {
