@@ -214,7 +214,7 @@ export default function ExamplesNavbar({index})
 									<DropdownItem  onClick={()=>toast.success('Copied', {theme: "dark"})}>
 										<CopyToClipboard text={account}>
 											<span>
-												{account !== 'Connect Wallet' ? account : "Desconnected"}
+												{account !== 'Connect Wallet' ? (account.substring(0, 10) + "......" ) : "Desconnected"}
 											</span>
 										</CopyToClipboard>
 									</DropdownItem>
