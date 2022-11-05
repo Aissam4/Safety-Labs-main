@@ -15,6 +15,7 @@ import { toast } from 'react-toastify';
 import { Modal, Group,  Stepper, Image, TextInput,  Text, Badge, Button as B} from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { clusterApiUrl, Connection, SystemProgram, Transaction } from '@solana/web3.js';
+
 export default function Pricing()
 {
 	const [price,setPrice] = useState('')
@@ -63,6 +64,12 @@ export default function Pricing()
 		buy().then((res, err) => {
 			if (err === undefined && !res.value){
 				toast.success('Transaction Succefully', {theme: "dark"});
+				// function post_data(data) {
+				// 	axios.post("http://132.226.196.89:8080/api/Buyers/add", {data}).then(res => {
+				// 	}).catch(err => {
+				// 		console.log("error has occurred");
+				// 	})
+				// }
 				return ;
 			}
 			}).catch(() => {toast.error('Transaction Failed', {theme: "dark"},);})
@@ -71,8 +78,7 @@ export default function Pricing()
 
 
 	const [active, setActive] = useState(0);
-	let BotName = "";
-	let BotImage = "";
+	const [bot, setBot] = useState(0);
 	const form = useForm({
 		initialValues: {
 			Twitterusername: '',
@@ -110,7 +116,10 @@ export default function Pricing()
 			if (form.validate().hasErrors) {
 				return current;
 			}
-			return current < 3 ? current + 1 : current;
+			else {
+				MakeTransaction();
+			}
+			// return current < 3 ? current + 1 : current;
 	});
 	return (
 		<div className='w-75'>
@@ -131,7 +140,6 @@ export default function Pricing()
 							BUY
 						</B>
 					</Group>
-
 				</Modal>
 			</>
 			 <h1 className="features text-center">PRICING</h1>
@@ -162,8 +170,13 @@ export default function Pricing()
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button onClick={() => {setOpened(true)}} className="btn btn-simple" color="primary">
-                      Buy
+                    <Button
+						onClick={() => {
+							setBot(1);
+							setOpened(true)}}
+						className="btn btn-simple"
+						color="primary">
+                    	Buy
                     </Button>
                   </CardFooter>
                 </Card>
@@ -195,8 +208,13 @@ export default function Pricing()
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button  onClick={() => {setOpened(true)}} className="btn-simple" color="success">
-                      Buy
+                    <Button  
+						onClick={() => {
+							setBot(2);
+							setOpened(true)}}
+						className="btn-simple"
+						color="success">
+                    	Buy
                     </Button>
                   </CardFooter>
                 </Card>
@@ -228,9 +246,14 @@ export default function Pricing()
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button  onClick={() => {setOpened(true)}} className="btn-simple" color="info">
-                      Buy
-                    </Button>
+						<Button  
+							onClick={() => {
+								setBot(3);
+								setOpened(true)}}
+							className="btn-simple"
+							color="info">
+							Buy
+						</Button>
                   </CardFooter>
                 </Card>
 				<div className="space-between"></div>
@@ -263,8 +286,13 @@ export default function Pricing()
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button  onClick={() => {setOpened(true)}} className="btn-simple" color="primary">
-                      Buy
+					<Button  
+						onClick={() => {
+							setBot(4);
+							setOpened(true)}}
+						className="btn-simple"
+						color="primary">
+						Buy
                     </Button>
                   </CardFooter>
                 </Card>
@@ -297,8 +325,13 @@ export default function Pricing()
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button onClick={() => {setOpened(true)}} className="btn-simple" color="success">
-                      Buy
+				  	<Button  
+						onClick={() => {
+							setBot(5);
+							setOpened(true)}}
+						className="btn-simple"
+						color="success">
+						Buy
                     </Button>
                   </CardFooter>
                 </Card>
@@ -330,8 +363,13 @@ export default function Pricing()
                     </Row>
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button onClick={() => {setOpened(true)}} className="btn-simple" color="info">
-                      Buy
+				  	<Button  
+						onClick={() => {
+							setBot(6);
+							setOpened(true)}}
+						className="btn-simple"
+						color="info">
+						Buy
                     </Button>
                   </CardFooter>
                 </Card>
@@ -363,9 +401,14 @@ export default function Pricing()
 						</Row>
 					</CardBody>
 					<CardFooter className="text-center">
-					<Button onClick={() => {setOpened(true)}} className="btn-simple" color="info">
+					<Button  
+						onClick={() => {
+							setBot(7);
+							setOpened(true)}}
+						className="btn-simple"
+						color="primary">
 						Buy
-					</Button>
+                    </Button>
 					</CardFooter>
 				</Card>
 			<div className="space-between"></div>
@@ -394,9 +437,14 @@ export default function Pricing()
 						</Row>
 					</CardBody>
 					<CardFooter className="text-center">
-					<Button onClick={() => {setOpened(true)}} className="btn-simple" color="info">
+					<Button  
+						onClick={() => {
+							setBot(8);
+							setOpened(true)}}
+						className="btn-simple"
+						color="success">
 						Buy
-					</Button>
+                    </Button>
 					</CardFooter>
 				</Card>
 			</Col>
