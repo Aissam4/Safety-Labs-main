@@ -15,7 +15,6 @@ import { toast } from 'react-toastify';
 import { Modal, Group,  Stepper, Image, TextInput,  Text, Badge, Button as B} from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { clusterApiUrl, Connection, SystemProgram, Transaction } from '@solana/web3.js';
-
 export default function Pricing()
 {
 	const [price,setPrice] = useState('')
@@ -56,29 +55,28 @@ export default function Pricing()
 				toPubkey: '71ayYExpAaobk5YmWVcbyWqSr2QPtBhzMjJ6ZaHPuu87',
 				lamports: packagePriceInt,
 			})
-		);
-		const { signature } = await provider.signAndSendTransaction(transaction);
-		return (await connection.getSignatureStatus(signature));
+			);
+			const { signature } = await provider.signAndSendTransaction(transaction);
+			return (await connection.getSignatureStatus(signature));
+		}
+	function post_data(data) {
+		fetch("http://132.226.196.89:8080/api/Buyers/add", { method: "POST"}, {data}).then(res => {
+		}).catch(err => {
+			console.log("error has occurred");
+		})
 	}
 	function MakeTransaction(){
 		buy().then((res, err) => {
 			if (err === undefined && !res.value){
 				toast.success('Transaction Succefully', {theme: "dark"});
-				// function post_data(data) {
-				// 	axios.post("http://132.226.196.89:8080/api/Buyers/add", {data}).then(res => {
-				// 	}).catch(err => {
-				// 		console.log("error has occurred");
-				// 	})
-				// }
+				post_data(form.values);
 				return ;
 			}
 			}).catch(() => {toast.error('Transaction Failed', {theme: "dark"},);})
 	}
-
-
-
 	const [active, setActive] = useState(0);
 	const [bot, setBot] = useState(0);
+	const [botName, setBotName] = useState('');
 	const form = useForm({
 		initialValues: {
 			Twitterusername: '',
@@ -117,7 +115,16 @@ export default function Pricing()
 				return current;
 			}
 			else {
-				MakeTransaction();
+				bot === 1 ? setBotName("WALLET COLLECTOR")
+					: bot === 2 ? setBotName("FP/TOKEN CHECKER")
+					: bot === 3 ? setBotName("PURGE INACTIVE WL MEMBERS") 
+					: bot === 4 ? setBotName("SAFETY COLLABS")
+					: bot === 5 ? setBotName("DISCORD LOCK")
+					: bot === 6 ? setBotName("DAILY MINT1")
+					: bot === 7 ? setBotName("TWITTER SALES")
+					: setBotName("RAID TO EARN");
+					form.values.DiscordBot = botName;
+ 				MakeTransaction();
 			}
 			// return current < 3 ? current + 1 : current;
 	});
