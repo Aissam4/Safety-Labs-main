@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
-import "./assets/css/style.css";
 import { Button, Row, Col } from "reactstrap";
-import "react-vertical-timeline-component/style.min.css";
 import Navbar from "Navbar.js";
 import Footer from "Footer.js";
 import Roadmap from "Roadmap.js";
 import Features from "Features.js";
 import Pricing from "Pricing.js";
 import { Mouse } from "moussejs";
-
 import { LoadingOverlay } from "@mantine/core";
-
+import "./assets/css/style.css";
+import "react-vertical-timeline-component/style.min.css";
 export default function LandingPage() {
 	window.Buffer = window.Buffer || require("buffer").Buffer;
 	React.useEffect(() => {
@@ -22,7 +20,7 @@ export default function LandingPage() {
 	const [loader, setLoader] = useState(true);
 	useEffect(() => {
 		window.onload = () => setLoader(false);
-		setTimeout(() => setLoader(false), 2000);
+		setTimeout(() => setLoader(false), 1400);
 	}, [])
   let mouse = new Mouse({
     mouse: "cirle",

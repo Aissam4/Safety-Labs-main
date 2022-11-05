@@ -9,16 +9,22 @@ import {
 	CardBody,
 	CardFooter,
 	Row,
-	Col
-} from "reactstrap";
+	Col } from "reactstrap";
 import { toast } from 'react-toastify';
-import { Modal, Group,  Stepper, Image, TextInput,  Text, Badge, Button as B} from '@mantine/core';
+import { Modal, Group, TextInput, Button as B} from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { clusterApiUrl, Connection, SystemProgram, Transaction } from '@solana/web3.js';
+import {
+	clusterApiUrl,
+	Connection,
+	SystemProgram,
+	Transaction } from '@solana/web3.js';
 export default function Pricing()
 {
 	const [price,setPrice] = useState('')
 	const [opened, setOpened] = useState(false);
+	// const [active, setActive] = useState(0);
+	const [bot, setBot] = useState(0);
+	const [botName, setBotName] = useState('');
 	useEffect(()=> {
 		fetchPrice()
 	},[])
@@ -58,7 +64,7 @@ export default function Pricing()
 			);
 			const { signature } = await provider.signAndSendTransaction(transaction);
 			return (await connection.getSignatureStatus(signature));
-		}
+	}
 	function post_data(data) {
 		fetch("http://132.226.196.89:8080/api/Buyers/add", { method: "POST"}, {data}).then(res => {
 		}).catch(err => {
@@ -74,9 +80,6 @@ export default function Pricing()
 			}
 			}).catch(() => {toast.error('Transaction Failed', {theme: "dark"},);})
 	}
-	const [active, setActive] = useState(0);
-	const [bot, setBot] = useState(0);
-	const [botName, setBotName] = useState('');
 	const form = useForm({
 		initialValues: {
 			Twitterusername: '',
@@ -105,14 +108,11 @@ export default function Pricing()
 					? null
 					: 'Discord invite must be https://discord.gg/id',
 				};
-			return {};
 		},
 	});
-
-	const BuyBot = () =>
-		setActive((current) => {
+	const BuyBot = () =>{
 			if (form.validate().hasErrors) {
-				return current;
+				return;
 			}
 			else {
 				bot === 1 ? setBotName("WALLET COLLECTOR")
@@ -127,7 +127,7 @@ export default function Pricing()
  				MakeTransaction();
 			}
 			// return current < 3 ? current + 1 : current;
-	});
+	};
 	return (
 		<div className='w-75'>
 			<>
@@ -141,7 +141,6 @@ export default function Pricing()
 						<TextInput label="Discord invite" placeholder="https://discord.gg/ID" {...form.getInputProps('DiscordInvite')} />
 						<TextInput label="Referred by" placeholder="Optional" {...form.getInputProps('Reference')} />
 					</div>
-
 					<Group position="right" mt="xl">
 						<B onClick={() => {BuyBot()}} variant="outline" color="grape" radius="xl" uppercase>
 							BUY
