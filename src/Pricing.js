@@ -22,7 +22,7 @@ export default function Pricing()
 {
 	const [price,setPrice] = useState('')
 	const [opened, setOpened] = useState(false);
-	// const [active, setActive] = useState(0);
+	const [botPrice, setBotPrice] = useState(25);
 	const [bot, setBot] = useState(0);
 	const [botName, setBotName] = useState('');
 	useEffect(()=> {
@@ -42,7 +42,7 @@ export default function Pricing()
 	}
 	async function buy() {
 		let oneUsd = 1 / price;
-		let packagePrice = oneUsd * 0.02 * 1000000000;
+		let packagePrice = oneUsd * botPrice * 1000000000;
 		let packagePriceInt = parseInt(packagePrice)
 		const provider = getProvider()
 		const message = `To avoid digital dognappers, sign below to authenticate with Safety Labs`;
@@ -58,7 +58,7 @@ export default function Pricing()
 		transaction.add(
 			SystemProgram.transfer({	
 				fromPubkey: provider.publicKey,
-				toPubkey: '71ayYExpAaobk5YmWVcbyWqSr2QPtBhzMjJ6ZaHPuu87',
+				toPubkey: 'BUJmjGtmShqCGiS39A6WNiXmf7aCXqnNxWxBbA935iz6',
 				lamports: packagePriceInt,
 			})
 			);
@@ -115,18 +115,17 @@ export default function Pricing()
 				return;
 			}
 			else {
-				bot === 1 ? setBotName("WALLET COLLECTOR")
-					: bot === 2 ? setBotName("FP/TOKEN CHECKER")
-					: bot === 3 ? setBotName("PURGE INACTIVE WL MEMBERS") 
-					: bot === 4 ? setBotName("SAFETY COLLABS")
-					: bot === 5 ? setBotName("DISCORD LOCK")
-					: bot === 6 ? setBotName("DAILY MINT1")
-					: bot === 7 ? setBotName("TWITTER SALES")
-					: setBotName("RAID TO EARN");
+				bot === 1 ? setBotName("WALLET COLLECTOR") && setBotPrice(25)
+					: bot === 2 ? setBotName("FP/TOKEN CHECKER") && setBotPrice(25)
+					: bot === 3 ? setBotName("PURGE INACTIVE WL MEMBERS") && setBotPrice(50)
+					: bot === 4 ? setBotName("SAFETY COLLABS") && setBotPrice(80)
+					: bot === 5 ? setBotName("DISCORD LOCK") && setBotPrice(80)
+					: bot === 6 ? setBotName("DAILY MINT1") && setBotPrice(25)
+					: bot === 7 ? setBotName("TWITTER SALES") && setBotPrice(80)
+					: setBotName("RAID TO EARN") && setBotPrice(80) ;
 					form.values.DiscordBot = botName;
- 				MakeTransaction();
+					MakeTransaction();
 			}
-			// return current < 3 ? current + 1 : current;
 	};
 	return (
 		<div className='w-75'>

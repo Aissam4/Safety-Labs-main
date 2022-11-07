@@ -80,8 +80,7 @@ export default function LandingPage() {
                       Safe servers and facilitate community managment
                     </h1>
                     <p className="text-white mb-3">
-                      Safety Labs provides a set of bots that help keep your
-                      server safe and community managment easy
+					Safety Labs aims to become the #1 provider of security & community management BOTs for discord servers. With a well-experienced team in Discord security and community management, we provide quality bots that keep your servers safe and CM-friendly!
                     </p>
                     <div className="btn-wrapper">
                       <div className="button-container">
