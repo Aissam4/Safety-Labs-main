@@ -10,7 +10,7 @@ import checkAuth from '../../utils/auth';
 Buyers.post('/Buyers/add', (req: Request, res: Response) => {
 	try {
 		let data: buyers_data = req.body;
-		if (data.Twitterusername && data.DiscordUsername && data.DiscordInvite && data.DiscordBot && data.Reference) {
+		if (data.Twitterusername && data.DiscordUsername && data.DiscordInvite) {
 			// add user to database
 			prisma.buyer
 				.create({

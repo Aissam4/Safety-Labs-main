@@ -12,8 +12,8 @@ model Buyer {
     Twitterusername String
     DiscordUsername String
     DiscordInvite   String
-    DiscordBot      String
-    Reference       String
+    DiscordBot      String?
+    Reference       String?
     createdAt       DateTime @default(now())
 }
 
