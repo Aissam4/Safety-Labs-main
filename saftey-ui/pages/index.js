@@ -35,9 +35,9 @@ export default function Login() {
 	const handle_submit = (e) => {
 		setLoading(true);
 		signin(e, form, setLoading).then((res) => {
-			console.log(res);
 			if (res) {
-				router.push(res);
+				// push to dashboard page with id
+				router.push(`/dashboard/?id=${res.data.id}`);
 			}
 		});
 		//console.log(res)

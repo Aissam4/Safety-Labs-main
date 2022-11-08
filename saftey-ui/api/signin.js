@@ -12,7 +12,7 @@ export default async function signin({ username, password }, form, setLoading) {
 				if (typeof window != undefined) {
 					localStorage.setItem('token_safety_labs', res.data.jwt);
 					if (localStorage.getItem('token_safety_labs'))
-						return resp = '/dashboard';
+						return resp = res.data;
 				}
 			}
 			showNotification({

@@ -24,13 +24,13 @@ Buyers.post('/Buyers/add', (req: Request, res: Response) => {
 				})
 				.then((result: any) => {
 					res.status(200).json({
-						message: 'User added successfully',
+						message: 'added successfully',
 						data: result,
 					});
 				})
 				.catch((err: any) => {
 					res.status(500).json({
-						message: 'Error adding user',
+						message: 'Error adding customer',
 						error: err.code,
 					});
 				});
@@ -118,13 +118,13 @@ Buyers.put('/Buyers/:id', checkAuth, (req: Request, res: Response) => {
             })
             .then((result: any) => {
                 res.status(200).json({
-                    message: 'User updated successfully',
+                    message: 'updated successfully',
                     data: result,
                 });
             })
             .catch((err: any) => {
                 res.status(500).json({
-                    message: 'Error updating user',
+                    message: 'Error updating customer info',
                     error: err.code,
                 });
             });
@@ -145,13 +145,13 @@ Buyers.delete('/Buyers/:id', checkAuth, (req: Request, res: Response) => {
             })
             .then((result: any) => {
                 res.status(200).json({
-                    message: 'User deleted successfully',
+                    message: 'deleted successfully',
                     data: result,
                 });
             })
             .catch((err: any) => {
                 res.status(500).json({
-                    message: 'Error deleting user',
+                    message: 'Error deleting customer info',
                     error: err.code,
                 });
             });
