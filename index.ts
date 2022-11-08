@@ -38,11 +38,9 @@ app.use('/api/', Buyers);
 app.use('/api/', admin);
 
 app.get('/', (req: Request, res: Response) => {
-
 	res.json({
-		message: 'Welcome to the API',
+		message: 'Welcome to the SafteyLabs API',
 	});
-
 });
 
 app.listen(process.env.PORT, () => {

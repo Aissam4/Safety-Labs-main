@@ -1,5 +1,5 @@
 {
-	"name": "Safety-Labs",
+	"name": "safetylabs",
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
@@ -8,7 +8,7 @@
 		"dev": "concurrently \"npx tsc --watch\" \"nodemon -q ./dist/index.js\""
 	},
 	"keywords": [],
-	"author": "",
+	"author": "Rachid Oudouch",
 	"license": "ISC",
 	"description": "",
 	"devDependencies": {

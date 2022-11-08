@@ -58,12 +58,12 @@ Buyers.get('/Buyers', checkAuth, (req: Request, res: Response) => {
 					id: 'desc',
 				},
 			})
-			.then((result) => {
+			.then((result: any) => {
 				res.status(200).json({
 					data: result,
 				});
 			})
-			.catch((err) => {
+			.catch((err: any) => {
 				res.status(500).json({
 					error: err.code,
 				});
@@ -83,12 +83,12 @@ Buyers.get('/Buyers/:id', checkAuth, (req: Request, res: Response) => {
                     id: id,
                 },
             })
-            .then((result) => {
+            .then((result: any) => {
                 res.status(200).json({
                     data: result,
                 });
             })
-            .catch((err) => {
+            .catch((err: any) => {
                 res.status(500).json({
                     error: err.code,
                 });
@@ -116,13 +116,13 @@ Buyers.put('/Buyers/:id', checkAuth, (req: Request, res: Response) => {
                     Reference: data.Reference,
                 },
             })
-            .then((result) => {
+            .then((result: any) => {
                 res.status(200).json({
                     message: 'User updated successfully',
                     data: result,
                 });
             })
-            .catch((err) => {
+            .catch((err: any) => {
                 res.status(500).json({
                     message: 'Error updating user',
                     error: err.code,
@@ -143,13 +143,13 @@ Buyers.delete('/Buyers/:id', checkAuth, (req: Request, res: Response) => {
                     id: id,
                 },
             })
-            .then((result) => {
+            .then((result: any) => {
                 res.status(200).json({
                     message: 'User deleted successfully',
                     data: result,
                 });
             })
-            .catch((err) => {
+            .catch((err: any) => {
                 res.status(500).json({
                     message: 'Error deleting user',
                     error: err.code,
