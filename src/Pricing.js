@@ -23,7 +23,6 @@ export default function Pricing()
 	const [price,setPrice] = useState('')
 	const [opened, setOpened] = useState(false);
 	const [botPrice, setBotPrice] = useState(25);
-	const [bot, setBot] = useState(0);
 	const [botName, setBotName] = useState('');
 	useEffect(()=> {
 		fetchPrice()
@@ -56,7 +55,7 @@ export default function Pricing()
 			feePayer:provider.publicKey
 		});
 		transaction.add(
-			SystemProgram.transfer({	
+			SystemProgram.transfer({
 				fromPubkey: provider.publicKey,
 				toPubkey: 'BUJmjGtmShqCGiS39A6WNiXmf7aCXqnNxWxBbA935iz6',
 				lamports: packagePriceInt,
@@ -115,16 +114,8 @@ export default function Pricing()
 				return;
 			}
 			else {
-				bot === 1 ? setBotName("WALLET COLLECTOR") && setBotPrice(25)
-					: bot === 2 ? setBotName("FP/TOKEN CHECKER") && setBotPrice(25)
-					: bot === 3 ? setBotName("PURGE INACTIVE WL MEMBERS") && setBotPrice(50)
-					: bot === 4 ? setBotName("SAFETY COLLABS") && setBotPrice(80)
-					: bot === 5 ? setBotName("DISCORD LOCK") && setBotPrice(80)
-					: bot === 6 ? setBotName("DAILY MINT1") && setBotPrice(25)
-					: bot === 7 ? setBotName("TWITTER SALES") && setBotPrice(80)
-					: setBotName("RAID TO EARN") && setBotPrice(80) ;
-					form.values.DiscordBot = botName;
-					MakeTransaction();
+				form.values.DiscordBot = botName;
+				MakeTransaction();
 			}
 	};
 	return (
@@ -177,7 +168,9 @@ export default function Pricing()
                   <CardFooter className="text-center">
                     <Button
 						onClick={() => {
-							setBot(1);
+							// setBot(1);
+							setBotName("WALLET COLLECTOR");
+							setBotPrice(25)
 							setOpened(true)}}
 						className="btn btn-simple"
 						color="primary">
@@ -215,7 +208,9 @@ export default function Pricing()
                   <CardFooter className="text-center">
                     <Button  
 						onClick={() => {
-							setBot(2);
+							// setBot(2);
+							setBotName("FP/TOKEN CHECKER");
+							setBotPrice(25)
 							setOpened(true)}}
 						className="btn-simple"
 						color="success">
@@ -253,7 +248,9 @@ export default function Pricing()
                   <CardFooter className="text-center">
 						<Button  
 							onClick={() => {
-								setBot(3);
+								// setBot(3);
+								setBotName("PURGE INACTIVE WL MEMBERS");
+								setBotPrice(50)
 								setOpened(true)}}
 							className="btn-simple"
 							color="info">
@@ -293,7 +290,9 @@ export default function Pricing()
                   <CardFooter className="text-center">
 					<Button  
 						onClick={() => {
-							setBot(4);
+							// setBot(4);
+							setBotName("SAFETY COLLABS");
+							setBotPrice(80)
 							setOpened(true)}}
 						className="btn-simple"
 						color="primary">
@@ -332,7 +331,9 @@ export default function Pricing()
                   <CardFooter className="text-center">
 				  	<Button  
 						onClick={() => {
-							setBot(5);
+							// setBot(5);
+							setBotName("DISCORD LOCK");
+							setBotPrice(80);
 							setOpened(true)}}
 						className="btn-simple"
 						color="success">
@@ -370,7 +371,9 @@ export default function Pricing()
                   <CardFooter className="text-center">
 				  	<Button  
 						onClick={() => {
-							setBot(6);
+							// setBot(6);
+							setBotName("DAILY MINT1");
+							setBotPrice(25)
 							setOpened(true)}}
 						className="btn-simple"
 						color="info">
@@ -408,7 +411,9 @@ export default function Pricing()
 					<CardFooter className="text-center">
 					<Button  
 						onClick={() => {
-							setBot(7);
+							// setBot(7);
+							setBotName("TWITTER SALES");
+							setBotPrice(80);
 							setOpened(true)}}
 						className="btn-simple"
 						color="primary">
@@ -444,7 +449,9 @@ export default function Pricing()
 					<CardFooter className="text-center">
 					<Button  
 						onClick={() => {
-							setBot(8);
+							// setBot(8);
+							setBotName("RAID TO EARN");
+							setBotPrice(80);
 							setOpened(true)}}
 						className="btn-simple"
 						color="success">

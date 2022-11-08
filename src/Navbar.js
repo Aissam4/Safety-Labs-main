@@ -73,7 +73,6 @@ export default function ExamplesNavbar({index})
 			});
 	}
 	const connectWallet = async() => {
-		console.log(provider);
 		try {
 			const resp = await provider.connect();
 			setAccount(resp.publicKey.toString());
