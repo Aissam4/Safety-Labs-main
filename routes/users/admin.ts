@@ -102,7 +102,6 @@ admin.post('/admin/register', checkAuth, async (req: Request, res: Response) => 
 admin.post('/admin/change-password', checkAuth, async (req: Request, res: Response) => {
     try {
         const {id, password, NewPassword}: {id: string, password: string, NewPassword: string} = req.body;
-        console.log(id, password, NewPassword)
         // check is the new password are valid
         if (NewPassword.length < 8) {
             res.status(400).json({
@@ -227,6 +226,75 @@ admin.get('/admin/me', checkAuth, async (req: Request, res: Response) => {
     } catch (err) {
         res.status(500).json({
             message: "Error finding user",
+            err
+        })
+    }
+});
+
+// get all users
+admin.get('/admin/users', checkAuth, async (req: Request, res: Response) => {
+    try {
+        prisma.user.findMany().then((data: any) => {
+            res.status(200).json({
+                data
+            })
+        }).catch((err: any) => {
+            res.status(400).json({
+                message: "Error finding users",
+                err
+            })
+        })
+    } catch (err) {
+        res.status(500).json({
+            message: "Error finding users",
+            err
+        })
+    }
+});
+
+// change username (admin)
+admin.post('/admin/change-username', checkAuth, async (req: Request, res: Response) => {
+    try {
+        const {id, username}: {id: string, username: string} = req.body;
+        prisma.user.findUnique({
+            where: {
+                id: parseInt(id)
+            }
+        }).then((data: any) => {
+            if (data) {
+                prisma.user.update({
+                    where: {
+                        id: parseInt(id)
+                    },
+                    data: {
+                        username
+                    }
+                }).then((data: any) => {
+                    res.status(200).json({
+                        message: "Username changed",
+                        data
+                    })
+                }
+                ).catch((err: any) => {
+                    res.status(400).json({
+                        message: "Error changing username",
+                        err
+                    })
+                })
+            } else {
+                res.status(400).json({
+                    message: "User not found"
+                })
+            }
+        }).catch((err: any) => {
+            res.status(400).json({
+                message: "Error finding user",
+                err
+            })
+        })
+    } catch (err) {
+        res.status(500).json({
+            message: "Error changing username",
             err
         })
     }
