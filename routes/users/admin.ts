@@ -101,9 +101,10 @@ admin.post('/admin/register', checkAuth, async (req: Request, res: Response) => 
 // change password
 admin.post('/admin/change-password', checkAuth, async (req: Request, res: Response) => {
     try {
-        const {id, password, newPassword}: {id: string, password: string, newPassword: string} = req.body;
+        const {id, password, NewPassword}: {id: string, password: string, NewPassword: string} = req.body;
+        console.log(id, password, NewPassword)
         // check is the new password are valid
-        if (newPassword.length < 8) {
+        if (NewPassword.length < 8) {
             res.status(400).json({
                 message: "Password must be at least 8 characters"
             })
@@ -121,7 +122,7 @@ admin.post('/admin/change-password', checkAuth, async (req: Request, res: Respon
                             id: parseInt(id)
                         },
                         data: {
-                            password: await hash_password(newPassword)
+                            password: await hash_password(NewPassword)
                         }
                     }).then((data: any) => {
                         res.status(200).json({
@@ -209,3 +210,24 @@ admin.post('/admin/delete-user', checkAuth, async (req: Request, res: Response) 
         })
     }
 })
+
+// get me (get user data)
+admin.get('/admin/me', checkAuth, async (req: Request, res: Response) => {
+    try {
+        let user: any = req.user;
+        if (req.user) [
+            res.status(200).json({
+                data: {
+                    id: user.id,
+                    username: user.username,
+                    role: user.role
+                }
+            })
+        ]
+    } catch (err) {
+        res.status(500).json({
+            message: "Error finding user",
+            err
+        })
+    }
+});

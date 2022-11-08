@@ -8,7 +8,6 @@ function ChangePassword({password, NewPassword}, id) {
             "Authorization": `Bearer ${localStorage.getItem("token_safety_labs")}`
         }
     };
-
     return axios.post(API_URL.CHANGEPASSWORD, {
         id: id,
         password: password,

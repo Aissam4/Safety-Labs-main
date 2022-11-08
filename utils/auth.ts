@@ -18,7 +18,7 @@ async function checkAuth(req: any, res: any, next: any) {
                 where: {
                     id: Number(decoded[1]?.sub)
                 }
-            }).then((data) => {
+            }).then((data: any) => {
                 if (data) {
                     req.user = data;
                     next();
@@ -27,7 +27,7 @@ async function checkAuth(req: any, res: any, next: any) {
                         message: 'Auth failed'
                     })
                 }
-            }).catch((err) => {
+            }).catch((err: any) => {
                 res.status(401).json({
                     message: 'Auth failed',
                     err
